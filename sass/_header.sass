@@ -1,0 +1,248 @@
+#hambMenu
+	position: fixed
+	z-index: 1200
+	right: 0
+	top: 0
+	background-color: $w
+	min-width: 200px
+	width: 20vw
+	padding: 8px 24px 0 43px
+	height: 100vh
+	font-family: 'Open Sans', sans-serif
+	transition: all 0.2s linear
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+	#closeHambMenu
+		width: 20px
+		height: 20px
+		fill: $b
+		&:hover
+			fill: $green
+	.top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.logo
+			width: 60%
+	ul
+		margin-top: 20px
+		font-size: 9px
+		li
+			display: block
+			&:not(:first-child)
+				margin-top: 12px
+			&.action
+				color: $red
+				font-weight: bold
+				position: relative
+				&:before
+					content: url(../img/ico_fire.svg)
+					width: 17px
+					height: 20px
+					margin-right: 3px
+					position: absolute
+					left: 0
+					top: 50%
+					transform: translate(calc( -100% - 6px ), -50%)
+		&.accent
+			margin-top: 30px
+			font-size: 10px
+			font-weight: bold
+			font-family: 'Montserrat', sans-serif
+
+header
+	font-family: 'Open Sans', sans-serif
+	nav .wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.links
+			padding: 12px 0
+			display: flex
+			align-items: center
+			font-size: 13px
+			> li
+				&:not(:first-child)
+					margin-left: 30px
+				&.action
+					color: $red
+					font-weight: bold
+					display: flex
+					align-items: center
+					&:before
+						content: url(../img/ico_fire.svg)
+						width: 17px
+						height: 20px
+						margin-right: 3px
+			.languages
+				display: flex
+				align-items: center
+				position: relative
+				width: max-content
+				user-select: none
+				font-weight: bold
+				svg
+					width: 8px
+					margin-left: 5px
+					fill: $green
+				.sublist
+					font-weight: normal
+		.socials
+			display: flex
+			align-items: center
+			li
+				&:not(:first-child)
+					margin-left: 14px
+		.hamb
+			display: none
+	.contacts .wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		position: relative
+		z-index: 0 // changed from 5 to make full interaction with languages menu
+		.logo
+			width: 200px
+		.addresses
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			font-size: 14px
+			font-family: 'Montserrat', sans-serif
+			> *
+				flex: 0 0 auto
+				width: max-content
+			div
+				font-weight: bold
+				margin-left: 8px
+			svg
+				margin-left: 8px
+		.phones
+			display: flex
+			align-items: center
+			justify-content: space-between
+			a
+				width: max-content
+				display: flex
+				align-items: center
+				font-size: 13px
+				font-weight: bold
+				svg
+					width: max-content
+					margin-right: 9px
+				&:not(:first-child)
+					margin-left: 32px
+	.manage
+		margin-top: 23px
+		background-color: $b
+		color: $w
+		.wrapper
+			display: flex
+			align-items: center
+			justify-content: space-between
+			.catalog
+				position: relative
+				font-family: 'Montserrat', sans-serif
+				*
+					user-select: none
+				.openMegamenu
+					padding: 25px 77px
+					background-color: $green
+					font-size: 16px
+					font-weight: bold
+					&:hover
+						background-color: lighten($green, 10%)
+						color: $w
+				.megamenu
+					position: absolute
+					z-index: 200
+					width: 100%
+					left: 0
+					top: 100%
+					background-color: $w
+					color: $b
+					padding: 10px 0
+					transition: all 0.2s linear
+					opacity: 0
+					visibility: hidden
+					&.active
+						opacity: 1
+						visibility: visible
+					.item
+						width: 100%
+						padding: 10px 12px 10px 24px
+						position: relative
+						&:hover .submenu
+							opacity: 1
+							visibility: visible
+						.title
+							display: flex
+							align-items: flex-start
+							justify-content: flex-start
+							svg:nth-of-type(1)
+								width: 16px
+								height: 16px
+								margin-right: 9px
+								flex: 0 0 auto
+							svg:nth-of-type(2)
+								margin-left: auto
+								padding-left: 18px
+								width: max-content
+						.submenu
+							position: absolute
+							z-index: 210
+							left: 100%
+							top: 0
+							width: 100%
+							background-color: $w
+							padding: 0 0 10px
+							transition: all 0.2s linear
+							opacity: 0
+							visibility: hidden
+							li
+								display: block
+								padding: 10px 12px 10px 24px
+			.search
+				margin-left: 19px
+				position: relative
+				flex-grow: 1
+				input
+					padding: 14px 0 14px 47px
+					width: 100%
+					border-radius: 60px
+					background-color: $w
+					color: $b
+					outline: none
+					transition: all 0.2s linear
+					border: 2.5px solid $tsp
+					&:focus
+						border-color: $green
+				svg
+					position: absolute
+					width: 18px
+					height: 18px
+					fill: $b
+					top: 50%
+					left: 18px
+					transform: translateY(-50%)
+			.personal
+				margin-left: 70px
+				display: flex
+				justify-content: space-between
+				a
+					padding: 0 24px
+					text-align: center
+					flex-grow: 1
+					&:not(:first-child)
+						border-left: 1px solid rgba($w, 0.4)
+					&:hover svg
+						fill: $green
+					svg
+						width: 29px
+						height: 29px
+						fill: $w
+					p
+						font-size: 12px

@@ -1,0 +1,219 @@
+// ---------------------------------------------------------------- Reset styles
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+	display: block
+
+ul
+	list-style: none
+	li
+		position: relative
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+// +
+button
+	border: none
+	background-color: transparent
+	cursor: pointer
+	padding: 0
+	outline: none
+li, a, span
+	display: inline-block
+	outline: none
+img
+	width: 100%
+	user-select: none
+	outline: none
+h1, h2, h3, h4, h5, h6
+	font-weight: bold
+svg
+	width: 100%
+	height: auto
+	fill: #2d2c2c
+	&:not(.native)
+		fill: inherit
+		path, g
+			fill: inherit
+
+// ---------------------------------------------------------------- Variables
+$red: 		#ff5e3b
+$green: 	#427d1e
+$b: 			#2d2c2c
+$w: 			#ffffff
+$tsp: 		#00000000
+$grey: 		#b3b3b3
+
+// ---------------------------------------------------------------- Functions
+
+// ---------------------------------------------------------------- Classes
+.bg
+	position: relative
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	overflow: hidden
+	> img
+		position: absolute
+		z-index: -1
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		width: 100%
+		height: auto
+
+.mainitem
+	position: relative
+	&:hover .sublist
+		max-height: 300px
+		opacity: 1
+		visibility: visible
+	> .sublist
+		width: 100%
+		position: absolute
+		left: 50%
+		top: 100%
+		transform: translate(-50%, 0)
+		max-height: 0
+		transition: all 0.2s linear
+		opacity: 0
+		visibility: hidden
+		background-color: $w
+		padding: 9px
+		border-radius: 5px
+		box-sizing: content-box
+		&:hover
+			max-height: 300px
+			opacity: 1
+			visibility: visible
+		li
+			width: max-content
+			&:not(:first-child)
+				margin-top: 9px
+// ---------------------------------------------------------------- Figures
+
+// ---------------------------------------------------------------- Mixins
+
+// ---------------------------------------------------------------- Slick
+
+// ---------------------------------------------------------------- Common styles
+*
+	color: inherit
+	text-decoration: none
+	box-sizing: border-box
+	font-family: inherit
+
+a, button, svg, img
+	transition: all 0.15s linear
+a:hover
+	color: $green
+
+html
+	width: 100vw
+	overflow-x: hidden
+	scroll-behavior: unset
+	position: relative
+	height: 100%
+
+body
+	width: 100%
+	height: 100%
+	position: relative
+	z-index: 1
+	overflow-x: hidden
+	&.discroll
+		position: fixed
+		overflow: hidden
+
+main
+	position: relative
+
+section
+	font-family: 'Open Sans', sans-serif
+	position: relative
+	z-index: 0 // changed from 5 to make full interaction with megamenu
+	overflow: hidden
+	color: $b
+
+.wrapper
+	width: 1440px
+	margin: 0 auto
+	position: relative
+	z-index: 5
+
+#overlay, #mainOverlay
+	position: fixed
+	z-index: 1000
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(#000, 0.8)
+	width: 100vw
+	height: 100vh
+	overflow: hidden
+	cursor: pointer
+	transition: all 0.2s linear
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+	#closeOverlay, #closeMainOverlay
+		position: absolute
+		right: 30px
+		top: 30px
+		width: 20px
+		height: 20px
+		fill: $w
+		&:hover
+			fill: $green
+
+#mainOverlay
+	position: absolute
+	width: 100%
+	height: 100%
+
+.discount
+	width: 100%
+	padding: 10px 0
+	text-align: center
+	font-size: 24px
+	font-weight: 500
+	text-transform: uppercase
+	color: $w
+	margin-top: -1px
+	font-family: 'Montserrat', sans-serif
+	img
+		height: 100%
+	strong
+		font-weight: 900

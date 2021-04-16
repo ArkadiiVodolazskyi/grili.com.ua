@@ -1,0 +1,82 @@
+footer
+	background-color: #000
+	color: $w
+	font-family: 'Montserrat', sans-serif
+	> img
+		opacity: 0.3
+		z-index: 1 !important
+		height: 100%
+	.wrapper
+		display: flex
+		flex-direction: column
+		padding: 70px 0 35px
+	.navigation
+		padding: 14px 0
+		display: flex
+		justify-content: space-between
+		.slogan
+			flex: 0 0 auto
+			p
+				margin-top: 15px
+				font-size: 12px
+				font-weight: bold
+				line-height: 20px
+				max-width: 175px
+		nav
+			display: flex
+			justify-content: space-between
+			margin-left: 130px
+			.footer_block
+				padding-left: 70px
+				font-size: 12px
+				&.filials ul
+					display: flex
+					flex-direction: column
+					li
+						display: inline-block
+						max-width: unset
+						a
+							white-space: nowrap
+				h3
+					font-weight: bold
+				> ul
+					margin-top: 36px
+					li
+						display: block
+						max-width: 200px
+						&:not(:first-child)
+							margin-top: 18px
+					span
+						margin-top: 6px
+						font-size: 9px
+					p
+						display: inline-block
+				> .socials
+					margin-top: 36px
+					span
+						font-weight: bold
+					ul
+						margin-top: 12px
+						display: flex
+						align-items: center
+					li
+						display: inline-block
+						&:not(:first-child)
+							margin-left: 12px
+						svg
+							transform: scale(0.8)
+	.copyright
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.payments
+			li
+				background-color: $w
+				border-radius: 3px
+				width: 50px
+				height: 32px
+				z-index: 1
+				&:not(:first-child)
+					margin-left: 12px
+				> img
+					max-width: 95%
