@@ -71,6 +71,7 @@ window.addEventListener("load", () => {
     element.classList.add('active');
   }
 
+  // Open Megamenu
   (function() {
     const openMegamenu = document.getElementById('openMegamenu');
     const megamenu = document.getElementById('megamenu');
@@ -78,6 +79,30 @@ window.addEventListener("load", () => {
     openMegamenu.addEventListener('click', () => {
       megamenu.classList.toggle('active');
     })
+  })();
+
+  // Open Modal Consult
+  (function() {
+    const openConsults = document.querySelectorAll('.openConsult');
+    const modalConsult = document.querySelector('#modalConsult');
+    const closeConsult = document.querySelector('#closeConsult');
+
+    if (openConsults.length && modalConsult && closeConsult) {
+      openConsults.forEach(openConsult => {
+        openConsult.addEventListener('click', () => {
+          overlay.classList.add('active');
+          modalConsult.classList.add('active');
+        });
+      })
+    }
+  })();
+
+  // Custom range input
+  (function() {
+    addEventListener('input', e => {
+      let _t = e.target;
+      _t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
+    }, false);
   })();
 
 });

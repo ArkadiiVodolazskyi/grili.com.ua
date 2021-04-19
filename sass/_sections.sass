@@ -1,4 +1,4 @@
-
+// page-home
 section.catalog
 	padding: 40px 0 100px
 	background-color: $cream
@@ -53,12 +53,13 @@ section.action_goods
 	.cards
 		display: inline-flex
 		justify-content: space-between
-		margin: 48px -10px 0
+		margin: 0 -10px
+		padding: 48px 0 0
 		.card
 			display: inline-flex
 			flex-direction: column
-			width: 20vw
-			max-width: 295px
+			width: 15vw
+			max-width: 282px
 			margin: 0 20px
 			padding: 10px 10px 20px 10px
 			&:hover
@@ -73,7 +74,6 @@ section.action_goods
 				align-items: flex-start
 				> img
 					height: auto
-					// max-height: 100%
 					width: auto
 					max-width: 100%
 					position: absolute
@@ -81,28 +81,6 @@ section.action_goods
 					left: 50%
 					transform: translate(-50%, -50%)
 					transition: all 0.2s linear
-				.tags
-					width: max-content
-					font-family: 'Open Sans', sans-serif
-					color: $w
-					position: relative
-					> div
-						font-size: 10px
-						padding: 4px 8px
-						border-radius: 40px
-						white-space: nowrap
-						width: max-content
-						&.tags_discount
-							background-color: $green
-						&.tags_bestseller
-							background-color: $b
-						&:not(:first-child)
-							margin-top: 4px
-					svg
-						width: 8px
-						height: 8px
-						fill: $w
-						margin-right: 4px
 				.options
 					width: max-content
 					font-family: 'Montserrat', sans-serif
@@ -143,20 +121,6 @@ section.action_goods
 					font-family: 'Open Sans', sans-serif
 				h3
 					font-size: 16px
-				.price
-					.old
-						font-size: 12px
-						color: $grey
-						text-decoration: line-through
-					.current
-						font-size: 12px
-						strong
-							font-size: 16px
-					.discount
-						font-size: 9px
-						strong
-							font-weight: bold
-							color: $red
 				.buy
 					width: 70%
 					margin: 14px auto 0
@@ -173,3 +137,532 @@ section.action_goods
 						color: $w
 section.blogs
 	margin-top: 110px
+	color: $w
+	.cards
+		display: flex
+		justify-content: space-between
+		margin: 0 -28px
+	.card
+		width: calc( 50% - 28px )
+		height: 338px
+		margin: 0 28px
+		border-radius: 10px
+		overflow: hidden
+		padding: 20px 30px
+		position: relative
+		> img
+			width: 70%
+			position: absolute
+			z-index: 1
+			right: 0
+			bottom: 0
+		h4
+			font-size: 24px
+			max-width: 50%
+section.brands
+	margin-top: 70px
+	.cards
+		display: inline-flex
+		padding: 80px 0 70px
+	.card
+		display: inline-block
+		text-align: center
+		margin: 0 50px
+		width: 10vw
+		max-width: 168px
+		text-align: center
+		.bg
+			height: 100px
+		span
+			margin-top: 30px
+			font-size: 10px
+section.news
+	margin-top: 30px
+	padding-top: 65px
+	background-color: $cream
+	.cards
+		display: inline-flex
+		padding: 70px 0 50px
+		font-family: 'Open Sans', sans-serif
+	.card
+		display: inline-block
+		margin: 0 10px
+		width: 20vw
+		max-width: 295px
+		background-color: $w
+		border-radius: 10px 10px 0px 0px
+		overflow: hidden
+		transition: all 0.2s linear
+		&:hover
+			box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15)
+		.bg
+			height: 144px
+			img
+				z-index: 1
+		.text
+			padding: 10px 10px 15px 15px
+			color: $b
+			.date
+				font-size: 8px
+				color: $grey
+			.title
+				margin-top: 4px
+				font-size: 14px
+				line-height: 1.5
+			p
+				margin-top: 6px
+				font-size: 12px
+				line-height: 1.5
+section.video
+	.wrapper
+		padding: 35px 0 65px
+	h2
+		max-width: 53%
+	.content
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		margin-top: 32px
+	.text
+		width: 36%
+		padding-right: 120px
+		font-family: 'Open Sans', sans-serif
+		p
+			font-size: 14px
+			line-height: 1.5
+			&:not(:first-child)
+				margin-top: 8px
+			&.accent
+				font-weight: bold
+			a
+				color: $green
+				&:hover
+					color: darken($green, 10%)
+	.video
+		width: 64%
+		height: 470px
+		iframe
+			width: 100%
+			height: 100%
+section.recipes
+	background-color: $cream
+	padding: 70px 0 50px
+	.cards
+		padding: 30px 0 40px
+		display: inline-flex
+	.card
+		margin: 0 10px
+		border-radius: 10px 10px 5px 5px
+		display: inline-block
+		overflow: hidden
+		background-color: $w
+		width: 42vw
+		max-width: 610px
+		.video
+			height: 282px
+		.text
+			padding: 12px 30px 30px
+			font-family: 'Open Sans', sans-serif
+			h5
+				font-size: 14px
+				line-height: 1.5
+	.btn_all
+		margin-top: 65px
+
+// single-item
+section.item
+	margin-top: 57px
+	.wrapper
+		height: 860px
+	.top
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		h1
+			font-size: 36px
+			width: 57%
+		.manage_buttons
+			width: 24%
+			display: flex
+			button
+				width: 30px
+				height: 30px
+				padding: 5px
+				border-radius: 100%
+				box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15)
+				background-color: $w
+				fill: $grey
+				display: flex
+				justify-content: center
+				align-items: center
+				&:not(:first-child)
+					margin-left: 10px
+				&:hover
+					fill: $green
+				svg
+					max-width: 20px
+					max-height: 20px
+		.basic_info
+			width: 19%
+			display: flex
+			flex-direction: column
+			font-size: 8px
+			font-family: 'Open Sans', sans-serif
+			color: $grey
+			.brand
+				max-width: 50%
+				margin-bottom: 15px
+			> span:not(:first-child)
+				margin-top: 8px
+			.availability strong
+				&.available
+					color: $green
+				&.notAvailable
+					color: $red
+			.code, .articul
+				font-weight: bold
+				color: $b
+	.bottom
+		margin-top: 65px
+		display: flex
+		justify-content: space-between
+	.tape
+		width: 5vw
+		height: 100%
+		display: block
+		padding-right: 50px
+		img
+			display: block
+			width: auto !important
+			height: 6vw !important
+			&:not(:first-child)
+				margin-top: 30px
+		// .slick-track
+		// 	width: 100% !important
+		// 	height: 100% !important
+		// 	display: inline-flex
+		// 	flex-direction: column
+	.item_image
+		width: 52%
+		padding: 0 20px 0 0
+		display: flex
+		justify-content: space-between
+		position: relative
+		.tags
+			position: absolute
+			z-index: 100
+			left: 0
+			top: 0
+		.slick-track
+			width: 100% !important
+			height: 100% !important
+		.images
+			.bg
+				height:
+			img
+				max-width: 100%
+				max-height: 100%
+	.right
+		width: 43%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+	.item_manage
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+	.text
+		width: 55%
+		padding-right: 20px
+		.price
+			font-family: 'Open Sans', sans-serif
+			margin-bottom: 40px
+			.old
+				font-size: 14px
+			.current
+				font-size: 16px
+				strong
+					font-size: 36px
+			.discount
+				font-size: 14px
+		button
+			width: 100%
+			padding: 12px 0
+			font-size: 12px
+			font-family: 'Montserrat', sans-serif
+			border-radius: 140px
+			color: $green
+			&.buy
+				color: $w
+				background-color: $red
+				&:hover
+					background-color: $green
+			&.buy_installment
+				margin-top: 15px
+				background-color: $tsp
+				border: 1px solid $green
+				&:hover
+					background-color: $green
+					color: $w
+			&.openConsult, &.item_test
+				margin-top: 20px
+				padding: 0
+				fill: $green
+				display: flex
+				align-items: center
+				justify-content: center
+				&:hover
+					fill: $red
+					color: $red
+				svg
+					margin-right: 9px
+					width: 18px
+	.options
+		width: 45%
+		padding: 4px 15px 9px 15px
+		background-color: $cream
+		font-size: 11px
+		font-family: 'Open Sans', sans-serif
+		border-radius: 5px
+		img, svg
+			max-width: 26px
+			margin-right: 12px
+		> *
+			padding: 14px 0
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			&:last-child
+				border-top: 1px solid rgba(#000, 0.1)
+	.interested
+		background-color: rgba($green, 0.1)
+		border-radius: 5px
+		padding: 20px 28px 18px 24px
+		font-family: 'Open Sans', sans-serif
+		margin-top: 30px
+		h6
+			max-width: 74%
+			font-size: 24px
+			font-family: 'Montserrat', sans-serif
+		p
+			max-width: 74%
+			margin-top: 14px
+			font-size: 14px
+		> div
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			margin-top: 14px
+		.schedule
+			font-size: 10px
+			font-weight: bold
+		.openConsult
+			width: max-content
+			padding: 12px 14px
+			font-size: 12px
+			font-family: 'Montserrat', sans-serif
+			border-radius: 140px
+			color: $w
+			background-color: $green
+			&:hover
+				background-color: $w
+				color: $green
+section.info
+	margin-top: 55px
+	.item
+		border-radius: 5px
+		background-color: $cream
+		padding: 24px 105px 24px 40px
+		font-family: 'Open Sans', sans-serif
+		font-size: 14px
+		&:not(:first-child)
+			margin-top: 20px
+		&.active
+			h6
+				color: $green
+				i
+					transform: rotate(180deg)
+			.content
+				margin-top: 33px
+				opacity: 1
+				visibility: visible
+				max-height: 1000px
+		h6
+			font-family: 'Montserrat', sans-serif
+			font-size: 16px
+			cursor: pointer
+			transition: all 0.2s linear
+			color: $b
+			&:hover
+				color: $green
+			i
+				font-size: 20px
+				font-weight: normal
+				margin-right: 20px
+				transition: all 0.2s linear
+		.content
+			transition: all 0.2s linear
+			margin-top: 0
+			opacity: 0
+			visibility: hidden
+			max-height: 0
+		table
+			width: 98%
+			margin-left: auto
+			tr:not(:first-child)
+				border-top: 1px solid #dbdbdb
+			td
+				width: 50%
+				padding: 10px 20px
+				&:nth-child(1)
+					color: $grey
+				&:nth-child(2)
+					color: $b
+section.cheaper
+	padding-top: 100px
+	.cards
+		padding: 72px 0 0
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+	.set
+		width: 64vw
+		max-width: 1240px
+		display: inline-flex
+		border: 1px solid $lgrey
+		> *
+			width: 25%
+			position: relative
+			&:not(:first-child)
+				border-left: 1px solid $lgrey
+				&:before
+					content: ''
+					background-color: $cream
+					color: $tsp
+					font-size: 0
+					width: 50px
+					height: 50px
+					border-radius: 100%
+					position: absolute
+					z-index: 100
+					left: 0
+					top: 50%
+					transform: translate(-50%, -50%)
+				&:after
+					content: '+'
+					color: $b
+					font-size: 36px
+					font-weight: 500
+					font-family: 'Montserrat', sans-serif
+					border-radius: 100%
+					position: absolute
+					z-index: 110
+					left: 0
+					top: 50%
+					transform: translate(-50%, -50%)
+			&:last-child::after
+				content: '='
+	.card
+		padding: 17px 23px 20px 21px
+		.bg
+			height: 150px
+			> img
+				z-index: 1
+				max-height: 100%
+				max-width: 100%
+				width: auto
+		.text
+			margin-top: 20px
+			font-family: 'Montserrat', sans-serif
+			h3
+				font-size: 16px
+			.price
+				margin-top: 6px
+			.buy
+				width: 75%
+				margin: 14px auto 0
+				display: block
+				padding: 12px 0
+				font-weight: bold
+				font-size: 12px
+				border-radius: 120px
+				transition: all 0.2s linear
+				color: $red
+				border: 1px solid $red
+				&:hover
+					background-color: $red
+					color: $w
+		&.total
+			display: flex
+			justify-content: center
+			align-items: center
+			position: relative
+			.text
+				width: 100%
+				height: 100%
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+				align-items: center
+			.price
+				margin: 0 auto
+				align-self: center
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: max-content
+				.old, .discount
+					font-size: 14px
+				.current
+					font-size: 16px
+					strong
+						font-size: 36px
+			.buy
+				margin-top: auto
+				align-self: flex-end
+section.also
+	margin-top: 120px
+section.similar
+	margin: 80px 0
+
+// taxonomy-category
+
+section.find_items
+	margin-top: 0
+	padding-bottom: 54px
+	.wrapper
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: flex-start
+	.page_title select
+		background-color: $cream
+		border: none
+		padding: 11px 38px
+		font-size: 10px
+		font-family: 'Open Sans', sans-serif
+	aside
+		width: 24%
+		background-color: $cream
+		padding: 30px
+		font-family: 'Montserrat', sans-serif
+		font-size: 12px
+		.price
+			font-size: 12px
+		input[type=range]
+			width: 100%
+			margin-top: 27px
+	main
+		width: 76%
+		padding-left: 30px
+		.cards
+			flex-wrap: wrap
+			margin: -15px
+			padding: 0
+			.card
+				width: calc( 100% / 3 - 30px )
+				margin: 15px
+		.pagination
+			margin-top: 48px
+			margin: 0 auto
