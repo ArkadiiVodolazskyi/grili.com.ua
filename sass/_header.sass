@@ -4,7 +4,7 @@
 	right: 0
 	top: 0
 	background-color: $w
-	min-width: 200px
+	min-width: 230px
 	width: 20vw
 	padding: 8px 24px 0 43px
 	height: 100vh
@@ -12,9 +12,11 @@
 	transition: all 0.2s linear
 	opacity: 0
 	visibility: hidden
+	transform: translateX(100%)
 	&.active
 		opacity: 1
 		visibility: visible
+		transform: translateX(0)
 	#closeHambMenu
 		width: 20px
 		height: 20px
@@ -27,6 +29,9 @@
 		justify-content: space-between
 		.logo
 			width: 60%
+			max-width: 150px
+			svg
+				width: 100%
 	ul
 		margin-top: 20px
 		font-size: 9px
@@ -55,10 +60,14 @@
 
 header
 	font-family: 'Open Sans', sans-serif
+	position: relative
 	nav .wrapper
 		display: flex
 		align-items: center
 		justify-content: space-between
+		.logo
+			display: none
+			width: 160px
 		.links
 			padding: 12px 0
 			display: flex
@@ -77,19 +86,21 @@ header
 						width: 17px
 						height: 20px
 						margin-right: 3px
-			.languages
-				display: flex
-				align-items: center
-				position: relative
-				width: max-content
-				user-select: none
-				font-weight: bold
-				svg
-					width: 8px
-					margin-left: 5px
-					fill: $green
-				.sublist
-					font-weight: normal
+		.languages
+			display: flex
+			align-items: center
+			position: relative
+			width: max-content
+			user-select: none
+			font-weight: bold
+			font-size: 13px
+			margin: 0 auto 0 30px
+			svg
+				width: 8px
+				margin-left: 5px
+				fill: $green
+			.sublist
+				font-weight: normal
 		.socials
 			display: flex
 			align-items: center
@@ -98,6 +109,8 @@ header
 					margin-left: 14px
 		.hamb
 			display: none
+			width: 18px
+			fill: $green
 	.contacts .wrapper
 		display: flex
 		align-items: center
@@ -120,6 +133,7 @@ header
 				margin-left: 8px
 			svg
 				margin-left: 8px
+				fill: $green
 		.phones
 			display: flex
 			align-items: center
@@ -131,7 +145,7 @@ header
 				font-size: 13px
 				font-weight: bold
 				svg
-					width: max-content
+					width: 20px
 					margin-right: 9px
 				&:not(:first-child)
 					margin-left: 32px
@@ -139,6 +153,7 @@ header
 		margin-top: 23px
 		background-color: $b
 		color: $w
+		position: relative
 		.wrapper
 			display: flex
 			align-items: center
@@ -153,6 +168,7 @@ header
 					background-color: $green
 					font-size: 16px
 					font-weight: bold
+					white-space: nowrap
 					&:hover
 						background-color: lighten($green, 10%)
 						color: $w
@@ -165,6 +181,8 @@ header
 					background-color: $w
 					color: $b
 					padding: 10px 0
+					font-size: 11px
+					font-weight: bold
 					transition: all 0.2s linear
 					opacity: 0
 					visibility: hidden
@@ -173,7 +191,7 @@ header
 						visibility: visible
 					.item
 						width: 100%
-						padding: 10px 12px 10px 24px
+						padding: 10px 12px 10px 16px
 						position: relative
 						&:hover .submenu
 							opacity: 1
@@ -189,22 +207,25 @@ header
 								flex: 0 0 auto
 							svg:nth-of-type(2)
 								margin-left: auto
-								padding-left: 18px
-								width: max-content
+								width: 9px
+								flex: 0 0 auto
+								fill: $green
+								padding-left: 9px
+								box-sizing: content-box
 						.submenu
 							position: absolute
 							z-index: 210
 							left: 100%
-							top: 0
-							width: 100%
+							top: -10px
+							width: max-content
 							background-color: $w
-							padding: 0 0 10px
+							padding: 10px 15px
 							transition: all 0.2s linear
 							opacity: 0
 							visibility: hidden
 							li
 								display: block
-								padding: 10px 12px 10px 24px
+								padding: 10px
 			.search
 				margin-left: 19px
 				position: relative

@@ -58,6 +58,11 @@
 
 		<nav>
 			<div class="wrapper">
+
+				<a href="#" class="logo">
+					<img src="./img/logo.png">
+				</a>
+
 				<ul class="links">
 					<li><a href="#">Доставка и оплата</a></li>
 					<li><a href="#">Кредит</a></li>
@@ -67,15 +72,16 @@
 					<li class="action"><a href="#">Акция</a></li>
 					<li><a href="#">Бренды</a></li>
 					<li><a href="#">Контакты</a></li>
-					<li class="languages mainitem">
-						UA
-						<img src="./img/ico_arrow_down.svg" class="img-svg">
-						<ul class="sublist">
-							<li><a href="#">RU</a></li>
-							<li><a href="#">EN</a></li>
-						</ul>
-					</li>
 				</ul>
+
+				<div class="languages mainitem">
+					RU
+					<img src="./img/ico_arrow_down.svg" class="img-svg">
+					<ul class="sublist">
+						<li><a href="#">UA</a></li>
+						<li><a href="#">EN</a></li>
+					</ul>
+				</div>
 
 				<ul class="socials">
 					<li><a href="#">
@@ -95,7 +101,7 @@
 					</a></li>
 				</ul>
 
-				<button class="hamb">
+				<button class="hamb openHambMenu">
 					<img src="./img/ico-hamburger.svg" class="img-svg">
 				</button>
 			</div>
@@ -150,7 +156,7 @@
 							<a href="#" class="title">
 								<img src="./img/ico_production.svg" class="img-svg">
 								Производители
-								<img src="./img/ico_arrow_right.svg" class="img-svg">
+								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
 							</a>
 							<ul class="submenu">
 								<li><a href="#">Производители 1</a></li>
@@ -162,7 +168,7 @@
 							<a href="#" class="title">
 								<img src="./img/ico_barbecue.svg" class="img-svg">
 								Грили, Хосперы, Мангалы
-								<img src="./img/ico_arrow_right.svg" class="img-svg">
+								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
 							</a>
 							<ul class="submenu">
 								<li><a href="#">Грили</a></li>
@@ -174,7 +180,7 @@
 							<a href="#" class="title">
 								<img src="./img/ico_pool.svg" class="img-svg">
 								Бассейны и СПА
-								<img src="./img/ico_arrow_right.svg" class="img-svg">
+								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
 							</a>
 							<ul class="submenu">
 								<li><a href="#">Бассейны</a></li>
@@ -191,7 +197,7 @@
 				</div>
 
 				<div class="personal">
-					<a href="#">
+					<a href="#" class="compare">
 						<img src="./img/ico_scales.svg" class="img-svg">
 						<p>Сравнение</p>
 					</a>
@@ -212,10 +218,10 @@
 	<!-- header end -->
 
 	<main>
-		<div id="mainOverlay">
-			<button id="closeMainOverlay">
+		<div id="mainOverlay" class="nofix">
+			<!-- <button id="closeMainOverlay">
 				<img src="./img/ico_cross.svg" class="img-svg">
-			</button>
+			</button> -->
 		</div>
 
 		<section class="banner full">
@@ -264,6 +270,8 @@
 					</a>
 
 				</div>
+
+				<a href="#" class="btn_all">Все категории</a>
 			</div>
 		</section>
 
@@ -272,7 +280,7 @@
 				<h2>Акционные товары</h2>
 				<div class="cards">
 
-					<div class="card">
+					<a href="./single-item.html" class="card">
 
 						<div class="picture">
 							<img src="./img/action_grill.png" alt="action">
@@ -332,11 +340,42 @@
 							<button class="buy">
 								Купить
 							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
 						</div>
 
-					</div>
+					</a>
 
-					<div class="card">
+					<a href="./single-item.html" class="card">
 
 						<div class="picture">
 							<img src="./img/action_grill.png" alt="action">
@@ -396,11 +435,42 @@
 							<button class="buy">
 								Купить
 							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
 						</div>
 
-					</div>
+					</a>
 
-					<div class="card">
+					<a href="./single-item.html" class="card">
 
 						<div class="picture">
 							<img src="./img/action_grill.png" alt="action">
@@ -460,11 +530,42 @@
 							<button class="buy">
 								Купить
 							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
 						</div>
 
-					</div>
+					</a>
 
-					<div class="card">
+					<a href="./single-item.html" class="card">
 
 						<div class="picture">
 							<img src="./img/action_grill.png" alt="action">
@@ -524,11 +625,42 @@
 							<button class="buy">
 								Купить
 							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
 						</div>
 
-					</div>
+					</a>
 
-					<div class="card">
+					<a href="./single-item.html" class="card">
 
 						<div class="picture">
 							<img src="./img/action_grill.png" alt="action">
@@ -588,11 +720,139 @@
 							<button class="buy">
 								Купить
 							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
 						</div>
 
-					</div>
+					</a>
+
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
 
 				</div>
+
+
 			</div>
 		</section>
 
@@ -657,6 +917,8 @@
 					</div>
 
 				</div>
+
+				<a href="#" class="btn_all">Посмотреть все</a>
 			</div>
 		</section>
 
@@ -770,15 +1032,6 @@
 						</div>
 						<div class="text">
 							<h5>Почему так популярен KamadoJoe Classic II среди грильменов?</h5>
-						</div>
-					</a>
-
-					<a href="#" class="card">
-						<div class="video">
-							<iframe src="https://www.youtube.com/embed/SrEI5qHQD7s?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-						</div>
-						<div class="text">
-							<h5>Прорыв в классическом барбекю KamadoJoe - обзор Classic III</h5>
 						</div>
 					</a>
 
@@ -927,6 +1180,29 @@
 						<i class="fas fa-chevron-right"></i>
 					</button>
 				`,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+						},
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+							dots: true
+						},
+					},
+				],
 			});
 
 			$("section.brands .cards").not(".slick-initialized").slick({
@@ -952,6 +1228,40 @@
 						<i class="fas fa-chevron-right"></i>
 					</button>
 				`,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 4,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+						},
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 5,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+							dots: true,
+						},
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+							dots: true,
+						},
+					},
+				],
 			});
 
 			$("section.news .cards").not(".slick-initialized").slick({
@@ -977,6 +1287,40 @@
 						<i class="fas fa-chevron-right"></i>
 					</button>
 				`,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+						},
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+							dots: true
+						},
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							arrows: true,
+							draggable: true,
+							touchThreshold: 300,
+							dots: true
+						},
+					},
+				],
 			});
 
 			$("section.recipes .cards").not(".slick-initialized").slick({
@@ -1002,19 +1346,22 @@
 						<i class="fas fa-chevron-right"></i>
 					</button>
 				`,
+				responsive: [
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							arrows: false,
+							draggable: true,
+							touchThreshold: 300,
+							dots: true
+						},
+					},
+				],
 			});
 
-			// Click on slide
-			// $("section.reviews .cards .slick-slide").click(function(e) {
-			// 	$('section.reviews .cards').slick('slickGoTo', parseInt(e.target.getAttribute('data-slick-index')));
-
-			// 	$("section.reviews .cards .slick-slide").removeClass('slick-current');
-			// 	e.target.classList.add('slick-current');
-			// });
-
-			// if (window.innerWidth <= 480) {}
-
-			});
+		})
 	</script>
 </body>
 </html>

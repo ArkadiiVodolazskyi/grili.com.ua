@@ -58,7 +58,7 @@ img
 h1, h2, h3, h4, h5, h6
 	font-weight: bold
 svg
-	// width: 100%
+	max-width: 50px
 	height: auto
 	fill: #2d2c2c
 	&:not(.native)
@@ -87,6 +87,12 @@ section.full
 		display: block
 		width: 1440px
 		margin: 0 auto
+
+.img-svg
+	max-width: 50px
+	transition: all 0.2s linear
+	opacity: 0
+	animation: fading 0.5s 0.5s linear forwards
 
 h1.page_title
 	margin: 35px 0
@@ -124,6 +130,7 @@ h2
 	> .sublist
 		width: 100%
 		position: absolute
+		z-index: 200
 		left: 50%
 		top: 100%
 		transform: translate(-50%, 0)
@@ -204,6 +211,8 @@ section.breadcrumbs
 		display: flex
 		align-items: center
 		justify-content: flex-start
+		flex-wrap: wrap
+		font-size: 14px
 		a
 			color: $grey
 			fill: $grey
@@ -224,52 +233,8 @@ section.breadcrumbs
 			width: 20px
 			height: 20px
 
-// Custom range
-// .range
-$width: 20em
-$h: 1em
-
-@mixin track()
-	background: none
-	height: 100%
+.cards
 	width: 100%
-@mixin thumb()
-	background: currentcolor
-	border: none
-	border-radius: 0
-	pointer-events: auto
-	width: $h
-	height: $h
-.wrap
-	display: grid
-	grid-template-rows: max-content $h
-	margin: 1em auto
-	width: $width
-	overflow: hidden
-	position: relative
-	background: linear-gradient(0deg, #ccc $h, transparent 0)
-.sr-only
-	position: absolute
-	clip-path: inset(50%)
-input[type='range']
-	grid-column: 1
-	grid-row: 2
-	background: none
-	color: #000
-	font: inherit
-	margin: 0
-	pointer-events: none
-	&::-webkit-slider-runnable-track,
-	&::-webkit-slider-thumb
-		-webkit-appearance: none
-	&::-webkit-slider-runnable-track,
-	&::-moz-range-track,
-	&::-webkit-slider-thumb,
-	&::-moz-range-thumb
-		@include track
-output::after
-	counter-reset: c var(--c)
-	content: counter(c)
 
 // ---------------------------------------------------------------- Figures
 
@@ -283,10 +248,15 @@ output::after
 	// max-width: 100%
 // .slick-track
 // 	max-width: 100%
+.slick-track
+	height: 100%
 .slick-slide
+	vertical-align: top
+	height: 100%
 	transition: all 0.2s linear
 	&[aria-hidden=true]
 		opacity: 0
+		visibility: hidden
 .slick-arrow
 	position: absolute
 	z-index: 500
@@ -305,11 +275,11 @@ output::after
 		background-color: $green
 		color: $w
 	&:nth-of-type(1)
-		transform: translate(calc( -100% - 14px ), -100%)
+		transform: translate(calc( -100% - 14px ), -95%)
 		i
 			margin-right: 2px
 	&:nth-of-type(2)
-		transform: translate(0, -100%)
+		transform: translate(0, -95%)
 		i
 			margin-left: 2px
 	&.slick-disabled
@@ -346,7 +316,7 @@ output::after
 
 a, button, svg, img
 	transition: all 0.15s linear
-a:hover
+a:not(.card):hover
 	color: $green
 
 html
@@ -369,6 +339,7 @@ body
 main
 	position: relative
 	margin: 0 auto -5px // fix phantom margin
+	z-index: 0
 
 section
 	font-family: 'Montserrat', sans-serif
@@ -413,8 +384,12 @@ section
 
 #mainOverlay
 	position: absolute
+	z-index: 1
 	width: 100%
 	height: 100%
+	top: -12px
+	&.nofix
+		top: 0
 
 body > .discount
 	width: 100%

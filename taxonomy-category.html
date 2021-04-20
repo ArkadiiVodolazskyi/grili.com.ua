@@ -5,22 +5,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="./css/custom_range.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<title>taxonomy-category</title>
 </head>
 <body>
 
 	<div id="overlay">
 		<button id="closeOverlay">
-			<img src="./img/ico_cross.svg" class="img-svg">
-		</button>
-	</div>
-
-	<div id="modalConsult">
-		<h3>Получить консультацию</h3>
-		<button id="closeConsult">
 			<img src="./img/ico_cross.svg" class="img-svg">
 		</button>
 	</div>
@@ -66,6 +58,11 @@
 
 		<nav>
 			<div class="wrapper">
+
+				<a href="#" class="logo">
+					<img src="./img/logo.png">
+				</a>
+
 				<ul class="links">
 					<li><a href="#">Доставка и оплата</a></li>
 					<li><a href="#">Кредит</a></li>
@@ -75,15 +72,16 @@
 					<li class="action"><a href="#">Акция</a></li>
 					<li><a href="#">Бренды</a></li>
 					<li><a href="#">Контакты</a></li>
-					<li class="languages mainitem">
-						UA
-						<img src="./img/ico_arrow_down.svg" class="img-svg">
-						<ul class="sublist">
-							<li><a href="#">RU</a></li>
-							<li><a href="#">EN</a></li>
-						</ul>
-					</li>
 				</ul>
+
+				<div class="languages mainitem">
+					RU
+					<img src="./img/ico_arrow_down.svg" class="img-svg">
+					<ul class="sublist">
+						<li><a href="#">UA</a></li>
+						<li><a href="#">EN</a></li>
+					</ul>
+				</div>
 
 				<ul class="socials">
 					<li><a href="#">
@@ -103,7 +101,7 @@
 					</a></li>
 				</ul>
 
-				<button class="hamb">
+				<button class="hamb openHambMenu">
 					<img src="./img/ico-hamburger.svg" class="img-svg">
 				</button>
 			</div>
@@ -158,7 +156,7 @@
 							<a href="#" class="title">
 								<img src="./img/ico_production.svg" class="img-svg">
 								Производители
-								<img src="./img/ico_arrow_right.svg" class="img-svg">
+								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
 							</a>
 							<ul class="submenu">
 								<li><a href="#">Производители 1</a></li>
@@ -170,7 +168,7 @@
 							<a href="#" class="title">
 								<img src="./img/ico_barbecue.svg" class="img-svg">
 								Грили, Хосперы, Мангалы
-								<img src="./img/ico_arrow_right.svg" class="img-svg">
+								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
 							</a>
 							<ul class="submenu">
 								<li><a href="#">Грили</a></li>
@@ -182,7 +180,7 @@
 							<a href="#" class="title">
 								<img src="./img/ico_pool.svg" class="img-svg">
 								Бассейны и СПА
-								<img src="./img/ico_arrow_right.svg" class="img-svg">
+								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
 							</a>
 							<ul class="submenu">
 								<li><a href="#">Бассейны</a></li>
@@ -199,7 +197,7 @@
 				</div>
 
 				<div class="personal">
-					<a href="#">
+					<a href="#" class="compare">
 						<img src="./img/ico_scales.svg" class="img-svg">
 						<p>Сравнение</p>
 					</a>
@@ -220,15 +218,11 @@
 	<!-- header end -->
 
 	<main>
-		<div id="mainOverlay">
-			<button id="closeMainOverlay">
-				<img src="./img/ico_cross.svg" class="img-svg">
-			</button>
-		</div>
+		<div id="mainOverlay"></div>
 
 		<section class="breadcrumbs">
 			<div class="wrapper">
-				<a href="#" class="home">
+				<a href="./index.html" class="home">
 					<img src="./img/ico_house.svg" alt="" class="img-svg">
 				</a>
 				<a href="#">Угольные грили</a>
@@ -247,84 +241,170 @@
 				</h1>
 
 				<aside>
-					<span class="price">
-						<strong>Цена:</strong> 1500 – 664852 грн
-					</span>
 
-					<p>
-						<label for="amount">Price range:</label>
-						<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-					</p>
-					<div id="slider-range"></div>
+					<div class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: -30; --b: 20; --min: -50; --max: 50">
+						<div id="multi-lbl">Цена:  1500 – 664852 грн</div>
 
-					<div class="options_block producer">
-						<p>Производитель:</p>
+						<label class="sr-only" for="a">Value A:</label>
+						<input id="a" type="range" min="-50" value="-30" max="50" />
+						<output for="a" style="--c: var(--a)"></output>
+
+						<label class="sr-only" for="b">Value B:</label>
+						<input id="b" type="range" min="-50" value="20" max="50" />
+						<output for="b" style="--c: var(--b)"></output>
+					</div>
+
+					<div class="options_block">
+						<h6>Производитель:</h6>
 						<ul>
-							<li>
-								<input type="checkbox" name="producer_AHOS" id="producer_AHOS">AHOS
-							</li>
-							<li>
-								<input type="checkbox" name="producer_BergHoff" id="producer_BergHoff">BergHoff
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Big Green Egg" id="producer_Big Green Egg">Big Green Egg
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Boretti" id="producer_Boretti">Boretti
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Broil King" id="producer_Broil King">Broil King
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Char-Broil" id="producer_Char-Broil">Char-Broil
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Cuisinart" id="producer_Cuisinart">Cuisinart
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Dancook" id="producer_Dancook">Dancook
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Enders" id="producer_Enders">Enders
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Everdure" id="producer_Everdure">Everdure
-							</li>
-							<li>
-								<input type="checkbox" name="producer_FireMagic" id="producer_FireMagic">FireMagic
-							</li>
-							<li>
-								<input type="checkbox" name="producer_GrandHall" id="producer_GrandHall">GrandHall
-							</li>
-							<li>
-								<input type="checkbox" name="producer_GRILLI" id="producer_GRILLI">GRILLI
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Grillson" id="producer_Grillson">Grillson
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Jamie Oliver " id="producer_Jamie Oliver ">Jamie Oliver
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Josper" id="producer_Josper">Josper
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Kamado Joe" id="producer_Kamado Joe">Kamado Joe
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Monolith" id="producer_Monolith">Monolith
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Napoleon" id="producer_Napoleon">Napoleon
-							</li>
-							<li>
-								<input type="checkbox" name="producer_Nielsen" id="producer_Nielsen">Nielsen
-							</li>
-							<li>
-								<input type="checkbox" name="producer_O-GRILL" id="producer_O-GRILL">O-GRILL
-							</li>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">AHOS</span>
+								<small class="amount">8</small>
+							</label>
 						</ul>
 					</div>
+
+					<div class="options_block">
+						<h6>Наличие боковой горелки:</h6>
+						<ul>
+							<label>
+								<input type="checkbox">
+								<span class="name">Да</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">Нет</span>
+								<small class="amount">8</small>
+							</label>
+						</ul>
+					</div>
+
+					<div class="options_block">
+						<h6>Материал решеток:</h6>
+						<ul>
+							<label>
+								<input type="checkbox">
+								<span class="name">нержавеющая сталь</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">сталь с покрытием</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">хромированная сталь</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">чугун</span>
+								<small class="amount">8</small>
+							</label>
+						</ul>
+					</div>
+
+					<div class="options_block">
+						<h6>Материал корпуса:</h6>
+						<ul>
+							<label>
+								<input type="checkbox">
+								<span class="name">Алюминий</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">Керамика</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">Нержавеющая сталь</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">Сталь</span>
+								<small class="amount">8</small>
+							</label>
+						</ul>
+					</div>
+
+					<div class="options_block">
+						<h6>Боковые полки:</h6>
+						<ul>
+							<label>
+								<input type="checkbox">
+								<span class="name">Да</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">Нет</span>
+								<small class="amount">8</small>
+							</label>
+						</ul>
+					</div>
+
+					<div class="options_block">
+						<h6>Площадь рабочей поверхности:</h6>
+						<ul>
+							<label>
+								<input type="checkbox">
+								<span class="name">27х27 см</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">35x22 см</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">35x25 см</span>
+								<small class="amount">8</small>
+							</label>
+							<label>
+								<input type="checkbox">
+								<span class="name">36х42 см</span>
+								<small class="amount">8</small>
+							</label>
+						</ul>
+					</div>
+
 				</aside>
 
 				<main>
@@ -651,19 +731,339 @@
 
 						</div>
 
+						<div class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+							</div>
+
+						</div>
+
+						<div class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+							</div>
+
+						</div>
+
+						<div class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+							</div>
+
+						</div>
+
+						<div class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+							</div>
+
+						</div>
+
+						<div class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+							</div>
+
+						</div>
+
 					</div>
 
 					<nav class="pagination">
-						<li class="prev">
-							<i class="fas fa-chevron-left"></i>
+						<li class="prev" aria-disabled="true">
+							<a href=""><i class="fas fa-chevron-left"></i></a>
 						</li>
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-						<li>5</li>
+						<li class="active"><a href="">1</a></li>
+						<li><a href="">2</a></li>
+						<li><a href="">3</a></li>
+						<li><a href="">4</a></li>
+						<li><a href="">5</a></li>
 						<li class="next">
-							<i class="fas fa-chevron-right"></i>
+							<a href=""><i class="fas fa-chevron-right"></i></a>
 						</li>
 					</nav>
 
@@ -789,19 +1189,14 @@
 	<script>
 		window.addEventListener('load', () => {
 
-			$( function() {
-				$( "#slider-range" ).slider({
-					range: true,
-					min: 0,
-					max: 500,
-					values: [ 75, 300 ],
-					slide: function( event, ui ) {
-						$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-					}
-				});
-				$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-					" - $" + $( "#slider-range" ).slider( "values", 1 ) );
-			} );
+			// Init custom range
+			(function() {
+				const input = document.querySelector('.wrap');
+				input.addEventListener('input', e => {
+					let _t = e.target;
+					_t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
+				}, false);
+			})();
 
 		})
 	</script>

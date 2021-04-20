@@ -2,16 +2,18 @@
 section.catalog
 	padding: 40px 0 100px
 	background-color: $cream
-	.wrapper
+	.btn_all
+		display: none
+		margin-top: 16px
 	h2
 		text-align: center
 	.cards
 		display: flex
-		justify-content: space-between
-		margin: 30px -10px 0
+		justify-content: flex-start
+		margin: 20px -10px 0
 		.card
 			width: calc( 100% / 6 - 20px )
-			margin: 0 10px
+			margin: 10px
 			padding: 28px 6px 6px
 			text-align: center
 			background-color: $w
@@ -55,16 +57,18 @@ section.action_goods
 		justify-content: space-between
 		margin: 0 -10px
 		padding: 48px 0 0
+		width: 100%
 		.card
 			display: inline-flex
 			flex-direction: column
-			width: 15vw
-			max-width: 282px
+			width: 282px
 			margin: 0 20px
 			padding: 10px 10px 20px 10px
 			&:hover
 				.picture > img
 					transform: translate(-50%, -50%) scale(1.15)
+				.text h3
+					color: $green
 			.picture
 				height: 185px
 				width: 100%
@@ -81,39 +85,44 @@ section.action_goods
 					left: 50%
 					transform: translate(-50%, -50%)
 					transition: all 0.2s linear
-				.options
-					width: max-content
-					font-family: 'Montserrat', sans-serif
-					position: relative
-					> div
-						border-radius: 3px
-						background-color: $cream
-						padding: 2px
-						width: 40px
-						height: 33px
-						text-align: center
-						&:not(:first-child)
-							margin-top: 4px
-						&.options_delivery
-							font-size: 0
-							p
-								white-space: pre-wrap
-						&.options_installment h4
-							font-size: 6px
-						h4
-							font-size: 8px
-							text-transform: lowercase
-						svg, img
-							width: 17px
+			.options
+				width: max-content
+				font-family: 'Montserrat', sans-serif
+				position: relative
+				> div
+					border-radius: 3px
+					background-color: $cream
+					padding: 2px
+					width: 45px
+					height: 36px
+					text-align: center
+					display: flex
+					flex-direction: column
+					justify-content: center
+					align-items: center
+					overflow: hidden
+					&:not(:first-child)
+						margin-top: 4px
+					&.options_delivery
+						font-size: 0
 						p
-							white-space: nowrap
-							font-size: 6px
-							font-weight: bold
-							span
-								&.amount
-									font-size: 8px
-								&.unit
-									font-size: 5px
+							white-space: normal
+					&.options_installment h4
+						font-size: 6px
+					h4
+						font-size: 8px
+						text-transform: lowercase
+					svg, img
+						width: 17px
+					p
+						white-space: nowrap
+						font-size: 6px
+						font-weight: bold
+						span
+							&.amount
+								font-size: 8px
+							&.unit
+								font-size: 5px
 			.text
 				font-family: 'Montserrat', sans-serif
 				.articul
@@ -121,6 +130,7 @@ section.action_goods
 					font-family: 'Open Sans', sans-serif
 				h3
 					font-size: 16px
+					transition: all 0.2s linear
 				.buy
 					width: 70%
 					margin: 14px auto 0
@@ -135,6 +145,12 @@ section.action_goods
 					&:hover
 						background-color: $red
 						color: $w
+				.options
+					display: none
+					display: flex
+					align-items: flex-start
+					justify-content: flex-start
+					margin-top: 8px
 section.blogs
 	margin-top: 110px
 	color: $w
@@ -143,13 +159,15 @@ section.blogs
 		justify-content: space-between
 		margin: 0 -28px
 	.card
-		width: calc( 50% - 28px )
+		width: calc( 50% - 56px )
 		height: 338px
 		margin: 0 28px
 		border-radius: 10px
 		overflow: hidden
 		padding: 20px 30px
 		position: relative
+		&:hover h4
+			color: $green
 		> img
 			width: 70%
 			position: absolute
@@ -159,6 +177,9 @@ section.blogs
 		h4
 			font-size: 24px
 			max-width: 50%
+			position: relative
+			z-index: 1
+			transition: all 0.2s linear
 section.brands
 	margin-top: 70px
 	.cards
@@ -176,6 +197,10 @@ section.brands
 		span
 			margin-top: 30px
 			font-size: 10px
+			user-select: none
+	.btn_all
+		display: none
+		margin-top: 54px
 section.news
 	margin-top: 30px
 	padding-top: 65px
@@ -199,6 +224,7 @@ section.news
 			height: 144px
 			img
 				z-index: 1
+				width: 105%
 		.text
 			padding: 10px 10px 15px 15px
 			color: $b
@@ -250,6 +276,7 @@ section.recipes
 	.cards
 		padding: 30px 0 40px
 		display: inline-flex
+		width: 100%
 	.card
 		margin: 0 10px
 		border-radius: 10px 10px 5px 5px
@@ -258,6 +285,8 @@ section.recipes
 		background-color: $w
 		width: 42vw
 		max-width: 610px
+		&:hover .text
+			color: $green
 		.video
 			height: 282px
 		.text
@@ -272,8 +301,6 @@ section.recipes
 // single-item
 section.item
 	margin-top: 57px
-	.wrapper
-		height: 860px
 	.top
 		display: flex
 		justify-content: space-between
@@ -306,7 +333,7 @@ section.item
 			width: 19%
 			display: flex
 			flex-direction: column
-			font-size: 8px
+			font-size: 11px
 			font-family: 'Open Sans', sans-serif
 			color: $grey
 			.brand
@@ -323,50 +350,79 @@ section.item
 				font-weight: bold
 				color: $b
 	.bottom
-		margin-top: 65px
+		margin-top: 20px
 		display: flex
 		justify-content: space-between
 	.tape
-		width: 5vw
+		width: 60px
 		height: 100%
 		display: block
-		padding-right: 50px
+		margin-right: 40px
 		img
 			display: block
-			width: auto !important
-			height: 6vw !important
+			width: 60px
+			height: 80px
+			cursor: pointer
+			transition: all 0.2s linear
+			opacity: 0.3
+			&:hover, &.active
+				opacity: 1
 			&:not(:first-child)
 				margin-top: 30px
-		// .slick-track
-		// 	width: 100% !important
-		// 	height: 100% !important
-		// 	display: inline-flex
-		// 	flex-direction: column
 	.item_image
 		width: 52%
-		padding: 0 20px 0 0
-		display: flex
+		padding: 0 90px
+		display: inline-flex
 		justify-content: space-between
 		position: relative
+		flex-direction: column
+		overflow: hidden
+		.text
+			display: none
+			flex-direction: column
+			margin-top: 50px
+			padding: 0 40px 0 0
+			width: 100%
+			.price
+				font-family: 'Open Sans', sans-serif
+				margin-bottom: 40px
+				.old
+					font-size: 14px
+				.current
+					font-size: 16px
+					strong
+						font-size: 36px
+				.discount
+					font-size: 14px
+		.images
+			width: 100%
+			height: 100%
+			display: inline-flex
+			text-align: center
+			.bg
+				display: inline-block
+				width: 25vw
+				height: 100%
+				vertical-align: middle
+				margin: 0 auto
+				> img
+					z-index: 1
+					max-width: 100%
+					max-height: 100%
+					width: auto
+					height: auto
 		.tags
 			position: absolute
 			z-index: 100
 			left: 0
 			top: 0
-		.slick-track
-			width: 100% !important
-			height: 100% !important
-		.images
-			.bg
-				height:
-			img
-				max-width: 100%
-				max-height: 100%
 	.right
 		width: 43%
 		display: flex
 		flex-direction: column
 		justify-content: space-between
+		> .text
+			display: none
 	.item_manage
 		display: flex
 		justify-content: space-between
@@ -453,11 +509,15 @@ section.item
 			justify-content: space-between
 			align-items: flex-start
 			margin-top: 14px
+			> strong
+				display: none
+				font-size: 10px
 		.schedule
 			font-size: 10px
 			font-weight: bold
 		.openConsult
 			width: max-content
+			white-space: nowrap
 			padding: 12px 14px
 			font-size: 12px
 			font-family: 'Montserrat', sans-serif
@@ -526,8 +586,7 @@ section.cheaper
 		flex-direction: row
 		justify-content: space-between
 	.set
-		width: 64vw
-		max-width: 1240px
+		width: 1240px
 		display: inline-flex
 		border: 1px solid $lgrey
 		> *
@@ -564,6 +623,8 @@ section.cheaper
 				content: '='
 	.card
 		padding: 17px 23px 20px 21px
+		&:hover .text h3
+			color: $green
 		.bg
 			height: 150px
 			> img
@@ -621,6 +682,8 @@ section.cheaper
 			.buy
 				margin-top: auto
 				align-self: flex-end
+section.cheaper_md
+	display: none
 section.also
 	margin-top: 120px
 section.similar
@@ -637,22 +700,80 @@ section.find_items
 		justify-content: space-between
 		align-items: flex-start
 	.page_title select
-		background-color: $cream
-		border: none
 		padding: 11px 38px
 		font-size: 10px
 		font-family: 'Open Sans', sans-serif
+		appearance: none
+		background: url(../img/ico_arrow_down.svg) no-repeat 85% 55% $cream
+		cursor: pointer
+		transition: all 0.2s linear
+		border: 1px solid $tsp
+		&:hover
+			border-color: rgba($green, 0.5)
 	aside
 		width: 24%
 		background-color: $cream
 		padding: 30px
 		font-family: 'Montserrat', sans-serif
-		font-size: 12px
+		font-size: 14px
+		color: #000
 		.price
 			font-size: 12px
-		input[type=range]
-			width: 100%
-			margin-top: 27px
+		.options_block
+			margin-top: 40px
+			ul
+				margin-top: 20px
+				label
+					width: 100%
+					display: flex
+					align-items: center
+					justify-content: flex-start
+					cursor: pointer
+					&:not(:first-child)
+						margin-top: 20px
+					&.active
+						color: $green
+						font-weight: bold
+					&:hover
+						color: $green
+						.amount
+							color: $green
+					input
+						position: absolute
+						z-index: -1
+						opacity: 0
+						user-select: none
+						&:checked + span::before
+							border-color: $green
+							background-color: $green
+							background-image: url(../img/ico_check.svg)
+					span:before
+						content: ''
+						display: inline-block
+						width: 16px
+						height: 16px
+						flex-shrink: 0
+						flex-grow: 0
+						border: 1px solid #c4c4c4
+						border-radius: 2px
+						margin-right: 12px
+						background-repeat: no-repeat
+						background-position: center center
+						background-size: 50% 50%
+						transition: all 0.2s linear
+					.name
+						transition: all 0.2s linear
+						user-select: none
+						display: flex
+						align-items: center
+						justify-content: flex-start
+					.amount
+						margin-left: auto
+						font-size: 12px
+						font-weight: bold
+						transition: all 0.2s linear
+						color: rgba(#000, 0.2)
+						user-select: none
 	main
 		width: 76%
 		padding-left: 30px
@@ -660,9 +781,29 @@ section.find_items
 			flex-wrap: wrap
 			margin: -15px
 			padding: 0
+			justify-content: flex-start
 			.card
 				width: calc( 100% / 3 - 30px )
 				margin: 15px
 		.pagination
-			margin-top: 48px
-			margin: 0 auto
+			margin: 48px auto 0
+			display: flex
+			justify-content: center
+			align-items: center
+			font-family: 'Montserrat', sans-serif
+			li
+				&:not(:first-child)
+					margin-left: 16px
+				&.active a
+					background-color: $green
+					color: $w
+					pointer-events: none
+				&[aria-disabled=true]
+					color: $lgrey
+					pointer-events: none
+				a
+					width: 46px
+					height: 46px
+					padding: 15px 21px
+					border-radius: 100%
+					font-size: 12px

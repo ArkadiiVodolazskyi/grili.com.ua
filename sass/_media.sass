@@ -1,9 +1,571 @@
 
 // @media (max-width: 1600px)
+
 @media (max-width: 1440px)
 	.wrapper
 		width: 90%
-// @media (max-width: 1280px)
-// @media (max-width: 1024px)
-// @media (max-width: 768px)
-// @media (max-width: 480px)
+
+@media (max-width: 1280px)
+	section.full > *
+		width: 100%
+	section.action_goods .cards .card
+		width: 20.2vw
+	section.brands .card
+		width: 11.5vw
+	section.news .card
+		width: 21.2vw
+	section.recipes .card
+		width: 44vw
+	section.cheaper .set
+		width: 90vw
+
+@media (max-width: 1024px)
+	header .manage .wrapper .personal
+		margin-left: 0
+
+	section.catalog
+		.cards
+			flex-wrap: wrap
+			.card
+				width: calc( 100% / 4 - 20px)
+	section.action_goods .cards .card
+		width: 27.6vw
+	section.blogs
+		.cards
+			margin: 0
+		.card
+			width: 50%
+			margin: 0 16px
+			height: 250px
+			h4
+				max-width: unset
+	section.brands .card
+		width: 15vw
+	section.news .card
+		width: 28.6vw
+	section.video h2
+		max-width: 70%
+	section.video
+		.text
+			padding-right: 40px
+		.video
+			height: 320px
+	section.recipes .card .video
+		height: 240px
+
+@media (max-width: 768px)
+	#mainOverlay
+		top: 0
+	h2
+		font-size: 24px
+
+	header
+		nav .wrapper
+			.logo
+				display: block
+				order: 1
+			.links
+				display: none
+			.socials
+				order: 2
+				margin-left: auto
+				margin-right: 24px
+				svg
+					max-width: 24px
+			.languages
+				order: 3
+				margin-right: 16px
+			.hamb
+				display: block
+				order: 4
+		.contacts .wrapper
+			.logo
+				display: none
+			.addresses
+				font-size: 10px
+			.phones a
+				font-size: 10px
+				&:not(:first-child)
+					margin-left: 10px
+		.manage .wrapper
+			width: 100%
+			.catalog
+				.openMegamenu
+					padding: 24px 20px
+				.megamenu
+					width: auto
+			.search
+				padding: 8px 0
+			.personal
+				margin-left: 60px
+				a
+					border: none !important
+					padding: 0 12px
+					&.compare
+						display: none
+					p
+						display: none
+
+	footer
+		.wrapper
+			padding: 30px 0
+		.navigation
+			flex-direction: column
+			padding: 0 0 24px
+			.slogan
+				width: 100%
+				.logo
+					width: 160px
+				p
+					display: none
+			nav
+				width: 100%
+				margin: 42px 0 0 0
+				.footer_block
+					font-size: 10px
+					padding: 0
+					width: 22%
+					&.filials ul li a
+						white-space: break-spaces
+					> .socials
+						justify-content: space-between
+						li:not(:first-child)
+							margin-left: 0
+					> ul
+						margin-top: 10px
+						li:not(:first-child)
+							margin-top: 10px
+		.copyright
+			font-size: 9px
+			.payments
+				padding-right: 10vw
+				li
+					width: 36px
+					height: 24px
+					&:not(:first-child)
+						margin-left: 6px
+
+	section.catalog
+		padding: 20px 0 50px
+		.cards
+			.card
+				width: calc( 100% / 3 - 20px)
+				display: flex
+				align-items: center
+				justify-content: space-between
+				padding: 14px 17px 6px 4px
+				.picture
+					width: 85px
+					height: 85px
+				p
+					margin: 0 0 0 10px
+					font-size: 14px
+					text-align: left
+	section.action_goods
+		margin-top: 30px
+		overflow: visible
+		.cards .card
+			margin: 0 13px
+			width: 28.5vw
+	section.blogs
+		margin-top: 87px
+		.card
+			height: 190px
+			h4
+				font-size: 16px
+				max-width: 50%
+	section.brands
+		.cards
+			padding: 50px 0
+		.card
+			margin: 0 6px
+			max-width: unset
+			width: 16.6vw
+		.btn_all
+			display: block
+	section.news
+		padding-top: 30px
+		.cards
+			padding: 50px 0 30px
+			margin-bottom: 50px
+	section.video
+		.text
+			width: 50%
+		.video
+			width: 50%
+			height: 190px
+	section.recipes
+		.cards
+			padding-top: 70px
+		.card .video
+			height: 160px
+	section.item
+		.top
+			h1
+				width: 50%
+				font-size: 24px
+			.basic_info
+				width: 28%
+				.brand
+					max-width: 140px
+					margin-left: auto
+			.manage_buttons
+				width: 15%
+		.bottom
+			margin-top: 0
+		.tape
+			width: 10vw
+		.item_image
+			width: 60%
+			padding: 0
+			.text
+				display: flex
+			.images
+				min-height: 360px
+				.bg
+					width: 40vw
+		.right
+			width: 30%
+		.text
+			display: none
+		.options
+			width: 100%
+			border-radius: 20px
+			max-width: 210px
+			margin: 30px 0 0 auto
+		.interested
+			text-align: center
+			h6
+				font-size: 16px
+				max-width: unset
+			p
+				font-size: 10px
+				max-width: unset
+			> div
+				flex-direction: column
+				text-align: center
+				> *
+					margin: 0 auto
+				> strong
+					display: block
+			button
+				font-size: 12px
+				margin-top: 20px
+			.schedule
+				display: none
+	section.info .item
+		padding: 24px
+	section.cheaper
+		display: none
+		margin-bottom: 70px
+		.set .card
+			width: calc( 100% / 3)
+			&:nth-of-type(3)
+				display: none
+	section.cheaper_md
+		display: block
+	section.cheaper_md,
+	section.also,
+	section.similar
+		&:not(:last-of-type)
+			border-bottom: 1px solid $lgrey
+		&:last-of-type
+			margin-bottom: 40px
+
+@media (max-width: 480px)
+	.slick-arrow
+		width: 30px
+		height: 30px
+		i
+			font-size: 16px
+			font-weight: normal
+	.slick-arrow:nth-of-type(1)
+		transform: translate(calc( -100% - 14px), -75%)
+	.slick-arrow:nth-of-type(2)
+		transform: translate(0, -75%)
+	.slick-dots li
+		padding: 3px
+	body > .discount
+		font-size: 14px
+
+	h2
+		font-size: 20px
+
+	header
+		nav .wrapper
+			.logo
+				flex-grow: 1
+				min-width: 80px
+				padding-right: 14px
+			.socials
+				margin-right: 12px
+				svg
+					max-width: 18px
+				li:not(:first-child)
+					margin-left: 6px
+		.contacts .wrapper
+			flex-wrap: wrap
+			.addresses
+				width: 100%
+				order: 2
+				margin-top: 10px
+				justify-content: flex-end
+			.phones
+				width: 100%
+				order: 1
+				justify-content: space-around
+				a
+					font-size: 9px
+					svg
+						margin-right: 4px
+		.manage
+			margin-top: 10px
+			.wrapper
+				.catalog
+					.openMegamenu
+						font-size: 9px
+						padding: 19px 10px
+				.search
+					margin-left: 8px
+					input
+						padding: 6px
+					svg
+						left: unset
+						right: 6px
+				.personal
+					margin-left: 4px
+					a
+						padding: 0 6px
+						svg
+							width: 16px
+							height: auto
+	footer
+		.bg > img
+			height: 100%
+		.navigation
+			.slogan
+				text-align: center
+				.logo
+					width: 190px
+					margin: 0 auto
+			nav
+				flex-wrap: wrap
+				.footer_block
+					width: 45%
+					padding-right: 16px
+					padding-bottom: 40px
+		.copyright
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			.payments
+				padding: 0
+				margin-top: 8px
+
+	section.catalog
+		.btn_all
+			display: block
+		.cards
+			margin: 20px 0 0
+			.card
+				width: 100%
+				margin: 5px 0
+				justify-content: flex-start
+				&.all
+					display: none
+	section.action_goods
+		overflow: visible
+		h2
+			font-size: 14px
+		.cards
+			margin: 0
+			.card
+				margin: 0
+				width: 92vw
+				display: inline-flex
+				flex-direction: row
+				.picture
+					width: 40%
+					.options
+						display: none
+				.text
+					width: 60%
+					h3
+						margin-top: 6px
+					.price
+						margin-top: 10px
+					.options
+						display: flex
+					.buy
+						width: 100%
+	section.blogs
+		margin-top: 50px
+		padding-top: 35px
+		border-top: 1px solid $lgrey
+		.cards
+			flex-wrap: wrap
+		.card
+			width: 100%
+			margin: 0
+			padding: 12px 18px
+			&:not(:first-child)
+				margin-top: 20px
+	section.brands
+		overflow: visible
+		.card
+			border-radius: 3px
+			border: solid 1px $cream
+			display: inline-flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			width: 28.3vw
+			padding: 15px
+			.bg
+				width: 100%
+			span
+				font-size: 10px
+				margin-top: 10px
+	section.news
+		.card
+			margin: 0
+			width: 90vw
+			max-width: unset
+		.slick-arrow.slick-disabled
+			opacity: 0
+			visibility: hidden
+		.slick-arrow:nth-of-type(1)
+			top: 50%
+			right: unset
+			left: 0
+			transform: translate(12px, -50%)
+		.slick-arrow:nth-of-type(2)
+			top: 50%
+			right: 0
+			transform: translate(-12px, -50%)
+	section.video
+		h2
+			max-width: unset
+			font-size: 20px
+		.content
+			flex-wrap: wrap
+			.text
+				width: 100%
+				padding: 0
+			.video
+				margin-top: 16px
+				width: 100%
+				height: 170px
+	section.recipes
+		padding-top: 18px
+		.btn_all
+			margin-top: 40px
+		.cards
+			padding: 30px 0 20px
+		.card
+			width: 90vw
+			margin: 0
+	section.item
+		.top
+			flex-wrap: wrap
+			h1
+				width: 85%
+				font-size: 16px
+			.manage_buttons
+				width: 15%
+				flex-direction: column
+				justify-content: flex-start
+				align-items: center
+				button:not(:first-child)
+					margin: 20px 0 0 0
+			.basic_info
+				width: 90%
+				margin-top: -30px
+				flex-wrap: wrap
+				flex-direction: row
+				.brand
+					display: none
+				> span
+					width: 50%
+					margin-bottom: 8px
+		.bottom
+			margin-top: 30px
+			flex-direction: column
+			.item_image
+				order: 1
+				width: 100%
+				padding: 0
+				.text
+					display: none
+				.images .bg
+					width: 90vw
+					height: 420px
+			.tape
+				order: 2
+				width: 100%
+				padding: 0
+				margin-top: 30px
+				.slick-list
+					height: 100% !important
+				img
+					display: inline-block
+					width: 11vw
+					height: auto
+					margin: 0 10px !important
+					vertical-align: middle
+			.right
+				width: 100%
+				margin-top: 20px
+				order: 3
+				> .text
+					display: block
+					margin-top: 30px
+					padding: 0
+					width: 100%
+		.options
+			max-width: unset
+			margin: 0
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			> *
+				width: 47%
+				border: none !important
+		.interested .openConsult
+			width: 100%
+	section.info
+		.item
+			position: relative
+			// &::after
+			// 	content: ''
+			// 	position: absolute
+			// 	z-index: 50
+			// 	height: 100%
+			// 	width: 90px
+			// 	top: 0
+			// 	bottom: 0
+			// 	left: 100%
+			// 	background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0))
+			// .content:after
+			// 	content: ''
+			// 	position: absolute
+			// 	z-index: 50
+			// 	height: 100%
+			// 	width: 90px
+			// 	top: 0
+			// 	bottom: 0
+			// 	left: 100%
+			// 	transform: translateX(-50%)
+			// 	background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0))
+			&.active
+				overflow-x: scroll
+			table
+				width: 150%
+				td
+					white-space: nowrap
+	section.cheaper .set .card
+		&:nth-of-type(2),
+		&.total
+			display: none
+		&:nth-of-type(1)
+			width: 100%
