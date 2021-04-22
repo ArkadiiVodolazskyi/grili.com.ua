@@ -3,19 +3,20 @@
 	--dif: calc(var(--max) - var(--min));
 	display: grid;
 	grid-template: repeat(2, max-content) 1em/ 1fr 1fr;
-	overflow: hidden;
 	position: relative;
-	margin: 1em auto;
-	width: 20em;
-	background: linear-gradient(0deg, #ccc 1em, transparent 0);
-	font-family: ubuntu mono, consolas, monaco, monospace;
+	margin: 40px auto 0;
+	width: 100%;
+	background: linear-gradient(0deg, #dbdbdb 1em, transparent 0);
+	border-radius: 20px;
+	font-family: 'Montserrat', sans-serif;
 }
 .wrap::before, .wrap::after {
 	grid-column: 1/ span 2;
 	grid-row: 3;
 	height: 100%;
-	background: #95a;
+	background: #427d1e;
 	content: '';
+	border-radius: 20px;
 }
 .wrap::before {
 	margin-left: calc((var(--a) - var(--min))/var(--dif)*100%);
@@ -27,6 +28,12 @@
 }
 [id='multi-lbl'] {
 	grid-column: 1/ span 2;
+	position: absolute;
+	z-index: 50;
+	left: 0;
+	top: -20px;
+	transform: translate(0, -100%);
+	width: 100%;
 }
 .sr-only {
 	position: absolute;
@@ -38,11 +45,13 @@ input[type='range'] {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	margin: 0;
+	margin: -7px -5px 0px -5px;
+	border-radius: 20px;
 	background: none;
  /* get rid of white Chrome background */
-	color: #000;
+	color: transparent;
 	pointer-events: none;
+	outline: none;
 }
 input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb, input[type='range'] {
 	-webkit-appearance: none;
@@ -62,30 +71,42 @@ input[type='range']::-moz-range-track {
 input[type='range']::-webkit-slider-thumb {
 	border: none;
  /* get rid of Firefox thumb border */
-	width: 1em;
-	height: 1em;
-	border-radius: 0;
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
  /* get rid of Firefox corner rounding */
-	background: currentcolor;
+ 	background: url(/img/ico_thumb.svg);
 	pointer-events: auto;
+	cursor: pointer;
+	transition: all 0.2s linear;
 }
 input[type='range']::-moz-range-thumb {
 	border: none;
  /* get rid of Firefox thumb border */
-	width: 1em;
-	height: 1em;
-	border-radius: 0;
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
  /* get rid of Firefox corner rounding */
-	background: currentcolor;
+ 	background: url(/img/ico_thumb.svg);
 	pointer-events: auto;
+	cursor: pointer;
+	transition: all 0.2s linear;
 }
-input[type='range']:focus {
+input[type='range']::-moz-range-thumb:hover {
+	filter: brightness(120%);
+}
+input[type='range']::-webkit-slider-thumb:hover {
+	filter: brightness(120%);
+}
+
+
+/* input[type='range']:focus {
 	z-index: 2;
 	outline: dotted 1px currentcolor;
-}
-input[type='range']:focus, input[type='range']:focus + output {
+} */
+/* input[type='range']:focus, input[type='range']:focus + output {
 	color: darkorange;
-}
+} */
 output {
 	grid-row: 2;
 }

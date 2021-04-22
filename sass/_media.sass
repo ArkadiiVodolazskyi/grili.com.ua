@@ -20,6 +20,9 @@
 		width: 90vw
 
 @media (max-width: 1024px)
+	h1.page_title
+		font-size: 30px
+
 	header .manage .wrapper .personal
 		margin-left: 0
 
@@ -52,12 +55,31 @@
 			height: 320px
 	section.recipes .card .video
 		height: 240px
+	section.find_items
+		aside
+			padding: 18px
+			font-size: 12px
+			width: 26%
+			.options_block
+				margin-top: 20px
+				ul label:not(:first-child)
+					margin-top: 12px
+		main
+			width: 74%
+			.cards .card
+				width: calc( 100% / 2 - 30px)
+	section.post .wrapper
+		width: 90%
 
 @media (max-width: 768px)
-	#mainOverlay
-		top: 0
+	body > .discount
+		font-size: 18px
+	h1.page_title
+		font-size: 24px
 	h2
 		font-size: 24px
+	.mainitem > .sublist
+		background-color: $w
 
 	header
 		nav .wrapper
@@ -70,8 +92,6 @@
 				order: 2
 				margin-left: auto
 				margin-right: 24px
-				svg
-					max-width: 24px
 			.languages
 				order: 3
 				margin-right: 16px
@@ -271,6 +291,47 @@
 			border-bottom: 1px solid $lgrey
 		&:last-of-type
 			margin-bottom: 40px
+	section.find_items
+		position: static // reset position to place aside at main's top
+		.wrapper
+			position: static
+		.page_title
+			#openFilters
+				display: inline-flex
+				padding: 8px 20px
+			select#sort
+				padding: 8px 30px 8px 10px
+				background-position: 90% 55%
+		aside
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			z-index: 200
+			max-height: 50vh
+			overflow-y: scroll
+			transition: all 0.2s ease-in
+			opacity: 0
+			visibility: hidden
+			transform: scale(0.1)
+			&.active
+				opacity: 1
+				visibility: visible
+				transform: scale(1)
+			#closeFilters
+				display: block
+		main
+			width: 100%
+			padding: 0
+			.cards .card
+				width: calc( 100% / 3 - 30px)
+				padding: 0
+	section.post
+		.content > *:not(.thumbnail):not(.video),
+		.back
+			width: 100%
+		.content .thumbnail .text h1
+			font-size: 24px
 
 @media (max-width: 480px)
 	.slick-arrow
@@ -299,10 +360,11 @@
 				padding-right: 14px
 			.socials
 				margin-right: 12px
-				svg
-					max-width: 18px
-				li:not(:first-child)
-					margin-left: 6px
+				li
+					&:not(:first-child)
+						margin-left: 6px
+					svg
+						height: 22px
 		.contacts .wrapper
 			flex-wrap: wrap
 			.addresses
@@ -324,7 +386,7 @@
 				.catalog
 					.openMegamenu
 						font-size: 9px
-						padding: 19px 10px
+						padding: 20px 10px
 				.search
 					margin-left: 8px
 					input
@@ -569,3 +631,74 @@
 			display: none
 		&:nth-of-type(1)
 			width: 100%
+	section.find_items
+		.wrapper
+			width: 100%
+		.page_title
+			font-size: 14px
+			flex-direction: column
+			align-items: flex-start
+			padding: 0 16px
+			margin-bottom: 8px
+			.selection
+				margin: 16px -16px 0 -16px
+				width: 100vw
+				> *
+					max-width: unset
+			#openFilters
+				width: 50%
+				border-radius: 0
+			select#sort
+				width: 50%
+				border-radius: 0
+				text-align: center
+		aside
+		main .cards
+			margin: 0
+			.card
+				width: 100%
+				margin: 0
+				padding: 10px
+				align-items: center
+				border-bottom: 1px solid $lgrey
+				.text	h3
+					font-size: 14px
+	section.post
+		margin-bottom: 0
+		.content
+			.thumbnail
+				margin-bottom: 30px
+				.text
+					display: none
+			.details
+				padding: 30px 20px
+				ol
+					padding: 0
+					li
+						width: 100%
+						padding: 0
+			.stages
+				h4
+					font-size: 14px
+				ul li
+					font-size: 12px
+					line-height: 18px
+			> h4
+				font-size: 14px
+		.back
+			width: 100vw
+			margin-left: -5vw
+			a
+				width: 100%
+				padding: 15px 15px 17px
+				border-radius: 0
+
+@media (max-width: 360px)
+	header nav .wrapper
+		.languages
+			margin: 0 8px 0 0
+		.socials li
+			&:not(:first-child)
+				margin-left: 1px
+			svg
+				height: 19px

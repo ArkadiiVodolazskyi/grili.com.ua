@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
-	<title>template</title>
+	<title>single-blog</title>
 </head>
 <body>
 
@@ -221,13 +221,70 @@
 		<section class="breadcrumbs">
 			<div class="wrapper">
 				<a href="./index.html" class="home"><img src="./img/ico_house.svg" class="img-svg"></a>
-				<a href="#">breacrumb</a>
+				<a href="#">Новости</a>
+				<a href="./single-blog.html">Буженина от Кости Лайпакова на гриль-коптильне GRILLI</a>
 			</div>
 		</section>
 
-		<section class="">
+		<section class="post">
 			<div class="wrapper">
-				<h1 class="page_title">page_title</h1>
+
+				<div class="content">
+
+					<div class="thumbnail">
+						<img src="./img/thumbnail.png" alt="thumbnail">
+						<div class="text">
+							<span class="date">21.08.2020</span>
+							<h1>Буженина от Кости Лайпакова на гриль-коптильне GRILLI</h1>
+						</div>
+					</div>
+
+					<p>
+						Вкуснейший рецепт буженины с курагой и черносливом от Кости Лайпакова отлично подойдет для прекрасного дня барбекю. Такое блюдо точно оценят все в компании друзей и семьи! Рекомендуем попробовать это фирменный рецепт буженины на гриль-коптильне украинского производителя GRILLI, аналогов которому в соотношении цена-качество нет на украинском рынке.
+					</p>
+
+					<div class="details">
+						<h4>Ингредиенты</h4>
+						<ol>
+							<li>Свиная шея 1 кг </li>
+							<li>Чернослив 100 гр</li>
+							<li>Курага 100 гр</li>
+							<li>Горчица 60 гр</li>
+							<li>Чеснок 3 зубчика</li>
+							<li>Несколько веточек розмарина</li>
+							<li>Соевый соус 70 мл</li>
+							<li>Мед 1 ст. л.</li>
+							<li>Соль</li>
+							<li>Перец</li>
+						</ol>
+					</div>
+
+					<div class="video">
+						<iframe src="https://www.youtube.com/embed/XjP88ReeBWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+
+					<div class="stages">
+						<h4>Этапы приготовления буженины с курагой и черносливом на гриль-коптильне GRILLI:</h4>
+						<ul>
+							<li>Нарезаем полосками курагу и чернослив.</li>
+							<li>Берем шею и делаем внутренний карман: сбоку вставляем нож и вырезаем небольшой карманчик. Затем фаршируем в наш карман курагу и чернослив. Укладываем мясо в емкость.</li>
+							<li>Приступаем к маринаду: давим чеснок и добавляем к мясу. Также добавляем соевый соус, горчицу, мед, перец и соль. Равномерно распределяем наш маринад.</li>
+							<li>Берем пергамент и укладываем и заворачиваем шею. Необходимо замотать поплотнее, чтобы наш маринад не вытек. </li>
+							<li>Отправляем в гриль и готовим при 200°C и будем измерять щупом, чтоб температура внутри нашего продукта была 67°C. </li>
+							<li>Не забываем периодически переворачивать буженину, чтобы она не пригорела, а также проверяем  температуру. </li>
+							<li>Приступаем к сервировке нашего блюда: нарезаем буженину и выкладываем, присыпаем веточками розмарина и солью.</li>
+						</ul>
+					</div>
+
+					<h4>Блюдо готово!</h4>
+				</div>
+
+				<div class="back">
+					<a href="#">
+						Перейти к списку новостей
+						<img src="./img/ico_back.svg" class="img-svg">
+					</a>
+				</div>
 
 			</div>
 		</section>
@@ -348,6 +405,16 @@
 
 	<script>
 		window.addEventListener('load', () => {
+
+			// Shorten .details to make it two rowed
+			(function() {
+				if (window.innerWidth > 480) {
+					const details = document.querySelectorAll('.details');
+					details.forEach(detail => {
+						detail.style.height = `${detail.offsetHeight * 0.6}px`;
+					});
+				}
+			})();
 
 		})
 	</script>

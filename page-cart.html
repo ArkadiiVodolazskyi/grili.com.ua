@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
-	<title>template</title>
+	<title>page-cart</title>
 </head>
 <body>
 
@@ -46,39 +46,31 @@
 
 	</div>
 
-	<a href="#" class="discount bg">
-		<img src="./img/discount_bg.png" alt="discount_bg">
-		Скидки на грили до <strong>-20%</strong>
-	</a>
-
 	<!-- header start -->
-	<header>
 
-		<nav>
-			<div class="wrapper">
+	<!-- page-cart has different header -->
+	<header class="cart">
+		<div class="wrapper">
 
-				<a href="./index.html" class="logo">
-					<img src="./img/logo.png">
-				</a>
+			<a href="./index.html" class="logo">
+				<img src="./img/logo.png">
+			</a>
 
-				<ul class="links">
-					<li><a href="#">Доставка и оплата</a></li>
-					<li><a href="#">Кредит</a></li>
-					<li><a href="#">Франшиза</a></li>
-					<li><a href="#">Дропшиппинг</a></li>
-					<li><a href="#">Новости</a></li>
-					<li class="action"><a href="#">Акция</a></li>
-					<li><a href="#">Бренды</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
+			<div class="right">
 
-				<div class="languages mainitem">
-					RU
-					<img src="./img/ico_arrow_down.svg" class="img-svg">
-					<ul class="sublist">
-						<li><a href="#">UA</a></li>
-						<li><a href="#">EN</a></li>
-					</ul>
+				<div class="phones">
+					<a href="tel:">
+						<img src="./img/ico_phone.svg" class="img-svg">
+						0 800 330 242
+					</a>
+					<a href="tel:">
+						<img src="./img/ico_kyivstar.svg" class="img-svg native">
+						(098) 077 44 27
+					</a>
+					<a href="tel:">
+						<img src="./img/ico_vodaphone.svg" class="img-svg native">
+						(050) 735 74 04
+					</a>
 				</div>
 
 				<ul class="socials">
@@ -99,135 +91,93 @@
 					</a></li>
 				</ul>
 
-				<button class="hamb openHambMenu">
-					<img src="./img/ico-hamburger.svg" class="img-svg">
-				</button>
-			</div>
-		</nav>
-
-		<div class="contacts">
-			<div class="wrapper">
-
-				<a href="./index.html" class="logo">
-					<img src="./img/logo.png">
-				</a>
-
-				<div class="addresses">
-					<span>Наши магазины:</span>
-					<div class="mainitem">
-						<a href="#">Киев, ул. Кирилловская, 34-38</a>
-						<ul class="sublist">
-							<li><a href="#">Киев, ул. Кирилловская, 34-38</a></li>
-							<li><a href="#">Киев, ул. Кирилловская, 34-38</a></li>
-						</ul>
-					</div>
+				<div class="languages mainitem">
+					RU
 					<img src="./img/ico_arrow_down.svg" class="img-svg">
-				</div>
-
-				<div class="phones">
-					<a href="tel:">
-						<img src="./img/ico_phone.svg" class="img-svg">
-						0 800 330 242
-					</a>
-					<a href="tel:">
-						<img src="./img/ico_kyivstar.svg" class="img-svg native">
-						(098) 077 44 27
-					</a>
-					<a href="tel:">
-						<img src="./img/ico_vodaphone.svg" class="img-svg native">
-						(050) 735 74 04
-					</a>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="manage">
-			<div class="wrapper">
-
-				<div class="catalog">
-					<button id="openMegamenu" class="openMegamenu">Каталог товаров</button>
-
-					<ul id="megamenu" class="megamenu">
-
-						<li class="item">
-							<a href="#" class="title">
-								<img src="./img/ico_production.svg" class="img-svg">
-								Производители
-								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
-							</a>
-							<ul class="submenu">
-								<li><a href="#">Производители 1</a></li>
-								<li><a href="#">Производители 2</a></li>
-								<li><a href="#">Производители 3</a></li>
-							</ul>
-						</li>
-						<li class="item">
-							<a href="#" class="title">
-								<img src="./img/ico_barbecue.svg" class="img-svg">
-								Грили, Хосперы, Мангалы
-								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
-							</a>
-							<ul class="submenu">
-								<li><a href="#">Грили</a></li>
-								<li><a href="#">Хосперы</a></li>
-								<li><a href="#">Мангалы</a></li>
-							</ul>
-						</li>
-						<li class="item">
-							<a href="#" class="title">
-								<img src="./img/ico_pool.svg" class="img-svg">
-								Бассейны и СПА
-								<img src="./img/ico_arrow_right.svg" class="img-svg arrow">
-							</a>
-							<ul class="submenu">
-								<li><a href="#">Бассейны</a></li>
-								<li><a href="#">СПА</a></li>
-							</ul>
-						</li>
-
+					<ul class="sublist">
+						<li><a href="#">UA</a></li>
+						<li><a href="#">EN</a></li>
 					</ul>
 				</div>
 
-				<div class="search">
-					<input type="text" id="search" placeholder="Поиск среди 1253 товаров">
-					<img src="./img/ico_search.svg" class="img-svg">
-				</div>
-
-				<div class="personal">
-					<a href="#" class="compare">
-						<img src="./img/ico_scales.svg" class="img-svg">
-						<p>Сравнение</p>
-					</a>
-					<a href="#">
-						<img src="./img/ico_cart.svg" class="img-svg">
-						<p>Корзина</p>
-					</a>
-					<a href="#">
-						<img src="./img/ico_user.svg" class="img-svg">
-						<p>Вход</p>
-					</a>
-				</div>
+				<button class="hamb openHambMenu">
+					<img src="./img/ico-hamburger.svg" class="img-svg">
+				</button>
 
 			</div>
-		</div>
 
+		</div>
 	</header>
 	<!-- header end -->
 
 	<main>
-		<div id="mainOverlay"></div>
-
-		<section class="breadcrumbs">
+		<section class="cart">
 			<div class="wrapper">
-				<a href="./index.html" class="home"><img src="./img/ico_house.svg" class="img-svg"></a>
-				<a href="#">breacrumb</a>
-			</div>
-		</section>
+				<h1 class="page_title">Корзина покупок </h1>
+				<div class="cards">
 
-		<section class="">
-			<div class="wrapper">
-				<h1 class="page_title">page_title</h1>
+					<div class="card">
+						<div class="picture">
+							<a href="./single-item.html">
+								<img src="./img/grill_gaz.png" alt="cart_item">
+							</a>
+						</div>
+						<div class="text">
+							<h5>
+								<a href="./single-item.html">Угольный гриль-коптильня Smoke Broil King 948050</a>
+							</h5>
+							<span>Артикул: 948050</span>
+						</div>
+						<div class="amount">
+							<button class="subtract" disabled>
+								<img src="./img/ico_minus.svg" class="img-svg">
+							</button>
+							<input type="number" name="" id="">
+							<button class="add">
+								<img src="./img/ico_plus.svg" class="img-svg">
+							</button>
+						</div>
+						<div class="price">
+							<p class="old">65 700 грн</p>
+							<p class="current"><strong>44 900</strong> грн</p>
+						</div>
+						<button class="delete">
+							<img src="./img/ico_delete.svg" class="img-svg">
+						</button>
+					</div>
+
+				</div>
+
+				<form action="">
+
+					<div class="top">
+						<h4>Воспользуйтесь дополнительными возможностями</h4>
+						<div class="text">
+							<p>Если у вас есть код купона на скидку или бонусные баллы, которые вы хотите использовать, выберите соответствующий пункт. Также можно приблизительно узнать стоимость доставки в ваш регион.</p>
+						</div>
+						<div class="promocode">
+							<label for="">Промокод:</label>
+							<input type="text" name="" id="">
+							<button>Применить</button>
+						</div>
+					</div>
+
+					<div class="bottom">
+
+						<div class="summary">
+							<strong>Итого: </strong>
+							<strong id="summary_price">85 800</strong>
+							<span>грн</span>
+						</div>
+
+						<div class="buttons">
+							<a href="#" class="continue">Продолжить покупки</a>
+							<button type="submit">Оформить заказ</button>
+						</div>
+
+					</div>
+
+				</form>
 
 			</div>
 		</section>

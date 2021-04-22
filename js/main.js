@@ -45,6 +45,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Smooth anchors scroll
+  (function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+    });
+  })();
+
 });
 
 window.addEventListener("load", () => {
@@ -139,20 +152,43 @@ window.addEventListener("load", () => {
   })();
 
   // Fix z-index on hover
-  function hideShow(triggerElementSelector, hideElementSelector, showElementSelector) {
-    const triggerElement = document.querySelector(triggerElementSelector);
-    const hideElement = document.querySelector(hideElementSelector);
-    const showElement = document.querySelector(showElementSelector);
-    if (triggerElement && hideElement && showElement) {
-      triggerElement.addEventListener('mouseover', () => {
-        hideElement.style.zIndex = '-1';
+  (function() {
+    function hideShow(triggerElementSelector, hideElementSelector, showElementSelector) {
+      const triggerElement = document.querySelector(triggerElementSelector);
+      const hideElement = document.querySelector(hideElementSelector);
+      const showElement = document.querySelector(showElementSelector);
+      if (triggerElement && hideElement && showElement) {
+        triggerElement.addEventListener('mouseover', () => {
+          hideElement.style.zIndex = '-1';
+        });
+        triggerElement.addEventListener('mouseout', () => {
+          hideElement.style.zIndex = '1';
+        });
+      }
+    }
+
+    hideShow('header .contacts .wrapper .addresses div', 'header .manage', 'header .contacts .wrapper .addresses div .sublist');
+  })();
+
+  // Open/close filters
+  (function() {
+    const filters = document.getElementById('filters');
+    const openFilters = document.getElementById('openFilters');
+    const closeFilters = document.getElementById('closeFilters');
+    const main = document.querySelector('main');
+
+    if (filters && openFilters && closeFilters) {
+      openFilters.addEventListener('click', () => {
+        mainOverlay.classList.add('active');
+        filters.classList.add('active');
+        main.style.overflow = 'hidden';
       });
-      triggerElement.addEventListener('mouseout', () => {
-        hideElement.style.zIndex = '1';
+      closeFilters.addEventListener('click', () => {
+        mainOverlay.classList.remove('active');
+        filters.classList.remove('active');
+        main.style.overflow = 'visible';
       });
     }
-  }
-
-  hideShow('header .contacts .wrapper .addresses div', 'header .manage', 'header .contacts .wrapper .addresses div .sublist');
+  })();
 
 });

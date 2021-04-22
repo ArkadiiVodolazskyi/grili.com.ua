@@ -20,7 +20,7 @@
 	<div id="hambMenu">
 
 		<div class="top">
-			<a href="#" class="logo">
+			<a href="./index.html" class="logo">
 				<img src="./img/logo_white.svg" class="img-svg native">
 			</a>
 			<button id="closeHambMenu">
@@ -59,7 +59,7 @@
 		<nav>
 			<div class="wrapper">
 
-				<a href="#" class="logo">
+				<a href="./index.html" class="logo">
 					<img src="./img/logo.png">
 				</a>
 
@@ -110,7 +110,7 @@
 		<div class="contacts">
 			<div class="wrapper">
 
-				<a href="#" class="logo">
+				<a href="./index.html" class="logo">
 					<img src="./img/logo.png">
 				</a>
 
@@ -217,8 +217,8 @@
 	</header>
 	<!-- header end -->
 
-	<main>
-		<div id="mainOverlay"></div>
+	<main id="watchItems">
+		<div id="mainOverlay" class="fix"></div>
 
 		<section class="breadcrumbs">
 			<div class="wrapper">
@@ -234,23 +234,35 @@
 
 				<h1 class="page_title">
 					Угольные грили
-					<select name="sort" id="sort">
-						<option value="">По цене вверх</option>
-						<option value="">По цене вниз</option>
-					</select>
+					<div class="selection">
+						<!-- href="#watchItems" -->
+						<a id="openFilters">
+							<img src="./img/ico_filter.svg" class="img-svg">
+							Фильтры
+						</a>
+
+						<select name="sort" id="sort">
+							<option value="">По цене вверх</option>
+							<option value="">По цене вниз</option>
+						</select>
+					</div>
 				</h1>
 
-				<aside>
+				<aside id="filters">
 
-					<div class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: -30; --b: 20; --min: -50; --max: 50">
-						<div id="multi-lbl">Цена:  1500 – 664852 грн</div>
+					<button id="closeFilters">
+						<img src="./img/ico_cross.svg" class="img-svg">
+					</button>
+
+					<div id="priceRange" class="wrap" role="group" aria-labelledby="multi-lbl" style="--a: 1500; --b: 664852; --min: 1500; --max: 1000000">
+						<div id="multi-lbl">Цена: <span class="from">1500</span> – <span class="to">664852</span> грн</div>
 
 						<label class="sr-only" for="a">Value A:</label>
-						<input id="a" type="range" min="-50" value="-30" max="50" />
+						<input id="a" type="range" min="1500" value="1500" max="1000000" />
 						<output for="a" style="--c: var(--a)"></output>
 
 						<label class="sr-only" for="b">Value B:</label>
-						<input id="b" type="range" min="-50" value="20" max="50" />
+						<input id="b" type="range" min="1500" value="664852" max="1000000" />
 						<output for="b" style="--c: var(--b)"></output>
 					</div>
 
@@ -411,7 +423,7 @@
 
 					<div class="cards">
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -471,11 +483,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -535,11 +578,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -599,11 +673,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -663,11 +768,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -727,11 +863,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -791,11 +958,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -855,11 +1053,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -919,11 +1148,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -983,11 +1243,42 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
 
-						<div class="card">
+						<a href="./single-item.html" class="card">
 
 							<div class="picture">
 								<img src="./img/action_grill.png" alt="action">
@@ -1047,9 +1338,230 @@
 								<button class="buy">
 									Купить
 								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
 							</div>
 
-						</div>
+						</a>
+
+						<a href="./single-item.html" class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+						</a>
+
+						<a href="./single-item.html" class="card">
+
+							<div class="picture">
+								<img src="./img/action_grill.png" alt="action">
+
+								<div class="tags">
+									<div class="tags_discount">
+										<img src="./img/ico-percent.svg" class="img-svg">
+										Скидка -20%
+									</div>
+									<div class="tags_bestseller">
+										<img src="./img/ico-cup.svg" class="img-svg">
+										Лидер продаж
+									</div>
+								</div>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="text">
+								<span class="articul">Артикул: 948050</span>
+								<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+								<div class="price">
+									<p class="old">65 700 грн</p>
+									<p class="current"><strong>44 900</strong> грн</p>
+									<p class="discount">Скидка <strong>20 800 грн</strong></p>
+								</div>
+
+								<button class="buy">
+									Купить
+								</button>
+
+								<div class="options">
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_privatbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_installment">
+										<h4>рассрочка</h4>
+										<p>
+											<img src="./img/ico_monobank.png">
+											<span class="amount">6</span>
+											<span class="unit">мес.</span>
+										</p>
+									</div>
+									<div class="options_credit">
+										<h4>кредит</h4>
+										<p>
+											<img src="./img/ico_otpbank.png">
+											<span class="amount">0</span>
+											<span class="unit">%</span>
+										</p>
+									</div>
+									<div class="options_delivery">
+										<p><img src="./img/ico_nposhta.png">бесплатная доставка
+										</p>
+									</div>
+								</div>
+							</div>
+
+						</a>
 
 					</div>
 
@@ -1081,8 +1593,8 @@
 			<div class="navigation">
 
 				<div class="slogan">
-					<a href="#" class="logo">
-						<img src="./img/logo_white.png" class="img-svg native">
+					<a href="./index.html" class="logo">
+						<img src="./img/logo_white.png">
 					</a>
 					<p>
 						Самый крупный мультибрендовый магазин грилей и товаров для барбекю в Украине
@@ -1196,6 +1708,38 @@
 					let _t = e.target;
 					_t.parentNode.style.setProperty(`--${_t.id}`, +_t.value)
 				}, false);
+			})();
+
+			// Watch range
+			(function() {
+				const priceWrap = document.querySelector('#priceRange');
+				const priceInput1 = priceWrap.querySelector('#a');
+				const priceInput2 = priceWrap.querySelector('#b');
+				const priceOutputMin = priceWrap.querySelector('.from');
+				const priceOutputMax = priceWrap.querySelector('.to');
+
+				if (priceInput1, priceInput2, priceOutputMin, priceOutputMax) {
+
+					// Init
+					function showPriceRange(value1, value2) {
+						priceOutputMin.innerHTML = Math.min(value1, value2);
+						priceOutputMax.innerHTML = Math.max(value1, value2);
+					}
+					let value1 = priceInput1.value;
+					let value2 = priceInput2.value;
+					showPriceRange(value1, value2);
+
+					// Watch changes
+					priceInput1.addEventListener('input', () => {
+						value1 = priceInput1.value;
+						showPriceRange(value1, value2);
+					});
+					priceInput2.addEventListener('input', () => {
+						value2 = priceInput2.value;
+						showPriceRange(value1, value2);
+					});
+				}
+
 			})();
 
 		})
