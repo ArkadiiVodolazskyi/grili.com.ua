@@ -6,6 +6,11 @@
 		width: 90%
 
 @media (max-width: 1280px)
+	footer .navigation nav
+		margin-left: 30px
+		.footer_block
+			padding-left: 30px
+
 	section.full > *
 		width: 100%
 	section.action_goods .cards .card
@@ -18,13 +23,58 @@
 		width: 44vw
 	section.cheaper .set
 		width: 90vw
+	section.archive_news .card
+		width: calc( 100% / 3 - 20px)
 
 @media (max-width: 1024px)
 	h1.page_title
 		font-size: 30px
 
-	header .manage .wrapper .personal
+	header
+		nav .wrapper
+			padding-top: 10px
+			.links
+				display: none
+			.socials
+				order: 2
+				margin-left: auto
+				margin-right: 24px
+			.languages
+				order: 3
+				margin-right: 16px
+			.hamb
+				display: block
+				order: 4
+		.manage .wrapper
+			.personal
+				margin-left: 0
+			.search #searchResults
+				width: 500px
+				left: 50%
+				transform: translate(-50%, 18px)
+	header.v_03
+		padding: 0
+		.right
+			.phones
+				order: 1
+				margin: 0 auto 0 0
+				flex-direction: column
+				align-items: flex-start
+				margin-right: auto
+				a
+					font-size: 11px
+					&:not(:first-child)
+						margin: 5px 0 0 0
+					svg
+						width: 22px
+						margin-right: 10px
+			.socials
+				order: 2
+				margin: 0 0 0 auto
+	footer .navigation nav
 		margin-left: 0
+		.footer_block
+			padding-left: 20px
 
 	section.catalog
 		.cards
@@ -70,6 +120,39 @@
 				width: calc( 100% / 2 - 30px)
 	section.post .wrapper
 		width: 90%
+	section.cart
+		.wrapper
+			width: 90%
+	section.search
+		.searchOptions > *
+			width: 23% !important
+			margin-left: 15px !important
+		.cards .card
+			width: calc( 100% / 3 - 30px)
+	section.archive_news .card
+		width: calc( 100% / 3 - 20px)
+		.bg
+			height: 150px
+	section.whoops .wrapper
+		width: 90%
+	section.contacts .card
+		.content
+			.text
+				h2
+					font-size: 30px
+				p
+					font-size: 14px
+				.toggleMap
+					padding: 8px 25px
+					font-size: 12px
+				.phones a
+					font-size: 12px
+			.gallery
+				width: 42vw
+				img
+					width: 42vw
+		.map
+			height: 325px
 
 @media (max-width: 768px)
 	body > .discount
@@ -83,21 +166,10 @@
 
 	header
 		nav .wrapper
+			padding-top: 0
 			.logo
 				display: block
 				order: 1
-			.links
-				display: none
-			.socials
-				order: 2
-				margin-left: auto
-				margin-right: 24px
-			.languages
-				order: 3
-				margin-right: 16px
-			.hamb
-				display: block
-				order: 4
 		.contacts .wrapper
 			.logo
 				display: none
@@ -116,6 +188,8 @@
 					width: auto
 			.search
 				padding: 8px 0
+				#searchResults
+					transform: translate(-50%, 12px)
 			.personal
 				margin-left: 60px
 				a
@@ -125,6 +199,38 @@
 						display: none
 					p
 						display: none
+	header.cart
+		.wrapper > .logo
+			position: absolute
+			width: 150px
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+		.right
+			width: 100%
+		.phones
+			flex-direction: column
+			align-items: flex-start
+			margin-right: auto
+			a
+				font-size: 11px
+				&:not(:first-child)
+					margin: 5px 0 0 0
+				svg
+					width: 22px
+					margin-right: 10px
+		.socials
+			margin: 0 0 0 auto
+			li
+				&:not(:first-child)
+					margin-left: 5px
+				svg
+					height: 22px
+		.languages
+			margin: 0 0 0 12px
+		.hamb
+			display: block
+			margin-left: 16px
 
 	footer
 		.wrapper
@@ -332,6 +438,47 @@
 			width: 100%
 		.content .thumbnail .text h1
 			font-size: 24px
+	section.cart
+		.page_title
+			font-size: 24px
+		form .top
+			h4
+				font-size: 18px
+			.text, .promocode
+				width: 50%
+	section.cart .fields
+		flex-direction: column
+		> *
+			width: 100%
+		> div
+			margin-top: 30px
+	section.search
+		.searchOptions
+			justify-content: space-between
+			> *
+				width: auto !important
+				margin: 0 0 15px 0 !important
+			input[type="text"], select
+				width: 48% !important
+		.cards
+			margin: 30px auto 0
+			.card
+				width: calc( 100% / 2 - 30px)
+				margin: 0 15px
+	section.archive_news
+		margin: 20px 0 30px
+		.cards
+			margin: 20px -10px 0
+			padding: 0
+		.card
+			width: calc( 100% / 2 - 20px)
+		.pagination
+			margin-top: 30px
+	section.whoops
+		margin-bottom: 40px
+		.wrapper
+			padding-top: 20px
+			align-items: flex-end
 
 @media (max-width: 480px)
 	.slick-arrow
@@ -348,7 +495,13 @@
 		padding: 3px
 	body > .discount
 		font-size: 14px
-
+	.pagination li
+		&:not(:first-child)
+			margin-left: 6px
+		a
+			width: 36px
+			height: 36px
+			padding: 10px
 	h2
 		font-size: 20px
 
@@ -394,6 +547,13 @@
 					svg
 						left: unset
 						right: 6px
+					#searchResults
+						width: 90vw
+						left: 43%
+						.card .text
+							font-size: 10px
+						.price
+							font-size: 12px
 				.personal
 					margin-left: 4px
 					a
@@ -401,6 +561,41 @@
 						svg
 							width: 16px
 							height: auto
+	header.cart
+		.wrapper
+			flex-wrap: wrap
+			> .logo
+				display: none
+		.right
+			flex-wrap: wrap
+			> .logo
+				display: block
+				order: 1
+				width: 80px
+			.socials
+				order: 2
+				li
+					margin: 0 !important
+					svg
+						height: 20px
+			.languages
+				order: 3
+				margin-left: 7px
+			.hamb
+				order: 4
+				margin-left: 10px
+			.phones
+				order: 5
+				width: 100%
+				flex-direction: row
+				justify-content: space-between
+				a
+					margin: 0 !important
+					font-size: 10px
+					svg
+						width: 20px
+						margin-right: 4px
+
 	footer
 		.bg > img
 			height: 100%
@@ -460,6 +655,11 @@
 						display: flex
 					.buy
 						width: 100%
+				.options > div
+					width: 38px
+					height: 30px
+					p
+						font-size: 5px
 	section.blogs
 		margin-top: 50px
 		padding-top: 35px
@@ -692,13 +892,130 @@
 				width: 100%
 				padding: 15px 15px 17px
 				border-radius: 0
+	section.cart
+		margin-bottom: 50px
+		.card
+			padding: 12px
+			flex-wrap: wrap
+			position: relative
+			.picture
+				width: 30%
+			.text
+				width: 70%
+				padding: 0 16px
+				h5
+					font-size: 11px
+			.amount
+				width: 50%
+				justify-content: flex-start
+				padding: 10px 0 0 0
+				input
+					margin: 0 12px
+			.price
+				width: max-content
+				margin-left: auto
+				padding: 10px 0 0 0
+			.delete
+				position: absolute
+				right: 8px
+				top: 20px
+				padding: 0
+		form
+			.top
+				flex-direction: column
+				.text
+					width: 100%
+					padding: 0
+				.promocode
+					width: 100%
+					margin-top: 20px
+			.bottom
+				margin-top: 50px
+				.buttons
+					width: 100%
+					.continue
+						width: 100%
+						text-align: center
+					[type="submit"]
+						width: 100%
+						margin: 20px 0 0 0
+	section.cart .fields
+		fieldset.user, fieldset.payment, fieldset.delivery
+			padding: 20px 10px
+	section.search .searchOptions
+		input[type="text"], select
+			width: 100% !important
+		.submitWrap
+			text-align: center
+			width: 100% !important
+			button
+				margin: 0 auto
+	section.archive_news
+		padding: 0
+		.cards
+			margin: 0
+		.card
+			width: 100%
+			margin: 10px 0
+	section.whoops
+		.wrapper
+			align-items: flex-start
+			flex-wrap: wrap
+			> img
+				width: 40%
+				height: auto
+				margin-left: -12px
+			.content
+				width: 60%
+				height: auto
+				padding: 0 15px 0 0
+				h2
+					font-size: 16px
+				p
+					font-size: 12px
+				a
+					display: none
+			.btnWrapper
+				display: block
+	section.contacts
+		margin-top: 20px
+		.card
+			.content
+				flex-direction: column
+				.text
+					width: 100%
+					padding: 0
+					h2
+						font-size: 20px
+				.gallery
+					width: 100%
+					margin-top: 16px
+					img
+						width: 83vw
 
 @media (max-width: 360px)
-	header nav .wrapper
-		.languages
-			margin: 0 8px 0 0
-		.socials li
-			&:not(:first-child)
-				margin-left: 1px
-			svg
-				height: 19px
+	header
+		nav .wrapper
+			.languages
+				margin: 0 8px 0 0
+			.socials li
+				&:not(:first-child)
+					margin-left: 1px
+				svg
+					height: 19px
+		.manage .wrapper .search #searchResults
+			left: 38%
+			.card
+				padding: 5px
+				.picture
+					width: 55px
+				.text
+					width: 57%
+				.price
+					font-size: 10px
+					strong
+						font-size: 14px
+
+	section.whoops .wrapper
+		> img, .content
+			width: 50%

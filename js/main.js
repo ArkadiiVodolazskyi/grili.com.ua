@@ -63,25 +63,31 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
 
   if (window.innerWidth < 480) {
-    const searchFiled = document.getElementById('search');
-    searchFiled.setAttribute('placeholder', '');
+    const searchField = document.getElementById('searchField');
+    searchField.setAttribute('placeholder', '');
   }
+
+  const body = document.body;
+  const header = document.querySelector('header');
 
   const overlay = document.getElementById('overlay');
   const closeOverlay = document.getElementById('closeOverlay');
 
   const mainOverlay = document.getElementById('mainOverlay');
-  // const closeMainOverlay = document.getElementById('closeMainOverlay');
+  const closeMainOverlay = document.getElementById('closeMainOverlay');
 
-  let closeActives = [overlay, closeOverlay, mainOverlay];
+  let closeActives = [overlay, closeOverlay, mainOverlay, closeMainOverlay];
 
   closeActives.forEach(closeActive => {
-    closeActive.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelectorAll('.active').forEach(element => {
-        element.classList.remove('active');
+    if (closeActive) {
+      closeActive.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.active').forEach(element => {
+          element.classList.remove('active');
+          body.classList.remove('discroll');
+        });
       });
-    });
+    }
   });
 
   function openModal(element) {
@@ -112,19 +118,53 @@ window.addEventListener("load", () => {
     const openMegamenu = document.getElementById('openMegamenu');
     const megamenu = document.getElementById('megamenu');
 
-    openMegamenu.addEventListener('click', () => {
-      if (megamenu.classList.contains('active')) {
-        megamenu.classList.remove('active');
-        mainOverlay.classList.remove('active');
-      } else {
-        megamenu.classList.add('active');
-        mainOverlay.classList.add('active');
-        mainOverlay.addEventListener('click', () => {
+    if (openMegamenu && megamenu) {
+      openMegamenu.addEventListener('click', () => {
+        if (megamenu.classList.contains('active')) {
           megamenu.classList.remove('active');
           mainOverlay.classList.remove('active');
-        })
-      }
-    })
+        } else {
+          megamenu.classList.add('active');
+          mainOverlay.classList.add('active');
+          body.classList.add('discroll');
+          mainOverlay.addEventListener('click', () => {
+            megamenu.classList.remove('active');
+            mainOverlay.classList.remove('active');
+            body.classList.remove('discroll');
+          })
+          header.addEventListener('click', (e) => {
+            if (e.target !== openMegamenu) {
+              megamenu.classList.remove('active');
+              mainOverlay.classList.remove('active');
+              body.classList.remove('discroll');
+            }
+          })
+        }
+      })
+    }
+
+
+  })();
+
+  // Open searchResults
+  (function() {
+    const searchField = document.getElementById('searchField');
+    const searchResults = document.getElementById('searchResults');
+
+    if (searchField && searchResults) {
+      searchField.addEventListener('focus', () => {
+        mainOverlay.classList.add('active');
+        body.classList.add('discroll');
+      });
+      searchField.addEventListener('input', () => {
+        searchResults.classList.add('active');
+      });
+      searchField.addEventListener('blur', () => {
+        mainOverlay.classList.remove('active');
+        searchResults.classList.remove('active');
+        body.classList.remove('discroll');
+      });
+    }
   })();
 
   // Open Modal Consult
@@ -188,6 +228,289 @@ window.addEventListener("load", () => {
         filters.classList.remove('active');
         main.style.overflow = 'visible';
       });
+    }
+  })();
+
+  // Input labels interaction
+  (function() {
+    const fields = document.querySelectorAll('.field');
+
+    if (fields.length) {
+      fields.forEach(field => {
+        const input = field.querySelector('input, textarea');
+        input.addEventListener('blur', () => {
+          if (input.value != '') {
+            input.classList.add('filled');
+          } else {
+            input.classList.remove('filled');
+          }
+        });
+      });
+    }
+  })();
+
+  // page-ordering - show/hide fields with radio buttons
+  (function() {
+
+    // User
+    const toRegister = document.querySelectorAll('section.cart .user .toRegister input');
+    const isRegisterFields = document.querySelectorAll('section.cart .user .info .isRegister');
+
+    if (toRegister.length && isRegisterFields.length) {
+      toRegister.forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (radio.value == 'on' && radio.id === 'register_yes') {
+            isRegisterFields.forEach(isRegisterField => {
+              isRegisterField.classList.remove('hidden');
+            });
+          } else {
+            isRegisterFields.forEach(isRegisterField => {
+              isRegisterField.classList.add('hidden');
+            });
+          }
+        });
+      })
+    }
+
+    // Payment
+    const payment = document.querySelectorAll('section.cart .payment > label input');
+    const isPaymentInstallment = document.querySelector('section.cart .payment .installment');
+
+    if (payment.length && isPaymentInstallment) {
+      payment.forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (radio.value == 'on' && radio.id === 'installment') {
+            isPaymentInstallment.classList.remove('hidden');
+          } else {
+            isPaymentInstallment.classList.add('hidden');
+          }
+        });
+      })
+    }
+
+    // Delivery
+    const delivery = document.querySelectorAll('section.cart .delivery > label input');
+    const isDeliveryInstallment = document.querySelector('section.cart .delivery .pickup');
+
+    if (delivery.length && isDeliveryInstallment) {
+      delivery.forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (radio.value == 'on' && radio.id === 'pickup') {
+            isDeliveryInstallment.classList.remove('hidden');
+          } else {
+            isDeliveryInstallment.classList.add('hidden');
+          }
+        });
+      })
+    }
+
+  })();
+
+  // page-brands - change search letters
+  (function() {
+    const alphabets = document.querySelectorAll('section.allBrands .alphabet .letters');
+
+    if (alphabets.length) {
+      alphabets.forEach(alphabet => {
+        const letters = alphabet.querySelectorAll('button');
+        letters.forEach(letter => {
+          letter.addEventListener('click', () => {
+            letters.forEach(letter => {
+              letter.classList.remove('active');
+            });
+            letter.classList.add('active');
+          });
+        });
+      });
+    }
+  })();
+
+  // page-contacts - init galleries | init maps
+  (function() {
+    const cards = document.querySelectorAll('section.contacts .cards .card');
+
+    if (cards.length) {
+
+      const mapCoords = [
+        [50.47032475221495, 30.502784727084233],
+        [48.42691860894034, 35.03351088507678],
+        [47.78819093088163, 35.238837340879904],
+        [49.933267850643816, 36.26488214093906]
+      ];
+
+      const galleries = document.querySelectorAll('section.contacts .cards .gallery');
+      const maps = document.querySelectorAll('section.contacts .cards .map');
+      const toggleMaps = document.querySelectorAll('section.contacts .cards .toggleMap');
+
+      for (let i = 0; i < cards.length; i++) {
+
+        // Init galleries
+        $(galleries[i]).not(".slick-initialized").slick({
+          arrows: true,
+          draggable: false,
+          touchThreshold: 300,
+          focusOnSelect: false,
+          infinite: false,
+          autoplay: false,
+          dots: false,
+          variableWidth: true,
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: `
+            <button type="button">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+          `,
+          nextArrow: `
+            <button type="button">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          `,
+          responsive: [
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                draggable: true,
+                touchThreshold: 300,
+                dots: false
+              },
+            },
+          ],
+        });
+
+        // Init maps
+        const coordinates = {
+          lat: mapCoords[i][0],
+          lng: mapCoords[i][1]
+        };
+        const map = new google.maps.Map(maps[i], {
+          center: coordinates,
+          zoom: 17,
+          disableDefaultUI: false,
+          scrollwheel: false,
+        });
+        const marker = new google.maps.Marker({
+          position: coordinates,
+          map: map,
+        });
+
+        // Toggle map
+        toggleMaps[i].addEventListener('click', () => {
+          if (maps[i].classList.contains('active')) {
+            maps[i].classList.remove('active');
+            toggleMaps[i].innerText = 'Показать на google maps';
+          } else {
+            maps[i].classList.add('active');
+            toggleMaps[i].innerText = 'Спрятать карту';
+          }
+        });
+
+      }
+
+      // cards.forEach((card, index) => {
+
+      //   console.log(card, index);
+
+      //   // Init galleries
+      //   const gallery = card.querySelector('.gallery');
+      //   $(gallery).not(".slick-initialized").slick({
+      //     arrows: true,
+      //     draggable: false,
+      //     touchThreshold: 300,
+      //     focusOnSelect: false,
+      //     infinite: false,
+      //     autoplay: false,
+      //     dots: false,
+      //     variableWidth: true,
+      //     vertical: false,
+      //     verticalSwiping: false,
+      //     slidesToShow: 1,
+      //     slidesToScroll: 1,
+      //     prevArrow: `
+      //       <button type="button">
+      //         <i class="fas fa-chevron-left"></i>
+      //       </button>
+      //     `,
+      //     nextArrow: `
+      //       <button type="button">
+      //         <i class="fas fa-chevron-right"></i>
+      //       </button>
+      //     `,
+      //     responsive: [
+      //       {
+      //         breakpoint: 1024,
+      //         settings: {
+      //           slidesToShow: 3,
+      //           slidesToScroll: 1,
+      //           arrows: true,
+      //           draggable: true,
+      //           touchThreshold: 300,
+      //           dots: false
+      //         },
+      //       },
+      //       {
+      //         breakpoint: 768,
+      //         settings: {
+      //           slidesToShow: 3,
+      //           slidesToScroll: 1,
+      //           arrows: true,
+      //           draggable: true,
+      //           touchThreshold: 300,
+      //           dots: false
+      //         },
+      //       },
+      //       {
+      //         breakpoint: 480,
+      //         settings: {
+      //           slidesToShow: 1,
+      //           slidesToScroll: 1,
+      //           arrows: true,
+      //           draggable: true,
+      //           touchThreshold: 300,
+      //           dots: false
+      //         },
+      //       },
+      //     ],
+      //   });
+
+      //   // Init maps
+      //   const maps[i] = document.querySelector('.map');
+      //   console.log(mapCoords[index][0], mapCoords[index][1]);
+      //   const coordinates = {
+      //     lat: mapCoords[index][0],
+      //     lng: mapCoords[index][1]
+      //   };
+      //   const map = new google.maps.Map(maps[i], {
+      //     center: coordinates,
+      //     zoom: 17,
+      //     disableDefaultUI: false,
+      //     scrollwheel: false,
+      //   });
+      //   const marker = new google.maps.Marker({
+      //     position: coordinates,
+      //     map: map,
+      //   });
+
+      //   // Toggle map
+      //   const toggleMap = card.querySelector('.toggleMap');
+      //   console.log(toggleMap);
+      //   toggleMap.addEventListener('click', () => {
+      //     if (maps[i].classList.contains('active')) {
+      //       maps[i].classList.remove('active');
+      //       toggleMap.innerText = 'Показать на google maps';
+      //     } else {
+      //       maps[i].classList.add('active');
+      //       toggleMap.innerText = 'Спрятать карту';
+      //     }
+      //   });
+
+      // });
+
     }
   })();
 

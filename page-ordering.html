@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/main.css">
-	<title>page-cart</title>
+	<title>page-ordering</title>
 </head>
 <body>
 
@@ -188,18 +188,6 @@
 
 				<form action="">
 
-					<div class="top">
-						<h4>Воспользуйтесь дополнительными возможностями</h4>
-						<div class="text">
-							<p>Если у вас есть код купона на скидку или бонусные баллы, которые вы хотите использовать, выберите соответствующий пункт. Также можно приблизительно узнать стоимость доставки в ваш регион.</p>
-						</div>
-						<div class="promocode">
-							<label for="">Промокод:</label>
-							<input type="text" name="" id="">
-							<button>Применить</button>
-						</div>
-					</div>
-
 					<div class="bottom">
 
 						<div class="summary">
@@ -208,8 +196,152 @@
 							<span>грн</span>
 						</div>
 
+						<div class="fields">
+
+							<fieldset class="user">
+								<h2>
+									Покупатель
+									<a href="#">Я зарегистрирован</a>
+								</h2>
+
+								<div class="register">
+									<span>Зарегистрироваться</span>
+									<fieldset class="toRegister">
+										<label class="radio">
+											<input type="radio" name="register" id="register_yes">
+											<span>Да</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="register" id="register_no" checked='checked'>
+											<span>Нет</span>
+										</label>
+									</fieldset>
+								</div>
+
+								<div class="info">
+									<div class="field">
+										<input type="text" name="name" id="name">
+										<label for="name">Имя <sup>*</sup></label>
+									</div>
+									<div class="field">
+										<input type="text" name="surname" id="surname">
+										<label for="surname">Фамлия</label>
+									</div>
+									<div class="field">
+										<input type="text" name="patronymic" id="patronymic">
+										<label for="patronymic">Отчество</label>
+									</div>
+									<div class="field">
+										<input type="tel" name="tel" id="tel">
+										<label for="tel">Телефон <sup>*</sup></label>
+									</div>
+									<div class="field">
+										<input type="email" name="email" id="email">
+										<label for="email">Email</label>
+									</div>
+									<div class="field">
+										<textarea name="commentary" id="commentary"></textarea>
+										<label for="commentary">Комментарий</label>
+									</div>
+									<div class="field isRegister hidden">
+										<input type="password" name="password" id="password">
+										<label for="password">Пароль <sup>*</sup></label>
+									</div>
+									<div class="field isRegister hidden">
+										<input type="password" name="confirm_password" id="confirm_password">
+										<label for="confirm_password">Подтвердите пароль <sup>*</sup></label>
+									</div>
+
+								</div>
+							</fieldset>
+
+							<div>
+								<fieldset class="payment">
+									<h2>Способ оплаты</h2>
+									<label class="radio">
+										<input type="radio" name="payment" id="" checked='checked'>
+										<span>Оплата при самовывозе</span>
+									</label>
+									<label class="radio">
+										<input type="radio" name="payment" id="">
+										<span>Оплата банковской картой онлайн</span>
+									</label>
+									<label class="radio">
+										<input type="radio" name="payment" id="installment">
+										<span>Купить в рассрочку</span>
+									</label>
+
+									<fieldset class="installment hidden">
+										<p>Перед оформлением рассрочки, пожалуйста, уточните наличие товара</p>
+										<label class="radio">
+											<input type="radio" name="installment" id="installment_privat">
+											<span>
+												Оплата частями (ПриватБанк)
+												<img src="./img/ico_privatbank.png" alt="">
+											</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="installment" id="installment_monobank">
+											<span>
+												Покупка частями (Monobank)
+												<img src="./img/ico_monobank.png" alt="">
+											</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="installment" id="installment_otp">
+											<span>
+												Кредит от ОТП Банка
+												<img src="./img/ico_otpbank.png" alt="">
+											</span>
+										</label>
+									</fieldset>
+
+								</fieldset>
+
+								<fieldset class="delivery">
+									<h2>Способ доставки</h2>
+									<label class="radio">
+										<input type="radio" name="delivery" id="pickup" checked='checked'>
+										<span>Самовывоз из наших магазинов</span>
+									</label>
+									<fieldset class="pickup">
+										<label class="radio">
+											<input type="radio" name="pickup" id="">
+											<span>Киев  ул. Кирилловская улица, 34-38</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="pickup" id="">
+											<span>Днепр пр. Богдана Хмельницкого, 94/1</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="pickup" id="">
+											<span>Харьков пр. Гагарина 187/1, ТЦ METRO</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="pickup" id="">
+											<span>Запорожье - Ореховское шоссе 7а, ТЦ METRO</span>
+										</label>
+									</fieldset>
+
+									<label class="radio">
+										<input type="radio" name="delivery" id="">
+										<span>
+											Новая почта
+											<img src="./img/ico_nposhta.png" alt="">
+										</span>
+									</label>
+									<label class="radio">
+										<input type="radio" name="delivery" id="">
+										<span>Курьерская доставка по Киеву</span>
+									</label>
+
+								</fieldset>
+							</div>
+
+						</div>
+
+
 						<div class="buttons">
-							<a href="#" class="continue">Продолжить покупки</a>
 							<button type="submit">Оформить заказ</button>
 						</div>
 

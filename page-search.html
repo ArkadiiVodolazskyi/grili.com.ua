@@ -4,10 +4,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>page-home</title>
-
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<title>page-search</title>
 </head>
 <body>
 
@@ -329,66 +328,46 @@
 	<!-- header end -->
 
 	<main>
-		<div id="mainOverlay" class="nofix">
-			<!-- <button id="closeMainOverlay">
-				<img src="./img/ico_cross.svg" class="img-svg">
-			</button> -->
-		</div>
+		<div id="mainOverlay"></div>
 
-		<section class="banner full">
-			<a href="#">
-				<img src="./img/banner.png" alt="banner">
-			</a>
-		</section>
-
-		<section class="catalog">
+		<section class="breadcrumbs">
 			<div class="wrapper">
-				<h2>Каталог</h2>
-				<div class="cards">
-
-					<a href="./taxonomy-category.html" class="card">
-						<div class="picture">
-							<img src="./img/grill_gaz.png" alt="grill_gaz">
-						</div>
-						<p>Газовые грили</p>
-					</a>
-					<a href="./taxonomy-category.html" class="card">
-						<div class="picture">
-							<img src="./img/grill_ugol.png" alt="grill_ugol">
-						</div>
-						<p>Угольные грили</p>
-					</a>
-					<a href="./taxonomy-category.html" class="card">
-						<div class="picture">
-							<img src="./img/grill_electro.png" alt="grill_electro">
-						</div>
-						<p>Электрические грили</p>
-					</a>
-					<a href="./taxonomy-category.html" class="card">
-						<div class="picture">
-							<img src="./img/grill_access.png" alt="grill_access" >
-						</div>
-						<p>Аксессуары для грилей</p>
-					</a>
-					<a href="./taxonomy-category.html" class="card">
-						<div class="picture">
-							<img src="./img/spa_pool.png" alt="spa_pool">
-						</div>
-						<p>Спа бассейны</p>
-					</a>
-					<a href="./taxonomy-category.html" class="card all">
-						<p>Все категории</p>
-					</a>
-
-				</div>
-
-				<a href="#" class="btn_all">Все категории</a>
+				<a href="./index.html" class="home"><img src="./img/ico_house.svg" class="img-svg"></a>
+				<a href="#">Поиск</a>
 			</div>
 		</section>
 
-		<section class="action_goods">
+		<section class="search action_goods">
 			<div class="wrapper">
-				<h2>Акционные товары</h2>
+
+				<form class="searchOptions">
+					<input type="text" name="" id="searchText" placeholder="Введите запрос">
+					<select name="sort" id="searchCategory">
+						<option value="" disabled>Категория</option>
+						<option value="">По цене вверх</option>
+						<option value="">По цене вниз</option>
+					</select>
+					<label class="checkbox">
+						<input type="checkbox" id="isSearchSubcategories">
+						<span class="name">Поиск в подкатегориях</span>
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" id="isSearchDescription">
+						<span class="name">Искать в описании товара</span>
+					</label>
+					<div class="submitWrap">
+						<button type="submit">Поиск</button>
+					</div>
+				</form>
+
+				<div class="result">
+					<p>
+						Найдено:
+						<a href="#" class="text">Угольный</a>
+						(<span class="amount">125</span>)
+					</p>
+				</div>
+
 				<div class="cards">
 
 					<a href="./single-item.html" class="card">
@@ -961,194 +940,594 @@
 
 					</a>
 
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+
+					<a href="./single-item.html" class="card">
+
+						<div class="picture">
+							<img src="./img/action_grill.png" alt="action">
+
+							<div class="tags">
+								<div class="tags_discount">
+									<img src="./img/ico-percent.svg" class="img-svg">
+									Скидка -20%
+								</div>
+								<div class="tags_bestseller">
+									<img src="./img/ico-cup.svg" class="img-svg">
+									Лидер продаж
+								</div>
+							</div>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="text">
+							<span class="articul">Артикул: 948050</span>
+							<h3>Угольный гриль-коптильня Smoke Broil King 948050</h3>
+							<div class="price">
+								<p class="old">65 700 грн</p>
+								<p class="current"><strong>44 900</strong> грн</p>
+								<p class="discount">Скидка <strong>20 800 грн</strong></p>
+							</div>
+
+							<button class="buy">
+								Купить
+							</button>
+
+							<div class="options">
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_privatbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_installment">
+									<h4>рассрочка</h4>
+									<p>
+										<img src="./img/ico_monobank.png">
+										<span class="amount">6</span>
+										<span class="unit">мес.</span>
+									</p>
+								</div>
+								<div class="options_credit">
+									<h4>кредит</h4>
+									<p>
+										<img src="./img/ico_otpbank.png">
+										<span class="amount">0</span>
+										<span class="unit">%</span>
+									</p>
+								</div>
+								<div class="options_delivery">
+									<p><img src="./img/ico_nposhta.png">бесплатная доставка
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+
 				</div>
+
+				<nav class="pagination">
+					<li class="prev" aria-disabled="true">
+						<a href=""><i class="fas fa-chevron-left"></i></a>
+					</li>
+					<li class="active"><a href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="">3</a></li>
+					<li><a href="">4</a></li>
+					<li><a href="">5</a></li>
+					<li class="next">
+						<a href=""><i class="fas fa-chevron-right"></i></a>
+					</li>
+				</nav>
+
 			</div>
 		</section>
-
-		<section class="blogs">
-			<div class="wrapper">
-				<div class="cards">
-
-					<a href="#" class="card" style="background-color: #ff5e3b;">
-						<img src="./img/video_consullt.png" alt="">
-						<h4>Видео консультации</h4>
-					</a>
-
-					<a href="#" class="card" style="background-color: #2d2c2c;">
-						<img src="./img/bbq_zone.png" alt="">
-						<h4>Разработка и строительство BBQ ZONE</h4>
-					</a>
-
-				</div>
-			</div>
-		</section>
-
-		<section class="brands">
-			<div class="wrapper">
-				<h2>Бренды</h2>
-				<div class="cards">
-
-					<div class="card">
-						<div class="bg">
-							<img src="./img/brand_1.png" alt="brand">
-						</div>
-						<span>Big Green Egg</span>
-					</div>
-					<div class="card">
-						<div class="bg">
-							<img src="./img/brand_2.png" alt="brand">
-						</div>
-						<span>BergHoff</span>
-					</div>
-					<div class="card">
-						<div class="bg">
-							<img src="./img/brand_1.png" alt="brand">
-						</div>
-						<span>Big Green Egg</span>
-					</div>
-					<div class="card">
-						<div class="bg">
-							<img src="./img/brand_3.png" alt="brand">
-						</div>
-						<span>Broil King</span>
-					</div>
-					<div class="card">
-						<div class="bg">
-							<img src="./img/brand_2.png" alt="brand">
-						</div>
-						<span>BergHoff</span>
-					</div>
-					<div class="card">
-						<div class="bg">
-							<img src="./img/brand_1.png" alt="brand">
-						</div>
-						<span>Big Green Egg</span>
-					</div>
-
-				</div>
-
-				<a href="#" class="btn_all">Посмотреть все</a>
-			</div>
-		</section>
-
-		<section class="news">
-			<div class="wrapper">
-				<h2>Новости</h2>
-				<div class="cards">
-
-					<a href="#" class="card">
-						<div class="bg">
-							<img src="./img/blog_post_thumb.png" alt="blog_post_thumb">
-						</div>
-						<div class="text">
-							<span class="date">17.11.2020</span>
-							<h4 class="title">Как GRILI Все для барбекю открыли магазин в г Харькове</h4>
-							<p>Вот уже более 8 лет мы дарим вам комфорт и вкусную жизнь в мире барбекю, ведь мы занимаемся продажей грилей, комплектующих для грилей</p>
-						</div>
-					</a>
-
-					<a href="#" class="card">
-						<div class="bg">
-							<img src="./img/blog_post_thumb.png" alt="blog_post_thumb">
-						</div>
-						<div class="text">
-							<span class="date">17.11.2020</span>
-							<h4 class="title">Как GRILI Все для барбекю открыли магазин в г Харькове</h4>
-							<p>Вот уже более 8 лет мы дарим вам комфорт и вкусную жизнь в мире барбекю, ведь мы занимаемся продажей грилей, комплектующих для грилей</p>
-						</div>
-					</a>
-
-					<a href="#" class="card">
-						<div class="bg">
-							<img src="./img/blog_post_thumb.png" alt="blog_post_thumb">
-						</div>
-						<div class="text">
-							<span class="date">17.11.2020</span>
-							<h4 class="title">Как GRILI Все для барбекю открыли магазин в г Харькове</h4>
-							<p>Вот уже более 8 лет мы дарим вам комфорт и вкусную жизнь в мире барбекю, ведь мы занимаемся продажей грилей, комплектующих для грилей</p>
-						</div>
-					</a>
-
-					<a href="#" class="card">
-						<div class="bg">
-							<img src="./img/blog_post_thumb.png" alt="blog_post_thumb">
-						</div>
-						<div class="text">
-							<span class="date">17.11.2020</span>
-							<h4 class="title">Как GRILI Все для барбекю открыли магазин в г Харькове</h4>
-							<p>Вот уже более 8 лет мы дарим вам комфорт и вкусную жизнь в мире барбекю, ведь мы занимаемся продажей грилей, комплектующих для грилей</p>
-						</div>
-					</a>
-
-					<a href="#" class="card">
-						<div class="bg">
-							<img src="./img/blog_post_thumb.png" alt="blog_post_thumb">
-						</div>
-						<div class="text">
-							<span class="date">17.11.2020</span>
-							<h4 class="title">Как GRILI Все для барбекю открыли магазин в г Харькове</h4>
-							<p>Вот уже более 8 лет мы дарим вам комфорт и вкусную жизнь в мире барбекю, ведь мы занимаемся продажей грилей, комплектующих для грилей</p>
-						</div>
-					</a>
-
-				</div>
-			</div>
-		</section>
-
-		<section class="video">
-			<div class="wrapper">
-				<h2>Крупнейший мультибрендовый магазин в Украине</h2>
-				<div class="content">
-					<div class="text">
-						<p class="accent">
-							Мы рады приветствовать Вас в нашем мультибрендовом интернет-магазине товаров для барбекю <a href="Grili.com.ua">Grili.com.ua</a>
-						</p>
-						<p>Посмотрите это короткое видео и узнайте почему Нас выбрало более 8327 покупателей по всей Украине и 98% из них стали нашими постоянными клиентами</p>
-					</div>
-					<div class="video">
-						<iframe src="https://www.youtube.com/embed/Fr4dzRjMh5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="recipes">
-			<div class="wrapper">
-				<h2>Видеорецепты</h2>
-				<div class="cards">
-
-					<a href="./single-blog.html" class="card">
-						<div class="video">
-							<iframe src="https://www.youtube.com/embed/KUfmfw_ZRhw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-						</div>
-						<div class="text">
-							<h5>Почему так популярен KamadoJoe Classic II среди грильменов?</h5>
-						</div>
-					</a>
-
-					<a href="./single-blog.html" class="card">
-						<div class="video">
-							<iframe src="https://www.youtube.com/embed/SrEI5qHQD7s?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-						</div>
-						<div class="text">
-							<h5>Прорыв в классическом барбекю KamadoJoe - обзор Classic III</h5>
-						</div>
-					</a>
-
-					<a href="./single-blog.html" class="card">
-						<div class="video">
-							<iframe src="https://www.youtube.com/embed/KUfmfw_ZRhw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-						</div>
-						<div class="text">
-							<h5>Почему так популярен KamadoJoe Classic II среди грильменов?</h5>
-						</div>
-					</a>
-
-				</div>
-				<a href="#" class="btn_all">Посмотреть все</a>
-			</div>
-		</section>
-
 	</main>
 
 	<!-- footer start -->
@@ -1263,212 +1642,9 @@
 	<script src="./js/libs/slick.min.js"></script>
 	<script src="./js/main.js"></script>
 
+
 	<script>
 		window.addEventListener('load', () => {
-
-			$("section.action_goods .cards").not(".slick-initialized").slick({
-				arrows: true,
-				draggable: false,
-				touchThreshold: 300,
-				focusOnSelect: false,
-				infinite: false,
-				autoplay: false,
-				dots: false,
-				variableWidth: true,
-				vertical: false,
-				verticalSwiping: false,
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				prevArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-left"></i>
-					</button>
-				`,
-				nextArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-right"></i>
-					</button>
-				`,
-				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-						},
-					},
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-							dots: true
-						},
-					},
-				],
-			});
-
-			$("section.brands .cards").not(".slick-initialized").slick({
-				arrows: true,
-				draggable: false,
-				touchThreshold: 300,
-				focusOnSelect: false,
-				infinite: false,
-				autoplay: false,
-				dots: true,
-				variableWidth: true,
-				vertical: false,
-				verticalSwiping: false,
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				prevArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-left"></i>
-					</button>
-				`,
-				nextArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-right"></i>
-					</button>
-				`,
-				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							slidesToShow: 4,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-						},
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 5,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-							dots: true,
-						},
-					},
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-							dots: true,
-						},
-					},
-				],
-			});
-
-			$("section.news .cards").not(".slick-initialized").slick({
-				arrows: true,
-				draggable: false,
-				touchThreshold: 300,
-				focusOnSelect: false,
-				infinite: false,
-				autoplay: false,
-				dots: true,
-				variableWidth: true,
-				vertical: false,
-				verticalSwiping: false,
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				prevArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-left"></i>
-					</button>
-				`,
-				nextArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-right"></i>
-					</button>
-				`,
-				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-						},
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-							dots: true
-						},
-					},
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							arrows: true,
-							draggable: true,
-							touchThreshold: 300,
-							dots: true
-						},
-					},
-				],
-			});
-
-			$("section.recipes .cards").not(".slick-initialized").slick({
-				arrows: true,
-				draggable: false,
-				touchThreshold: 300,
-				focusOnSelect: false,
-				infinite: false,
-				autoplay: false,
-				dots: true,
-				variableWidth: true,
-				vertical: false,
-				verticalSwiping: false,
-				slidesToShow: 2,
-				slidesToScroll: 1,
-				prevArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-left"></i>
-					</button>
-				`,
-				nextArrow: `
-					<button type="button">
-						<i class="fas fa-chevron-right"></i>
-					</button>
-				`,
-				responsive: [
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							arrows: false,
-							draggable: true,
-							touchThreshold: 300,
-							dots: true
-						},
-					},
-				],
-			});
 
 		})
 	</script>

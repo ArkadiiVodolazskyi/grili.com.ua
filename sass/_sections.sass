@@ -64,7 +64,10 @@ section.action_goods
 			width: 282px
 			margin: 0 20px
 			padding: 10px 10px 20px 10px
+			border-radius: 5px
+			transition: all 0.2s linear
 			&:hover
+				box-shadow: 0 5px 55px 0 rgba(0, 0, 0, 0.25)
 				.picture > img
 					transform: translate(-50%, -50%) scale(1.15)
 				.text h3
@@ -236,6 +239,8 @@ section.news
 			img
 				z-index: 1
 				width: 105%
+				top: 0
+				transform: translate(-50%, 0)
 		.text
 			padding: 10px 10px 15px 15px
 			color: $b
@@ -369,6 +374,8 @@ section.item
 		height: 100%
 		display: block
 		margin-right: 40px
+		.slick-track
+			width: 100% !important
 		img
 			display: block
 			width: 60px
@@ -648,6 +655,7 @@ section.cheaper
 			font-family: 'Montserrat', sans-serif
 			h3
 				font-size: 16px
+				transition: all 0.2s linear
 			.price
 				margin-top: 6px
 			.buy
@@ -837,28 +845,6 @@ section.find_items
 			.card
 				width: calc( 100% / 3 - 30px )
 				margin: 15px
-		.pagination
-			margin: 48px auto 0
-			display: flex
-			justify-content: center
-			align-items: center
-			font-family: 'Montserrat', sans-serif
-			li
-				&:not(:first-child)
-					margin-left: 16px
-				&.active a
-					background-color: $green
-					color: $w
-					pointer-events: none
-				&[aria-disabled=true]
-					color: $lgrey
-					pointer-events: none
-				a
-					width: 46px
-					height: 46px
-					padding: 15px 21px
-					border-radius: 100%
-					font-size: 12px
 
 // single-blog
 section.post
@@ -991,6 +977,21 @@ section.cart
 		font-size: 36px
 	.cards
 		margin-top: 20px
+	.noItems
+		text-align: center
+		border: 1px solid $lgrey
+		border-radius: 5px
+		font-size: 14px
+		font-weight: bold
+		transition: all 0.2s linear
+		opacity: 0
+		visibility: hidden
+		max-height: 0
+		&.active
+			padding: 50px 0
+			opacity: 1
+			visibility: visible
+			max-height: 300px
 	.card
 		display: flex
 		justify-content: space-between
@@ -999,6 +1000,9 @@ section.cart
 		padding-right: 40px
 		border: 1px solid $lgrey
 		border-radius: 5px
+		transition: all 0.2s linear
+		&.deleted
+			animation: fadeOut 0.3s linear forwards
 		&:not(:first-child)
 			margin-top: 20px
 		> *:not(.picture)
@@ -1067,9 +1071,6 @@ section.cart
 					margin: 0
 				&:focus
 					border-color: $green
-		.price
-			.old
-			.current
 		.delete
 			fill: $lgrey
 			&:hover
@@ -1081,14 +1082,15 @@ section.cart
 		.top
 			display: flex
 			flex-wrap: wrap
+			align-items: flex-start
 			h4
 				width: 100%
 				font-size: 22px
 				font-family: 'Open Sans', sans-serif
 				line-height: 1.5
+				margin-bottom: 10px
 			.text
 				width: 60%
-				margin-top: 10px
 				padding-right: 15px
 				p
 					font-size: 14px
@@ -1096,11 +1098,560 @@ section.cart
 					line-height: 1.5
 			.promocode
 				width: 40%
+				position: relative
+				label
+					position: absolute
+					z-index: 20
+					left: 0
+					top: 50%
+					transform: translate(20px, -50%)
+					font-size: 12px
+					color: $grey
+					user-select: none
+					font-family: 'Open Sans', sans-serif
+				input
+					width: 100%
+					border-radius: 60px
+					text-align: center
+					padding: 12px 20px
+					outline: none
+					transition: all 0.2s linear
+					border: 1px solid $lgrey
+					&:focus
+						border-color: $green
+				button
+					position: absolute
+					z-index: 20
+					right: 0
+					top: 50%
+					transform: translate(-20px, -50%)
+					font-size: 11px
+					font-weight: bold
+					color: $green
+					user-select: none
 		.bottom
 			margin-top: 20px
 			display: flex
 			flex-direction: column
 			align-items: flex-end
 			.summary
+				strong
+					font-size: 14px
+					&.summary_price
+						font-size: 12px
+				span
+					font-size: 10px
 			.buttons
+				margin-top: 30px
+				> *
+					padding: 12px 30px
+					font-size: 11px
+					border-radius: 140px
+					font-weight: bold
+					border-width: 1px
+					border-style: solid
+					&:not(:first-child)
+						margin-left: 22px
+				.continue
+					color: $green
+					border-color: $green
+					&:hover
+						background-color: $green
+						color: $w
+				[type=submit]
+					width: 290px
+					color: $w
+					border-color: $red
+					background-color: $red
+					&:hover
+						background-color: $green
+						border-color: $green
+
+// page-ordering
+section.cart .fields
+	margin-top: 80px
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	width: 100%
+	> *
+		width: calc( 50% - 10px )
+	fieldset
+		background-color: $cream
+		border-radius: 10px
+		font-family: 'Open Sans', sans-serif
+		font-size: 12px
+		&.user,
+		&.payment,
+		&.delivery
+			padding: 20px 30px
+		h2
+			font-family: 'Montserrat', sans-serif
+			font-size: 22px
+			margin-bottom: 15px
+		> label
+			margin-top: 12px
+			display: block
+			span
+				width: 100%
+				user-select: none
+				img
+					width: 18px
+					margin-left: auto
+		.fields
+			margin-top: 12px
+			position: relative
+		> fieldset
+			margin: 10px 0 0 20px
+			border-radius: 7px
+			border: 1px solid $lgrey
+			padding: 10px 15px
+			transition: all 0.2s linear
+			opacity: 1
+			visibility: visible
+			max-height: 400px
+			&.hidden
+				opacity: 0
+				visibility: hidden
+				max-height: 0
+				margin-top: 0
+				padding: 0
+			p
+				color: $red
+				font-weight: bold
+			label
+				display: block !important
+				&:first-child
+					margin-top: 0
+			&.installment label
+				width: 250px
+	.radio
+		cursor: pointer
+		display: inline-flex
+		align-items: center
+		justify-content: flex-start
+		&:hover span
+			color: $green
+			&::before
+				border-color: rgba($green, 0.2)
+				background-color: rgba($green, 0.2)
+				background-image: url(../img/ico_dot.svg)
+		input
+			position: absolute
+			z-index: -1
+			opacity: 0
+			user-select: none
+			margin: 0
+			margin-block: 0
+			margin-inline: 0
+			&:checked + span::before
+				border-color: $green
+				background-color: $green
+				background-image: url(../img/ico_dot.svg)
+		span
+			display: inline-flex
+			align-items: center
+			justify-content: flex-start
+			transition: all 0.2s linear
+			&::before
+				content: ''
+				display: inline-block
+				width: 16px
+				height: 16px
+				border-radius: 100%
+				flex-shrink: 0
+				flex-grow: 0
+				border: 1px solid #c4c4c4
+				margin-right: 6px
+				background-repeat: no-repeat
+				background-position: center center
+				background-size: 50% 50%
+				transition: all 0.2s linear
+	.field
+		width: 100%
+		position: relative
+		transition: all 0.2s linear
+		opacity: 1
+		visibility: visible
+		max-height: 400px
+		&:not(:first-child)
+			margin-top: 20px
+		&.hidden
+			opacity: 0
+			visibility: hidden
+			max-height: 0
+			margin-top: 0
+		input, textarea
+			width: 100%
+			border: solid 1px $lgrey
+			background-color: $w
+			padding: 12px 20px
+			border-radius: 7px
+			outline: none
+			transition: all 0.2s linear
+			&:focus, &.filled
+				border-color: $green
+				+ label
+					top: 0
+					&::before
+						content: ''
+						position: absolute
+						z-index: -1
+						top: 0
+						left: 50%
+						transform: translate(-50%, 2px)
+						width: 120%
+						height: 42%
+						background-color: $cream
+		label
+			position: absolute
+			z-index: 50
+			left: 20px
+			top: 50%
+			transform: translate(0, -50%)
+			font-size: 12px
+			transition: all 0.2s linear
+			sup
+				font-size: 10px
+				color: $red
+		textarea
+			min-width: 100%
+			max-width: 442px
+			max-height: 200px
+			&:focus + label::before,
+			&.filled + label::before
+				height: 50%
+			+ label
+				top: 20px
+	.user
+		h2 a
+			font-size: 12px
+			color: $green
+			text-decoration: underline
+			margin-left: 15px
+		.register
+			font-size: 12px
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			.toRegister
+				margin-left: 8px
+				label
+					margin: 0
+					display: inline-flex
+					&:not(:first-child)
+						margin-left: 8px
+		.info
+			width: 100%
+			margin-top: 20px
+	.payment, .delivery
+		> label
+			display: block !important
+			width: max-content
+			img
+				width: 18px
+				margin-left: 8px
+	.delivery
+		margin-top: 20px
+
+// page-search
+section.search
+	margin: 50px 0 60px
+	.wrapper
+	.searchOptions
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: flex-start
+		font-size: 12px
+		font-family: 'Open Sans', sans-serif
+		> *:not(div):not(:first-child)
+			margin-left: 20px
+		input[type=text]
+			width: 300px
+			border: 1px solid $grey
+			border-radius: 62.5px
+			background-color: $w
+			padding: 10px
+		select
+			width: 300px
+			border: 1px solid $grey
+			border-radius: 62.5px
+			background-color: $w
+			padding: 10px
+			appearance: none
+			background: url(../img/ico_arrow_down.svg) no-repeat 95% 55% $w
+			cursor: pointer
+			transition: all 0.2s linear
+			&:hover, &:focus
+				border-color: $green
+		.submitWrap
+			width: 100%
+			margin-top: 20px
+			button
+				width: 210px
+				border-radius: 62.5px
+				background-color: $w
+				padding: 10px
+				border: 1px solid $green
+				color: $green
+				&:hover
+					background-color: $green
+					color: $w
+	.result
+		width: 100%
+		margin-top: 15px
+		font-family: 'Montserrat', sans-serif
+		font-size: 24px
+		font-weight: bold
+		.amount
+			color: $green
+	.cards
+		flex-wrap: wrap
+		margin: 15px -15px 0
+		padding: 0
+		justify-content: flex-start
+		.card
+			width: calc( 100% / 4 - 30px )
+			margin: 15px
+
+// page-brands
+section.allBrands
+	margin: 30px 0 150px
+	font-family: 'Montserrat', sans-serif
+	.alphabet
+		margin-top: 20px
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		flex-wrap: wrap
+		> span
+			font-size: 14px
+			margin-right: 16px
+		.letters
+			margin: 5px 0
+			padding: 10px 15px
+			background-color: $cream
+			border-radius: 25px
+			&:not(:last-child)
+				margin-right: 16px
+		button
+			font-size: 18px
+			font-weight: bold
+			display: inline-flex
+			justify-content: center
+			align-items: center
+			width: 30px
+			height: 30px
+			text-transform: uppercase
+			border-radius: 100%
+			&.active, &:hover
+				background-color: $green
+				color: $w
+	.letter_results
+		.result
+			margin-top: 40px
+		.letter
+			font-size: 24px
+		.brands
+			display: flex
+			justify-content: flex-start
+			flex-wrap: wrap
+		.brand
+			width: 85px
+			padding: 10px 15px
+			border: 1px solid $lgrey
+			display: inline-flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			font-size: 12px
+			text-transform: capitalize
+			transition: all 0.2s linear
+			margin-top: 20px
+			&:not(:last-child)
+				margin-right: 20px
+			&:hover
+				box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15)
+				img
+					transform: scale(1.2)
+		img
+			transition: all 0.2s linear
+		span
+			margin-top: 20px
+			text-align: center
+
+// archive-news
+section.archive_news
+	padding: 0
+	margin: 40px 0 60px
+	background-color: $w
+	.cards
+		padding: 40px 0 0
+		margin: 0 -10px
+		flex-wrap: wrap
+	.card
+		width: calc( 100% / 3 - 20px )
+		margin: 10px
+		max-width: unset
+		border: solid 1px #f2f2f2
+		border-radius: 5px
+		.bg
+			height: 200px
+
+// page-404
+section.whoops
+	margin-top: 60px
+	height: 360px
+	.wrapper
+		width: 1024px
+		height: 100%
+		padding: 75px 0 0
+		background-color: $orange
+		border-radius: 5px
+		color: $w
+		display: flex
+		align-items: stretch
+		justify-content: flex-start
+		> img
+			margin-left: -15px
+			width: 200px
+			height: 290px
+			z-index: -1
+		.content
+			width: 65%
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			padding-bottom: 30px
+			h2
+				font-size: 36px
+			p
+				margin-top: 20px
+				font-size: 14px
+				font-family: 'Open Sans', sans-serif
+		a
+			display: block
+			width: max-content
+			margin-top: auto
+			padding: 12px 80px
+			border-radius: 140px
+			font-size: 11px
+			font-family: 'Montserrat', sans-serif
+			transition: all 0.2s linear
+			background-color: $tsp
+			color: $w
+			border: 1px solid $w
+			&:hover
+				background-color: $w
+				color: $orange
+		.btnWrapper
+			display: none
+			width: 100%
+			text-align: center
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				z-index: 0
+				left: 0
+				top: 0
+				transform: translate(0, -100%)
+				width: 50%
+				height: 60px
+				background-image: linear-gradient(to top, $orange, rgba($orange, 0.8), rgba($orange, 0.7), rgba($orange, 0.5),rgba($orange, 0.1))
+			a
+				margin: 0 auto
+
+// page-contacts
+section.contacts
+	margin: 60px 0 140px
+	.cards
+	.card
+		border-radius: 5px
+		background-color: $cream
+		border-radius: 5px
+		padding: 20px
+		&:not(:first-child)
+			margin-top: 30px
+		.content
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+			.text
+				width: 50%
+				padding-right: 30px
+				h2
+					font-size: 36px
+				p
+					margin-top: 12px
+					font-size: 16px
+					font-family: 'Open Sans', sans-serif
+					font-weight: bold
+					line-height: 1.5
+				.toggleMap
+					margin-top: 10px
+					padding: 12px 50px
+					border-radius: 140px
+					border: 1px solid $green
+					color: $green
+					background-color: $tsp
+					&:hover
+						background-color: $green
+						color: $w
+				.phones
+					margin-top: 16px
+					a
+						display: flex
+						align-items: center
+						justify-content: flex-start
+						&:not(:first-child)
+							margin-top: 10px
+						svg
+							width: 20px
+							margin-right: 10px
+				.otherInfo
+					margin-top: 16px
+					font-size: 14px
+					font-family: 'Open Sans', sans-serif
+					li
+						display: block
+						&:not(:first-child)
+							margin-top: 10px
+			.gallery
+				width: 36vw
+				max-width: 500px
+				margin-left: auto
+				color: $b
+				.slick-list
+					border-radius: 5px
+					overflow: hidden
+				img
+					display: inline-block
+					width: 36vw
+					max-width: 500px
+				.slick-arrow.slick-disabled
+					color: $lgrey
+					opacity: 1
+				.slick-arrow:nth-of-type(1)
+					top: 50%
+					right: unset
+					left: 0
+					transform: translate(-50%, -50%)
+				.slick-arrow:nth-of-type(2)
+					top: 50%
+					right: 0
+					transform: translate(50%, -50%)
+		.map
+			height: 500px
+			border-radius: 10px
+			transition: all 0.2s linear
+			max-height: 0
+			opacity: 0
+			visibility: hidden
+			&.active
+				max-height: 500px
+				opacity: 1
+				visibility: visible
 				margin-top: 30px
