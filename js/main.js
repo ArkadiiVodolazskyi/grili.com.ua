@@ -411,107 +411,58 @@ window.addEventListener("load", () => {
         });
 
       }
-
-      // cards.forEach((card, index) => {
-
-      //   console.log(card, index);
-
-      //   // Init galleries
-      //   const gallery = card.querySelector('.gallery');
-      //   $(gallery).not(".slick-initialized").slick({
-      //     arrows: true,
-      //     draggable: false,
-      //     touchThreshold: 300,
-      //     focusOnSelect: false,
-      //     infinite: false,
-      //     autoplay: false,
-      //     dots: false,
-      //     variableWidth: true,
-      //     vertical: false,
-      //     verticalSwiping: false,
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1,
-      //     prevArrow: `
-      //       <button type="button">
-      //         <i class="fas fa-chevron-left"></i>
-      //       </button>
-      //     `,
-      //     nextArrow: `
-      //       <button type="button">
-      //         <i class="fas fa-chevron-right"></i>
-      //       </button>
-      //     `,
-      //     responsive: [
-      //       {
-      //         breakpoint: 1024,
-      //         settings: {
-      //           slidesToShow: 3,
-      //           slidesToScroll: 1,
-      //           arrows: true,
-      //           draggable: true,
-      //           touchThreshold: 300,
-      //           dots: false
-      //         },
-      //       },
-      //       {
-      //         breakpoint: 768,
-      //         settings: {
-      //           slidesToShow: 3,
-      //           slidesToScroll: 1,
-      //           arrows: true,
-      //           draggable: true,
-      //           touchThreshold: 300,
-      //           dots: false
-      //         },
-      //       },
-      //       {
-      //         breakpoint: 480,
-      //         settings: {
-      //           slidesToShow: 1,
-      //           slidesToScroll: 1,
-      //           arrows: true,
-      //           draggable: true,
-      //           touchThreshold: 300,
-      //           dots: false
-      //         },
-      //       },
-      //     ],
-      //   });
-
-      //   // Init maps
-      //   const maps[i] = document.querySelector('.map');
-      //   console.log(mapCoords[index][0], mapCoords[index][1]);
-      //   const coordinates = {
-      //     lat: mapCoords[index][0],
-      //     lng: mapCoords[index][1]
-      //   };
-      //   const map = new google.maps.Map(maps[i], {
-      //     center: coordinates,
-      //     zoom: 17,
-      //     disableDefaultUI: false,
-      //     scrollwheel: false,
-      //   });
-      //   const marker = new google.maps.Marker({
-      //     position: coordinates,
-      //     map: map,
-      //   });
-
-      //   // Toggle map
-      //   const toggleMap = card.querySelector('.toggleMap');
-      //   console.log(toggleMap);
-      //   toggleMap.addEventListener('click', () => {
-      //     if (maps[i].classList.contains('active')) {
-      //       maps[i].classList.remove('active');
-      //       toggleMap.innerText = 'Показать на google maps';
-      //     } else {
-      //       maps[i].classList.add('active');
-      //       toggleMap.innerText = 'Спрятать карту';
-      //     }
-      //   });
-
-      // });
-
     }
+  })();
+
+  // Init landing slicks
+  (function() {
+    $("section.examples .cards").not(".slick-initialized").slick({
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: true,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: `
+        <button type="button">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      `,
+      nextArrow: `
+        <button type="button">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      `,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            draggable: true,
+            touchThreshold: 300,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            draggable: true,
+            touchThreshold: 300,
+            dots: false
+          },
+        },
+      ],
+    });
   })();
 
 });

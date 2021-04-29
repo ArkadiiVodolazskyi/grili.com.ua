@@ -914,17 +914,7 @@ section.post
 					list-style-position: inside
 		.video
 			margin-top: 45px
-			position: relative
-			padding-bottom: 56.25%
 			padding-top: 30px
-			height: 0
-			overflow: hidden
-			iframe, object, embed
-				position: absolute
-				top: 0
-				left: 0
-				width: 100%
-				height: 100%
 		.stages
 			margin-top: 50px
 			h4
@@ -1655,3 +1645,382 @@ section.contacts
 				opacity: 1
 				visibility: visible
 				margin-top: 30px
+
+section.banner_landing
+	margin-top: 30px
+	.wrapper
+		height: 450px
+		display: flex
+		align-items: center
+		justify-content: center
+		color: $w
+		padding: 0 70px
+		border-radius: 5px
+		overflow: hidden
+		h1
+			line-height: 1.2
+			font-size: 48px
+			text-align: center
+section.banner_landing.key
+	&.testDriveOrder
+		margin: 90px 0
+	.wrapper
+		padding: 50px
+		flex-direction: column
+		.cards
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+			margin-top: 35px
+			.card
+				display: inline-flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				text-align: center
+				svg
+					width: 50px
+					fill: $w
+				p
+					margin-top: 12px
+					font-size: 16px
+					line-height: 1.2
+					font-weight: bold
+		.openConsult
+			margin-top: 60px
+			font-size: 12px
+			padding: 22px
+			width: 310px
+			border-radius: 140px
+			background-color: $orange
+			color: $w
+			&:hover
+				background-color: darken($orange, 20%)
+		a
+			margin-top: 18px
+			font-size: 36px
+			font-weight: bold
+			line-height: 1.5
+section.pros
+	padding: 120px 0 100px
+	.wrapper
+		display: flex
+		justify-content: space-between
+		.left
+			width: calc( 50% - 20px )
+			p
+				font-size: 36px
+				line-height: 1.5
+				font-weight: bold
+			span
+				font-size: 18px
+				line-height: 1.5
+				font-weight: bold
+				max-width: 400px
+			button
+				margin-top: 18px
+				font-size: 12px
+				padding: 22px
+				border-radius: 140px
+				background-color: $orange
+				color: $w
+				white-space: nowrap
+				&:hover
+					background-color: darken($orange, 20%)
+		.cards
+			width: calc( 50% - 20px )
+			.card
+				padding: 15px 10px
+				display: inline-flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				text-align: center
+				width: calc( 100% / 3 - 5px )
+				svg
+					width: 40px
+				p
+					margin-top: 20px
+					font-size: 16px
+					line-height: 1.2
+					font-family: 'Open Sans', sans-serif
+					font-weight: bold
+		> .openConsult
+			display: none
+			margin: 18px auto 0
+			font-size: 12px
+			padding: 10px
+			border-radius: 140px
+			background-color: $orange
+			color: $w
+			white-space: nowrap
+			&:hover
+				background-color: darken($orange, 20%)
+section.pros_2
+	padding: 120px 0 60px
+	h2
+		width: 50%
+		font-size: 36px
+		line-height: 1.5
+	.cards
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		margin: 40px -10px 0
+	.card
+		width: calc( 100% / 2 - 20px )
+		margin: 10px
+		border-radius: 5px
+		background-color: $cream
+		display: inline-flex
+		align-items: flex-start
+		justify-content: flex-start
+		padding: 30px 40px
+		svg
+			width: 45px
+			max-width: unset
+			margin-right: 40px
+			flex: 0 0 auto
+		p
+			font-size: 16px
+			line-height: 1.2
+			font-family: 'Open Sans', sans-serif
+section.portfolio
+	margin-top: 60px
+	h1
+		line-height: 1.2
+		font-size: 48px
+		text-align: center
+	.cards
+		margin-top: 30px
+	.card
+		padding: 20px
+		background-color: $cream
+		border-radius: 5px
+		display: flex
+		justify-content: space-between
+		&:not(:first-child)
+			margin-top: 20px
+		> *
+			width: calc( 50% - 10px )
+			span
+				font-size: 14px
+				line-height: 1.5
+			.bg
+				margin-top: 12px
+				height: 336px
+				border-radius: 5px
+				overflow: hidden
+				position: relative
+				&.gallery::after
+					content: ''
+					position: absolute
+					z-index: 50
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					background: url(../img/ico_images.svg) no-repeat center rgba(#000, 0.6)
+					border-radius: 100%
+					width: 60px
+					height: 60px
+				> img
+					z-index: 1
+		.after
+			text-align: right
+	.btn_all
+		margin-top: 30px
+		background-color: $tsp
+		color: $green
+		border: 1px solid $green
+		&:hover
+			background-color: $green
+			color: $w
+section.video_reviews
+	&.self
+		margin-top: 120px
+	h2
+		line-height: 1.2
+		font-size: 36px
+		text-align: center
+	span
+		font-size: 14px
+		line-height: 1.5
+		font-family: 'Open Sans', sans-serif
+		margin-top: 12px
+	> .text
+		width: 70%
+	.cards
+		margin-top: 30px
+	.card
+		padding: 20px
+		background-color: $cream
+		border-radius: 5px
+		&:not(:first-child)
+			margin-top: 60px
+		.text
+			margin-top: 20px
+			h6
+				font-size: 18px
+				line-height: 1.5
+			p
+				margin-top: 4px
+				font-size: 16px
+				line-height: 1.5
+				font-family: 'Open Sans', sans-serif
+	.btn_all
+		margin-top: 30px
+		background-color: $tsp
+		color: $green
+		border: 1px solid $green
+		&:hover
+			background-color: $green
+			color: $w
+section.banner_landing.team
+	overflow: visible
+	margin-top: 70px
+	.wrapper
+		padding: 35px 70px
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		background-color: #000
+		overflow: visible
+		.text
+			width: 40%
+			h2
+				line-height: 1.2
+				font-size: 36px
+			p
+				font-size: 16px
+				line-height: 1.5
+				font-family: 'Open Sans', sans-serif
+				margin-top: 12px
+		> img.team
+			height: 115%
+			width: auto
+			transform: translate(-15%, 0)
+			top: unset
+			bottom: 0
+section.scheme
+	padding-top: 80px
+	h2
+		line-height: 1.2
+		font-size: 36px
+		text-align: center
+	.cards
+		display: flex
+		justify-content: flex-start
+		flex-wrap: wrap
+		margin: 15px -10px 0
+		counter-reset: scheme
+	.card
+		width: calc( 100% / 4 - 20px )
+		margin: 10px
+		background-color: $cream
+		border-radius: 5px
+		padding: 30px
+		position: relative
+		overflow: hidden
+		text-align: left
+		&::before
+			counter-increment: scheme
+			content: counter(scheme)
+			position: absolute
+			left: 0
+			top: -25px
+			color: rgba($b, 0.1)
+			font-size: 96px
+			font-weight: bold
+		p
+			font-size: 16px
+			line-height: 1.5
+			font-family: 'Open Sans', sans-serif
+		button
+			color: $red
+			text-decoration: underline
+			font-size: inherit
+			text-align: left
+section.banner_landing.director
+	margin-top: 90px
+	.wrapper
+		padding: 0
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+		background-color: #000
+		overflow: visible
+		height: auto
+		.text
+			width: 60%
+			padding: 40px 55px
+			h3
+				line-height: 1.2
+				font-size: 23px
+				small
+					display: block
+					font-weight: normal
+			p
+				font-size: 16px
+				line-height: 1.5
+				font-family: 'Open Sans', sans-serif
+				margin-top: 20px
+		> img.director
+			position: relative
+			max-width: 378px
+			max-height: 442px
+			transform: translate(0, 0)
+			left: 0
+			top: unset
+			bottom: 0
+section.examples
+	padding-bottom: 70px
+	.cards .card
+		width: 22.5vw
+	.wrapper > .text
+		margin-top: 50px
+		font-size: 14px
+		line-height: 1.7
+		font-family: 'Open Sans', sans-serif
+	.leaveRequest
+		margin: 30px auto 0
+		font-size: 12px
+		padding: 22px
+		width: 310px
+		border-radius: 140px
+		background-color: $orange
+		color: $w
+		display: block
+		min-width: 180px
+		&:hover
+			background-color: darken($orange, 20%)
+section.banner_landing.team.company
+	.wrapper
+		padding: 0
+		.text
+			padding: 50px 0 50px 50px
+			width: 60%
+			height: 100%
+			display: flex
+			flex-direction: column
+			h2
+				margin-right: -60px
+			.openConsult
+				margin-top: auto
+				display: block
+				width: 310px
+				font-size: 12px
+				padding: 22px
+				border-radius: 140px
+				background-color: $orange
+				color: $w
+				white-space: nowrap
+				&:hover
+					background-color: darken($orange, 20%)
+		> img.team
+			width: 50%
+			min-width: 290px
+			margin-top: auto
+			height: auto
+			transform: none
+			position: relative
+			z-index: -1

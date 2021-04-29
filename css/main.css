@@ -334,6 +334,8 @@ main {
   position: relative;
   margin: 0 auto -5px;
   z-index: 0; }
+  main.landingWrapper section > .wrapper {
+    width: 1070px; }
 
 section {
   font-family: 'Montserrat', sans-serif;
@@ -467,6 +469,18 @@ label.checkbox {
       background-position: center center;
       background-size: 50% 50%;
       transition: all 0.2s linear; }
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden; }
+  .video iframe, .video object, .video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 @keyframes fading {
   0% {
@@ -1834,17 +1848,7 @@ section.post {
           list-style-position: inside; }
     section.post .content .video {
       margin-top: 45px;
-      position: relative;
-      padding-bottom: 56.25%;
-      padding-top: 30px;
-      height: 0;
-      overflow: hidden; }
-      section.post .content .video iframe, section.post .content .video object, section.post .content .video embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; }
+      padding-top: 30px; }
     section.post .content .stages {
       margin-top: 50px; }
       section.post .content .stages h4 {
@@ -2559,6 +2563,399 @@ section.contacts {
         visibility: visible;
         margin-top: 30px; }
 
+section.banner_landing {
+  margin-top: 30px; }
+  section.banner_landing .wrapper {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding: 0 70px;
+    border-radius: 5px;
+    overflow: hidden; }
+    section.banner_landing .wrapper h1 {
+      line-height: 1.2;
+      font-size: 48px;
+      text-align: center; }
+
+section.banner_landing.key.testDriveOrder {
+  margin: 90px 0; }
+
+section.banner_landing.key .wrapper {
+  padding: 50px;
+  flex-direction: column; }
+  section.banner_landing.key .wrapper .cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 35px; }
+    section.banner_landing.key .wrapper .cards .card {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      section.banner_landing.key .wrapper .cards .card svg {
+        width: 50px;
+        fill: #ffffff; }
+      section.banner_landing.key .wrapper .cards .card p {
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: bold; }
+  section.banner_landing.key .wrapper .openConsult {
+    margin-top: 60px;
+    font-size: 12px;
+    padding: 22px;
+    width: 310px;
+    border-radius: 140px;
+    background-color: #ff6a32;
+    color: #ffffff; }
+    section.banner_landing.key .wrapper .openConsult:hover {
+      background-color: #cb3700; }
+  section.banner_landing.key .wrapper a {
+    margin-top: 18px;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.5; }
+
+section.pros {
+  padding: 120px 0 100px; }
+  section.pros .wrapper {
+    display: flex;
+    justify-content: space-between; }
+    section.pros .wrapper .left {
+      width: calc( 50% - 20px); }
+      section.pros .wrapper .left p {
+        font-size: 36px;
+        line-height: 1.5;
+        font-weight: bold; }
+      section.pros .wrapper .left span {
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: bold;
+        max-width: 400px; }
+      section.pros .wrapper .left button {
+        margin-top: 18px;
+        font-size: 12px;
+        padding: 22px;
+        border-radius: 140px;
+        background-color: #ff6a32;
+        color: #ffffff;
+        white-space: nowrap; }
+        section.pros .wrapper .left button:hover {
+          background-color: #cb3700; }
+    section.pros .wrapper .cards {
+      width: calc( 50% - 20px); }
+      section.pros .wrapper .cards .card {
+        padding: 15px 10px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: calc( 100% / 3 - 5px); }
+        section.pros .wrapper .cards .card svg {
+          width: 40px; }
+        section.pros .wrapper .cards .card p {
+          margin-top: 20px;
+          font-size: 16px;
+          line-height: 1.2;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: bold; }
+    section.pros .wrapper > .openConsult {
+      display: none;
+      margin: 18px auto 0;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 140px;
+      background-color: #ff6a32;
+      color: #ffffff;
+      white-space: nowrap; }
+      section.pros .wrapper > .openConsult:hover {
+        background-color: #cb3700; }
+
+section.pros_2 {
+  padding: 120px 0 60px; }
+  section.pros_2 h2 {
+    width: 50%;
+    font-size: 36px;
+    line-height: 1.5; }
+  section.pros_2 .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px -10px 0; }
+  section.pros_2 .card {
+    width: calc( 100% / 2 - 20px);
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 40px; }
+    section.pros_2 .card svg {
+      width: 45px;
+      max-width: unset;
+      margin-right: 40px;
+      flex: 0 0 auto; }
+    section.pros_2 .card p {
+      font-size: 16px;
+      line-height: 1.2;
+      font-family: 'Open Sans', sans-serif; }
+
+section.portfolio {
+  margin-top: 60px; }
+  section.portfolio h1 {
+    line-height: 1.2;
+    font-size: 48px;
+    text-align: center; }
+  section.portfolio .cards {
+    margin-top: 30px; }
+  section.portfolio .card {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; }
+    section.portfolio .card:not(:first-child) {
+      margin-top: 20px; }
+    section.portfolio .card > * {
+      width: calc( 50% - 10px); }
+      section.portfolio .card > * span {
+        font-size: 14px;
+        line-height: 1.5; }
+      section.portfolio .card > * .bg {
+        margin-top: 12px;
+        height: 336px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative; }
+        section.portfolio .card > * .bg.gallery::after {
+          content: '';
+          position: absolute;
+          z-index: 50;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url(../img/ico_images.svg) no-repeat center rgba(0, 0, 0, 0.6);
+          border-radius: 100%;
+          width: 60px;
+          height: 60px; }
+        section.portfolio .card > * .bg > img {
+          z-index: 1; }
+    section.portfolio .card .after {
+      text-align: right; }
+  section.portfolio .btn_all {
+    margin-top: 30px;
+    background-color: #00000000;
+    color: #427d1e;
+    border: 1px solid #427d1e; }
+    section.portfolio .btn_all:hover {
+      background-color: #427d1e;
+      color: #ffffff; }
+
+section.video_reviews.self {
+  margin-top: 120px; }
+
+section.video_reviews h2 {
+  line-height: 1.2;
+  font-size: 36px;
+  text-align: center; }
+
+section.video_reviews span {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 12px; }
+
+section.video_reviews > .text {
+  width: 70%; }
+
+section.video_reviews .cards {
+  margin-top: 30px; }
+
+section.video_reviews .card {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 5px; }
+  section.video_reviews .card:not(:first-child) {
+    margin-top: 60px; }
+  section.video_reviews .card .text {
+    margin-top: 20px; }
+    section.video_reviews .card .text h6 {
+      font-size: 18px;
+      line-height: 1.5; }
+    section.video_reviews .card .text p {
+      margin-top: 4px;
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: 'Open Sans', sans-serif; }
+
+section.video_reviews .btn_all {
+  margin-top: 30px;
+  background-color: #00000000;
+  color: #427d1e;
+  border: 1px solid #427d1e; }
+  section.video_reviews .btn_all:hover {
+    background-color: #427d1e;
+    color: #ffffff; }
+
+section.banner_landing.team {
+  overflow: visible;
+  margin-top: 70px; }
+  section.banner_landing.team .wrapper {
+    padding: 35px 70px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #000;
+    overflow: visible; }
+    section.banner_landing.team .wrapper .text {
+      width: 40%; }
+      section.banner_landing.team .wrapper .text h2 {
+        line-height: 1.2;
+        font-size: 36px; }
+      section.banner_landing.team .wrapper .text p {
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 12px; }
+    section.banner_landing.team .wrapper > img.team {
+      height: 115%;
+      width: auto;
+      transform: translate(-15%, 0);
+      top: unset;
+      bottom: 0; }
+
+section.scheme {
+  padding-top: 80px; }
+  section.scheme h2 {
+    line-height: 1.2;
+    font-size: 36px;
+    text-align: center; }
+  section.scheme .cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 15px -10px 0;
+    counter-reset: scheme; }
+  section.scheme .card {
+    width: calc( 100% / 4 - 20px);
+    margin: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: left; }
+    section.scheme .card::before {
+      counter-increment: scheme;
+      content: counter(scheme);
+      position: absolute;
+      left: 0;
+      top: -25px;
+      color: rgba(45, 44, 44, 0.1);
+      font-size: 96px;
+      font-weight: bold; }
+    section.scheme .card p {
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: 'Open Sans', sans-serif; }
+    section.scheme .card button {
+      color: #ff5e3b;
+      text-decoration: underline;
+      font-size: inherit;
+      text-align: left; }
+
+section.banner_landing.director {
+  margin-top: 90px; }
+  section.banner_landing.director .wrapper {
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color: #000;
+    overflow: visible;
+    height: auto; }
+    section.banner_landing.director .wrapper .text {
+      width: 60%;
+      padding: 40px 55px; }
+      section.banner_landing.director .wrapper .text h3 {
+        line-height: 1.2;
+        font-size: 23px; }
+        section.banner_landing.director .wrapper .text h3 small {
+          display: block;
+          font-weight: normal; }
+      section.banner_landing.director .wrapper .text p {
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 20px; }
+    section.banner_landing.director .wrapper > img.director {
+      position: relative;
+      max-width: 378px;
+      max-height: 442px;
+      transform: translate(0, 0);
+      left: 0;
+      top: unset;
+      bottom: 0; }
+
+section.examples {
+  padding-bottom: 70px; }
+  section.examples .cards .card {
+    width: 22.5vw; }
+  section.examples .wrapper > .text {
+    margin-top: 50px;
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Open Sans', sans-serif; }
+  section.examples .leaveRequest {
+    margin: 30px auto 0;
+    font-size: 12px;
+    padding: 22px;
+    width: 310px;
+    border-radius: 140px;
+    background-color: #ff6a32;
+    color: #ffffff;
+    display: block;
+    min-width: 180px; }
+    section.examples .leaveRequest:hover {
+      background-color: #cb3700; }
+
+section.banner_landing.team.company .wrapper {
+  padding: 0; }
+  section.banner_landing.team.company .wrapper .text {
+    padding: 50px 0 50px 50px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; }
+    section.banner_landing.team.company .wrapper .text h2 {
+      margin-right: -60px; }
+    section.banner_landing.team.company .wrapper .text .openConsult {
+      margin-top: auto;
+      display: block;
+      width: 310px;
+      font-size: 12px;
+      padding: 22px;
+      border-radius: 140px;
+      background-color: #ff6a32;
+      color: #ffffff;
+      white-space: nowrap; }
+      section.banner_landing.team.company .wrapper .text .openConsult:hover {
+        background-color: #cb3700; }
+  section.banner_landing.team.company .wrapper > img.team {
+    width: 50%;
+    min-width: 290px;
+    margin-top: auto;
+    height: auto;
+    transform: none;
+    position: relative;
+    z-index: -1; }
+
 footer {
   background-color: #000;
   color: #ffffff;
@@ -2677,11 +3074,15 @@ footer {
   section.cheaper .set {
     width: 90vw; }
   section.archive_news .card {
-    width: calc( 100% / 3 - 20px); } }
+    width: calc( 100% / 3 - 20px); }
+  section.examples .cards .card {
+    width: 26.4vw; } }
 
 @media (max-width: 1024px) {
   h1.page_title {
     font-size: 30px; }
+  h2 {
+    font-size: 24px; }
   header nav .wrapper {
     padding-top: 10px; }
     header nav .wrapper .links {
@@ -2724,6 +3125,10 @@ footer {
     margin-left: 0; }
     footer .navigation nav .footer_block {
       padding-left: 20px; }
+  main.landingWrapper section > .wrapper {
+    width: 90%; }
+  .video {
+    padding-bottom: 40%; }
   section.catalog .cards {
     flex-wrap: wrap; }
     section.catalog .cards .card {
@@ -2791,7 +3196,50 @@ footer {
     section.contacts .card .content .gallery img {
       width: 42vw; }
   section.contacts .card .map {
-    height: 325px; } }
+    height: 325px; }
+  section.banner_landing.title .wrapper {
+    height: 290px; }
+    section.banner_landing.title .wrapper h1 {
+      font-size: 36px; }
+  section.pros {
+    padding: 60px 0 40px; }
+    section.pros .wrapper .left {
+      display: flex;
+      flex-direction: column;
+      height: 100%; }
+      section.pros .wrapper .left p {
+        font-size: 24px; }
+      section.pros .wrapper .left .openConsult {
+        padding: 15px;
+        width: max-content; }
+  section.banner_landing.key .wrapper {
+    height: auto; }
+    section.banner_landing.key .wrapper .openConsult {
+      padding: 15px;
+      width: max-content; }
+    section.banner_landing.key .wrapper a {
+      font-size: 18px; }
+  section.pros_2 h2 {
+    width: 75%; }
+  section.banner_landing.team .wrapper .text h2 {
+    font-size: 24px; }
+  section.banner_landing.team .wrapper .text p {
+    font-size: 14px; }
+  section.banner_landing.team .wrapper > img.team {
+    width: 55%;
+    height: auto; }
+  section.banner_landing.director .wrapper .text {
+    padding-left: 0;
+    margin-left: -30px; }
+  section.examples .leaveRequest {
+    padding: 15px;
+    width: max-content; }
+  section.portfolio .card > * .bg {
+    height: 260px; }
+  section.video_reviews h2 {
+    font-size: 24px; }
+  section.banner_landing.key.testDriveOrder .wrapper {
+    height: 320px; } }
 
 @media (max-width: 768px) {
   body > .discount {
@@ -2922,6 +3370,11 @@ footer {
     section.action_goods .cards .card {
       margin: 0 13px;
       width: 28.5vw; }
+      section.action_goods .cards .card h3 {
+        font-size: 14px;
+        line-height: normal; }
+      section.action_goods .cards .card .text .buy {
+        width: 100%; }
   section.blogs {
     margin-top: 87px; }
     section.blogs .card {
@@ -3098,7 +3551,66 @@ footer {
     margin-bottom: 40px; }
     section.whoops .wrapper {
       padding-top: 20px;
-      align-items: flex-end; } }
+      align-items: flex-end; }
+  section.pros .wrapper .cards .card {
+    padding: 10px 5px; }
+    section.pros .wrapper .cards .card p {
+      font-size: 12px;
+      margin-top: 12px; }
+  section.banner_landing.key .wrapper {
+    padding: 30px; }
+    section.banner_landing.key .wrapper .openConsult {
+      margin-top: 30px; }
+  section.pros_2 {
+    padding-top: 90px; }
+    section.pros_2 .card {
+      padding: 25px 15px; }
+      section.pros_2 .card svg {
+        width: 40px;
+        margin-right: 25px; }
+      section.pros_2 .card p {
+        font-size: 12px; }
+  section.portfolio {
+    margin-top: 0; }
+  section.portfolio .card > * .bg {
+    height: 210px; }
+  section.video_reviews {
+    margin-top: 75px; }
+    section.video_reviews h2 {
+      text-align: center; }
+    section.video_reviews .card .text h6 {
+      font-size: 16px; }
+    section.video_reviews .card .text p {
+      font-size: 14px; }
+  section.banner_landing.team .wrapper {
+    padding: 20px 45px; }
+    section.banner_landing.team .wrapper .text {
+      width: 55%; }
+      section.banner_landing.team .wrapper .text h2 {
+        font-size: 24px; }
+    section.banner_landing.team .wrapper > img.team {
+      width: 63%;
+      transform: translate(-22%, 0); }
+  section.scheme h2 {
+    font-size: 24px; }
+  section.scheme .card {
+    padding: 30px 10px;
+    font-size: 12px; }
+  section.banner_landing.director .wrapper .text {
+    padding: 25px;
+    margin-left: -140px; }
+    section.banner_landing.director .wrapper .text h3 {
+      font-size: 18px; }
+    section.banner_landing.director .wrapper .text p {
+      font-size: 12px; }
+  section.examples {
+    margin-top: 50px; }
+  section.banner_landing.team.company .wrapper .text {
+    margin-right: -100px; }
+  section.banner_landing.team.company .wrapper > img.team {
+    width: 60%; }
+  section.video_reviews > .text {
+    width: 80%; } }
 
 @media (max-width: 480px) {
   .slick-arrow {
@@ -3123,16 +3635,18 @@ footer {
     padding: 10px; }
   h2 {
     font-size: 20px; }
-  header nav .wrapper .logo {
-    flex-grow: 1;
-    min-width: 80px;
-    padding-right: 14px; }
-  header nav .wrapper .socials {
-    margin-right: 12px; }
-    header nav .wrapper .socials li:not(:first-child) {
-      margin-left: 6px; }
-    header nav .wrapper .socials li svg {
-      height: 22px; }
+  header nav .wrapper {
+    padding: 7px 0; }
+    header nav .wrapper .logo {
+      flex-grow: 1;
+      min-width: 80px;
+      padding-right: 14px; }
+    header nav .wrapper .socials {
+      margin-right: 12px; }
+      header nav .wrapper .socials li:not(:first-child) {
+        margin-left: 6px; }
+      header nav .wrapper .socials li svg {
+        height: 22px; }
   header .contacts .wrapper {
     flex-wrap: wrap; }
     header .contacts .wrapper .addresses {
@@ -3562,7 +4076,148 @@ footer {
         width: 100%;
         margin-top: 16px; }
         section.contacts .card .content .gallery img {
-          width: 83vw; } }
+          width: 83vw; }
+  section.banner_landing.title .wrapper {
+    height: 190px; }
+    section.banner_landing.title .wrapper h1 {
+      font-size: 18px; }
+  section.pros {
+    padding: 30px 0 0; }
+    section.pros .wrapper {
+      flex-direction: column; }
+      section.pros .wrapper .left {
+        width: 100%; }
+        section.pros .wrapper .left p {
+          font-size: 18px; }
+        section.pros .wrapper .left span {
+          font-size: 12px; }
+        section.pros .wrapper .left .openConsult {
+          display: none; }
+      section.pros .wrapper .cards {
+        width: 100%; }
+        section.pros .wrapper .cards .card {
+          width: calc( 100% / 2 - 5px); }
+          section.pros .wrapper .cards .card svg {
+            width: 30px; }
+      section.pros .wrapper > .openConsult {
+        display: block; }
+  section.banner_landing.key .wrapper {
+    padding: 30px 20px; }
+    section.banner_landing.key .wrapper .cards {
+      flex-wrap: wrap;
+      margin-top: 0; }
+      section.banner_landing.key .wrapper .cards .card {
+        width: 50%;
+        margin-top: 40px; }
+        section.banner_landing.key .wrapper .cards .card svg {
+          width: 40px; }
+        section.banner_landing.key .wrapper .cards .card p {
+          font-size: 14px; }
+    section.banner_landing.key .wrapper .openConsult {
+      min-width: 180px;
+      padding: 12px; }
+    section.banner_landing.key .wrapper a {
+      font-size: 24px; }
+  section.pros_2 {
+    padding: 30px 0 50px; }
+    section.pros_2 h2 {
+      font-size: 24px;
+      width: 100%; }
+    section.pros_2 .cards {
+      margin: 30px 0 0;
+      flex-direction: column; }
+    section.pros_2 .card {
+      width: 100%;
+      margin: 0;
+      padding: 20px 5px; }
+      section.pros_2 .card:not(:first-child) {
+        margin-top: 10px; }
+  section.portfolio h1 {
+    font-size: 24px; }
+  section.portfolio .card {
+    flex-direction: column; }
+    section.portfolio .card > * {
+      width: 100%; }
+      section.portfolio .card > * .bg {
+        margin-top: 0; }
+        section.portfolio .card > * .bg.gallery::after {
+          transform: translate(-50%, -50%) scale(1);
+          width: 50px;
+          height: 50px; }
+      section.portfolio .card > * span {
+        padding-left: 10px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: bold; }
+    section.portfolio .card .after {
+      text-align: left;
+      margin-top: 20px; }
+  section.video_reviews .card:not(:first-child) {
+    margin-top: 10px; }
+  section.video_reviews .card .text h6 {
+    font-size: 14px; }
+  section.video_reviews .card .text p {
+    font-size: 12px; }
+  section.banner_landing.team .wrapper {
+    padding: 20px;
+    flex-direction: column; }
+    section.banner_landing.team .wrapper .text {
+      width: 100%; }
+      section.banner_landing.team .wrapper .text h2 {
+        font-size: 18px; }
+    section.banner_landing.team .wrapper > img.team {
+      width: 100%;
+      transform: translate(-50%, 0);
+      left: 50%; }
+  section.scheme {
+    padding-top: 40px; }
+    section.scheme .cards {
+      margin: 15px -5px 0; }
+    section.scheme .card {
+      width: calc( 100% / 2 - 10px);
+      margin: 10px 5px; }
+  section.banner_landing.director {
+    margin-top: 40px;
+    overflow: visible; }
+    section.banner_landing.director .wrapper {
+      padding: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start; }
+      section.banner_landing.director .wrapper .text {
+        width: 100%;
+        margin-left: 0;
+        margin-top: -10px;
+        padding: 0 10px 20px; }
+        section.banner_landing.director .wrapper .text h2 {
+          font-size: 18px; }
+      section.banner_landing.director .wrapper > img.director {
+        max-width: 170px;
+        margin-top: -40px; }
+  section.examples .leaveRequest {
+    margin-top: 50px;
+    min-width: 180px;
+    padding: 12px; }
+  section.banner_landing.team.company .wrapper {
+    height: auto; }
+    section.banner_landing.team.company .wrapper .text {
+      padding: 20px 20px 50px 20px;
+      width: 100%;
+      margin: 0; }
+      section.banner_landing.team.company .wrapper .text h2 {
+        margin: 0; }
+      section.banner_landing.team.company .wrapper .text .openConsult {
+        width: 100%;
+        margin-top: 120px;
+        padding: 12px; }
+    section.banner_landing.team.company .wrapper > img.team {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0); }
+  section.banner_landing.key .wrapper h2 {
+    text-align: center; } }
 
 @media (max-width: 360px) {
   header nav .wrapper .languages {

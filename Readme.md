@@ -12,6 +12,8 @@
 - archive-news **http://dev4.devpro.agency/archive-news.html**
 - page-404 **http://dev4.devpro.agency/page-404.html**
 - page-contacts **http://dev4.devpro.agency/page-contacts.html**
+- page-grillzone
+- page-testdrive
 
 # Todo
 - custom scrollbar search

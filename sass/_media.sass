@@ -25,10 +25,14 @@
 		width: 90vw
 	section.archive_news .card
 		width: calc( 100% / 3 - 20px)
+	section.examples .cards .card
+		width: 26.4vw
 
 @media (max-width: 1024px)
 	h1.page_title
 		font-size: 30px
+	h2
+		font-size: 24px
 
 	header
 		nav .wrapper
@@ -75,6 +79,11 @@
 		margin-left: 0
 		.footer_block
 			padding-left: 20px
+
+	main.landingWrapper section > .wrapper
+		width: 90%
+	.video
+		padding-bottom: 40%
 
 	section.catalog
 		.cards
@@ -153,6 +162,51 @@
 					width: 42vw
 		.map
 			height: 325px
+	section.banner_landing.title .wrapper
+		height: 290px
+		h1
+			font-size: 36px
+	section.pros
+		padding: 60px 0 40px
+		.wrapper .left
+			display: flex
+			flex-direction: column
+			height: 100%
+			p
+				font-size: 24px
+			.openConsult
+				padding: 15px
+				width: max-content
+	section.banner_landing.key .wrapper
+		height: auto
+		.openConsult
+			padding: 15px
+			width: max-content
+		a
+			font-size: 18px
+	section.pros_2 h2
+		width: 75%
+	section.banner_landing.team .wrapper
+		.text
+			h2
+				font-size: 24px
+			p
+				font-size: 14px
+		> img.team
+			width: 55%
+			height: auto
+	section.banner_landing.director .wrapper .text
+		padding-left: 0
+		margin-left: -30px
+	section.examples .leaveRequest
+		padding: 15px
+		width: max-content
+	section.portfolio .card > * .bg
+		height: 260px
+	section.video_reviews h2
+		font-size: 24px
+	section.banner_landing.key.testDriveOrder .wrapper
+		height: 320px
 
 @media (max-width: 768px)
 	body > .discount
@@ -293,6 +347,11 @@
 		.cards .card
 			margin: 0 13px
 			width: 28.5vw
+			h3
+				font-size: 14px
+				line-height: normal
+			.text .buy
+				width: 100%
 	section.blogs
 		margin-top: 87px
 		.card
@@ -479,6 +538,68 @@
 		.wrapper
 			padding-top: 20px
 			align-items: flex-end
+	section.pros .wrapper .cards .card
+		padding: 10px 5px
+		p
+			font-size: 12px
+			margin-top: 12px
+	section.banner_landing.key .wrapper
+		padding: 30px
+		.openConsult
+			margin-top: 30px
+	section.pros_2
+		padding-top: 90px
+		.card
+			padding: 25px 15px
+			svg
+				width: 40px
+				margin-right: 25px
+			p
+				font-size: 12px
+	section.portfolio
+		margin-top: 0
+	section.portfolio .card > * .bg
+		height: 210px
+	section.video_reviews
+		margin-top: 75px
+		h2
+			text-align: center
+		.card .text
+			h6
+				font-size: 16px
+			p
+				font-size: 14px
+	section.banner_landing.team .wrapper
+		padding: 20px 45px
+		.text
+			width: 55%
+			h2
+				font-size: 24px
+		> img.team
+			width: 63%
+			transform: translate(-22%, 0)
+	section.scheme
+		h2
+			font-size: 24px
+		.card
+			padding: 30px 10px
+			font-size: 12px
+	section.banner_landing.director .wrapper .text
+		padding: 25px
+		margin-left: -140px
+		h3
+			font-size: 18px
+		p
+			font-size: 12px
+	section.examples
+		margin-top: 50px
+	section.banner_landing.team.company .wrapper
+		.text
+			margin-right: -100px
+		> img.team
+			width: 60%
+	section.video_reviews > .text
+		width: 80%
 
 @media (max-width: 480px)
 	.slick-arrow
@@ -507,6 +628,7 @@
 
 	header
 		nav .wrapper
+			padding: 7px 0
 			.logo
 				flex-grow: 1
 				min-width: 80px
@@ -992,6 +1114,150 @@
 					margin-top: 16px
 					img
 						width: 83vw
+	section.banner_landing.title .wrapper
+		height: 190px
+		h1
+			font-size: 18px
+	section.pros
+		padding: 30px 0 0
+		.wrapper
+			flex-direction: column
+			.left
+				width: 100%
+				p
+					font-size: 18px
+				span
+					font-size: 12px
+				.openConsult
+					display: none
+			.cards
+				width: 100%
+				.card
+					width: calc( 100% / 2 - 5px)
+					svg
+						width: 30px
+			> .openConsult
+				display: block
+	section.banner_landing.key .wrapper
+		padding: 30px 20px
+		.cards
+			flex-wrap: wrap
+			margin-top: 0
+			.card
+				width: 50%
+				margin-top: 40px
+				svg
+					width: 40px
+				p
+					font-size: 14px
+		.openConsult
+			min-width: 180px
+			padding: 12px
+		a
+			font-size: 24px
+	section.pros_2
+		padding: 30px 0 50px
+		h2
+			font-size: 24px
+			width: 100%
+		.cards
+			margin: 30px 0 0
+			flex-direction: column
+		.card
+			width: 100%
+			margin: 0
+			padding: 20px 5px
+			&:not(:first-child)
+				margin-top: 10px
+	section.portfolio
+		h1
+			font-size: 24px
+	section.portfolio .card
+		flex-direction: column
+		> *
+			width: 100%
+			.bg
+				margin-top: 0
+				&.gallery::after
+					transform: translate(-50%, -50%) scale(1)
+					width: 50px
+					height: 50px
+			span
+				padding-left: 10px
+				font-size: 12px
+				color: rgba(#000, 0.6)
+				font-weight: bold
+		.after
+			text-align: left
+			margin-top: 20px
+	section.video_reviews .card
+		&:not(:first-child)
+			margin-top: 10px
+		.text
+			h6
+				font-size: 14px
+			p
+				font-size: 12px
+	section.banner_landing.team .wrapper
+		padding: 20px
+		flex-direction: column
+		.text
+			width: 100%
+			h2
+				font-size: 18px
+		> img.team
+			width: 100%
+			transform: translate(-50%, 0)
+			left: 50%
+	section.scheme
+		padding-top: 40px
+		.cards
+			margin: 15px -5px 0
+		.card
+			width: calc( 100% / 2 - 10px)
+			margin: 10px 5px
+	section.banner_landing.director
+		margin-top: 40px
+		overflow: visible
+		.wrapper
+			padding: 0
+			flex-direction: column
+			align-items: flex-start
+			justify-content: flex-start
+			.text
+				width: 100%
+				margin-left: 0
+				margin-top: -10px
+				padding: 0 10px 20px
+				h2
+					font-size: 18px
+			> img.director
+				max-width: 170px
+				margin-top: -40px
+	section.examples .leaveRequest
+		margin-top: 50px
+		min-width: 180px
+		padding: 12px
+	section.banner_landing.team.company .wrapper
+		height: auto
+		.text
+			padding: 20px 20px 50px 20px
+			width: 100%
+			margin: 0
+			h2
+				margin: 0
+			.openConsult
+				width: 100%
+				margin-top: 120px
+				padding: 12px
+		> img.team
+			width: 100%
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translate(-50%, 0)
+	section.banner_landing.key .wrapper h2
+		text-align: center
 
 @media (max-width: 360px)
 	header
