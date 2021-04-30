@@ -1646,8 +1646,45 @@ section.contacts
 				visibility: visible
 				margin-top: 30px
 
+// landings
 section.banner_landing
 	margin-top: 30px
+	&.rent_tags .wrapper
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: flex-end
+		text-align: center
+		padding: 0 50px 30px
+		h1
+			max-width: 500px
+		p
+			margin-top: 16px
+			font-size: 16px
+			line-height: 1.5
+			font-family: 'Open Sans', sans-serif
+			font-weight: bold
+			max-width: 500px
+		.tags_buttons
+			margin-top: 70px
+			font-size: 16px
+			line-height: 1.5
+			font-family: 'Open Sans', sans-serif
+			.buttons
+				margin-top: 5px
+				button
+					margin: 5px
+					padding: 10px
+					border-radius: 50px
+					background-color: $w
+					color: $b
+					font-size: 16px
+					font-weight: normal
+					&:not(:first-child)
+						margin-left: 10px
+					&:hover
+						background-color: $green
+						color: $w
 	.wrapper
 		height: 450px
 		display: flex
@@ -1667,6 +1704,8 @@ section.banner_landing.key
 	.wrapper
 		padding: 50px
 		flex-direction: column
+		h2
+			text-align: center
 		.cards
 			display: flex
 			align-items: flex-start
@@ -1703,6 +1742,35 @@ section.banner_landing.key
 			line-height: 1.5
 section.pros
 	padding: 120px 0 100px
+	&.pros_v3
+		padding-top: 80px
+		.wrapper
+			flex-direction: column
+			.cards
+				order: 1
+				width: 100%
+				.card
+					width: calc( 100% / 6 - 5px)
+					svg
+						max-width: 45px
+						width: 45px
+					&.button
+						display: none
+						button
+							font-size: 12px
+							padding: 20px
+							border-radius: 140px
+							background-color: $orange
+							color: $w
+							white-space: nowrap
+							&:hover
+								background-color: darken($orange, 20%)
+			.left
+				order: 2
+				width: 100%
+				text-align: center
+				button
+					margin-top: 50px
 	.wrapper
 		display: flex
 		justify-content: space-between
@@ -1836,6 +1904,7 @@ section.portfolio
 			background-color: $green
 			color: $w
 section.video_reviews
+	margin-top: 50px
 	&.self
 		margin-top: 120px
 	h2
@@ -2024,3 +2093,151 @@ section.banner_landing.team.company
 			transform: none
 			position: relative
 			z-index: -1
+section.rent_catalog
+	background-color: $cream
+	padding: 40px 0
+	h2
+		display: flex
+		justify-content: space-between
+		align-items: center
+		.sort
+			font-size: 12px
+			span
+				font-family: 'Open Sans', sans-serif
+				color: rgba($b, 0.5)
+				font-weight: normal
+			select
+				width: 130px
+				margin-left: 12px
+				border: 1px solid $tsp
+				background-color: $w
+				padding: 10px
+				appearance: none
+				background: url(../img/ico_arrow_down.svg) no-repeat 90% 55% $w
+				cursor: pointer
+				transition: all 0.2s linear
+				&:hover, &:focus
+					border-color: $green
+	.cards
+		margin-top: 30px
+		.card
+			background-color: $w
+			padding: 20px 30px
+			display: flex
+			align-items: center
+			&:not(:first-child)
+				margin-top: 30px
+			.image
+				width: 30%
+				img
+					max-width: 90%
+					max-height: 90%
+					display: block
+					margin: 0 auto
+			.info
+				width: 70%
+				display: flex
+				flex-wrap: wrap
+				font-size: 14px
+				line-height: 1.5
+				h3
+					width: 100%
+					font-size: 22px
+					margin-bottom: 30px
+				.use
+					width: 50%
+					padding-right: 40px
+					li
+						display: block
+				.kit
+					width: 50%
+					padding-left: 40px
+					strong:not(:first-of-type)
+						margin-top: 20px
+						display: inline-block
+				.order
+					width: 100%
+					margin-top: 30px
+					display: flex
+					justify-content: flex-end
+					align-items: center
+					font-size: 12px
+					.price .amount
+						color: $red
+						font-weight: bold
+						font-size: 16px
+					button
+						margin-left: 30px
+						padding: 12px
+						min-width: 210px
+						border-radius: 140px
+						background-color: $tsp
+						color: $red
+						border: 1px solid $red
+						&:hover
+							background-color: $red
+							color: $w
+section.text_info
+	font-size: 14px
+	line-height: 1.7
+	font-family: 'Open Sans', sans-serif
+	margin-bottom: 100px
+	p:not(:first-child)
+		margin-top: 20px
+section.rent_catalog.heatrent .cards .card .info
+	.kit
+		padding-left: 0
+		li:not(:first-child)
+			margin-top: 10px
+	.order
+		flex-direction: column
+		align-items: flex-end
+		button
+			width: 210px
+			margin: 0
+			&.video_review
+				color: $green
+				border-color: $green
+				&:hover
+					background-color: $green
+					color: $w
+		> div
+			margin-top: 10px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			.price
+				white-space: nowrap
+			> .video_review
+				display: none
+section.banner_landing.banner_landing_v5
+	.wrapper
+		background-color: #000
+		display: block
+		padding: 50px 60px 30px
+		height: auto
+		p
+			margin-top: 24px
+		.openConsult
+			display: block
+			margin: 40px auto 0
+			font-size: 12px
+			padding: 22px
+			width: 310px
+			border-radius: 140px
+			background-color: $orange
+			color: $w
+			&:hover
+				background-color: darken($orange, 20%)
+section.text_info.text_info_v2
+	margin-top: 50px
+	.wrapper
+		background-color: $cream
+		padding: 40px
+		h2
+			margin-bottom: 20px
+		h6
+			margin-top: 20px
+		p
+			margin-top: 0

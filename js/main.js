@@ -123,6 +123,7 @@ window.addEventListener("load", () => {
         if (megamenu.classList.contains('active')) {
           megamenu.classList.remove('active');
           mainOverlay.classList.remove('active');
+          body.classList.remove('discroll');
         } else {
           megamenu.classList.add('active');
           mainOverlay.classList.add('active');
