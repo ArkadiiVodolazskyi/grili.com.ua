@@ -119,7 +119,7 @@ window.addEventListener("load", () => {
     const megamenu = document.getElementById('megamenu');
 
     if (openMegamenu && megamenu) {
-      openMegamenu.addEventListener('click', () => {
+      openMegamenu.addEventListener('click', (e) => {
         if (megamenu.classList.contains('active')) {
           megamenu.classList.remove('active');
           mainOverlay.classList.remove('active');
@@ -128,7 +128,7 @@ window.addEventListener("load", () => {
           megamenu.classList.add('active');
           mainOverlay.classList.add('active');
           body.classList.add('discroll');
-          mainOverlay.addEventListener('click', () => {
+          mainOverlay.addEventListener('click', (e) => {
             megamenu.classList.remove('active');
             mainOverlay.classList.remove('active');
             body.classList.remove('discroll');
@@ -142,9 +142,26 @@ window.addEventListener("load", () => {
           })
         }
       })
+
+      // `New: Open Megamenu submenu's on mobile`
+      const mainLinks = megamenu.querySelectorAll('.item > .title');
+      const subLinks = megamenu.querySelectorAll('.item > .submenu');
+
+      for (let i = 0; i < mainLinks.length; i++) {
+        mainLinks[i].addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (subLinks[i].classList.contains('active')) {
+            subLinks[i].classList.remove('active');
+          } else {
+            subLinks.forEach(subLink => {
+              subLink.classList.remove('active');
+            })
+            subLinks[i].classList.add('active');
+          }
+
+        });
+      }
     }
-
-
   })();
 
   // Open searchResults
@@ -209,6 +226,7 @@ window.addEventListener("load", () => {
     }
 
     hideShow('header .contacts .wrapper .addresses div', 'header .manage', 'header .contacts .wrapper .addresses div .sublist');
+    hideShow('header .contacts .wrapper .addresses div', 'main', 'header .contacts .wrapper .addresses div .sublist');
   })();
 
   // Open/close filters
@@ -450,6 +468,17 @@ window.addEventListener("load", () => {
             draggable: true,
             touchThreshold: 300,
           },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: true,
+            draggable: true,
+            touchThreshold: 300,
+            dots: false
+          }
         },
         {
           breakpoint: 480,

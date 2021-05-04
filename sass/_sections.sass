@@ -255,7 +255,7 @@ section.news
 				margin-top: 6px
 				font-size: 12px
 				line-height: 1.5
-section.video
+section.video_section
 	.wrapper
 		padding: 35px 0 65px
 	h2
@@ -282,7 +282,8 @@ section.video
 					color: darken($green, 10%)
 	.video
 		width: 64%
-		height: 470px
+		// height: 470px
+		padding-bottom: 36%
 		iframe
 			width: 100%
 			height: 100%
@@ -376,17 +377,41 @@ section.item
 		margin-right: 40px
 		.slick-track
 			width: 100% !important
-		img
+		.image
 			display: block
-			width: 60px
-			height: 80px
+			height: auto
 			cursor: pointer
+			position: relative
 			transition: all 0.2s linear
 			opacity: 0.3
 			&:hover, &.active
 				opacity: 1
 			&:not(:first-child)
 				margin-top: 30px
+			&.item_video::before
+				content: ''
+				position: absolute
+				z-index: 5
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				background-color: rgba(#000, 0.5)
+			&.item_video::after
+				content: ''
+				position: absolute
+				z-index: 10
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				background: url(../img/ico_play.svg) no-repeat center
+				width: 26px
+				height: 26px
+			> img
+				max-width: 100%
+				max-height: 100%
 	.item_image
 		width: 52%
 		padding: 0 90px
@@ -535,7 +560,6 @@ section.item
 			font-weight: bold
 		.openConsult
 			width: max-content
-			white-space: nowrap
 			padding: 12px 14px
 			font-size: 12px
 			font-family: 'Montserrat', sans-serif
@@ -564,13 +588,48 @@ section.info
 				margin-top: 33px
 				opacity: 1
 				visibility: visible
-				max-height: 1000px
+				max-height: 500px
+		&.item_reviews
+			padding: 24px 24px 24px 40px
+			.content
+				width: 100%
+				overflow: auto
+				.review
+					&:not(:first-child)
+						margin-top: 30px
+					.name_date
+						display: flex
+						justify-content: space-between
+						align-items: center
+						padding: 5px 8px
+						border: 1px solid rgba($b, 0.15)
+						border-radius: 5px
+						background: linear-gradient(to right, #f5f5f5 0%,rgba($green, 0.1) 100%)
+						.name
+							i
+								color: $grey
+							span
+								margin: 0 8px 0 6px
+								font-family: 'Montserrat', sans-serif
+								font-weight: 600
+						.rating
+							white-space: nowrap
+							i
+								color: $grey
+								&.active
+									color: $green
+						.date
+							margin-left: auto
+					.comment
+						margin-top: 8px
+						padding-left: 8px
 		h6
 			font-family: 'Montserrat', sans-serif
 			font-size: 16px
 			cursor: pointer
 			transition: all 0.2s linear
 			color: $b
+			user-select: none
 			&:hover
 				color: $green
 			i
@@ -1427,7 +1486,7 @@ section.allBrands
 				margin-right: 16px
 		button
 			font-size: 18px
-			font-weight: bold
+			font-weight: normal
 			display: inline-flex
 			justify-content: center
 			align-items: center
@@ -1435,7 +1494,11 @@ section.allBrands
 			height: 30px
 			text-transform: uppercase
 			border-radius: 100%
-			&.active, &:hover
+			&.active
+				font-weight: bold
+				background-color: $green
+				color: $w
+			&:hover
 				background-color: $green
 				color: $w
 	.letter_results
@@ -1443,6 +1506,7 @@ section.allBrands
 			margin-top: 40px
 		.letter
 			font-size: 24px
+			font-weight: bold
 		.brands
 			display: flex
 			justify-content: flex-start
@@ -1874,6 +1938,8 @@ section.portfolio
 			span
 				font-size: 14px
 				line-height: 1.5
+				font-weight: bold
+				color: rgba($b, 0.6)
 			.bg
 				margin-top: 12px
 				height: 336px
@@ -2045,6 +2111,7 @@ section.examples
 	padding-bottom: 70px
 	.cards .card
 		width: 22.5vw
+		max-width: 337px
 	.wrapper > .text
 		margin-top: 50px
 		font-size: 14px

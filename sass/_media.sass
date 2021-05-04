@@ -6,6 +6,31 @@
 		width: 90%
 
 @media (max-width: 1280px)
+	header .contacts .wrapper .phones
+		a
+			&:not(:first-child)
+				margin-left: 5px
+			svg
+				margin-right: 3px
+	header.v_03
+		padding: 0
+		.right
+			.phones
+				order: 1
+				margin: 0 auto 0 0
+				flex-direction: column
+				align-items: flex-start
+				margin-right: auto
+				a
+					font-size: 11px
+					&:not(:first-child)
+						margin: 5px 0 0 0
+					svg
+						width: 22px
+						margin-right: 10px
+			.socials
+				order: 2
+				margin: 0 0 0 auto
 	footer .navigation nav
 		margin-left: 30px
 		.footer_block
@@ -36,7 +61,7 @@
 
 	header
 		nav .wrapper
-			padding-top: 10px
+			padding-top: 0
 			.links
 				display: none
 			.socials
@@ -49,6 +74,18 @@
 			.hamb
 				display: block
 				order: 4
+			.logo
+				display: block
+				order: 1
+		.contacts .wrapper
+			.logo
+				display: none
+			.addresses
+				font-size: 10px
+			.phones a
+				font-size: 10px
+				&:not(:first-child)
+					margin-left: 10px
 		.manage .wrapper
 			.personal
 				margin-left: 0
@@ -56,29 +93,45 @@
 				width: 500px
 				left: 50%
 				transform: translate(-50%, 18px)
-	header.v_03
-		padding: 0
-		.right
-			.phones
-				order: 1
-				margin: 0 auto 0 0
-				flex-direction: column
-				align-items: flex-start
-				margin-right: auto
-				a
-					font-size: 11px
+
+	footer
+		.wrapper
+			padding: 30px 0
+		.navigation
+			flex-direction: column
+			padding: 0 0 24px
+			.slogan
+				width: 100%
+				.logo
+					width: 160px
+				p
+					display: none
+			nav
+				width: 100%
+				margin: 42px 0 0 0
+				.footer_block
+					font-size: 10px
+					padding: 0
+					width: 22%
+					&.filials ul li a
+						white-space: break-spaces
+					> .socials
+						justify-content: space-between
+						li:not(:first-child)
+							margin-left: 0
+					> ul
+						margin-top: 10px
+						li:not(:first-child)
+							margin-top: 10px
+		.copyright
+			font-size: 9px
+			.payments
+				padding-right: 10vw
+				li
+					width: 36px
+					height: 24px
 					&:not(:first-child)
-						margin: 5px 0 0 0
-					svg
-						width: 22px
-						margin-right: 10px
-			.socials
-				order: 2
-				margin: 0 0 0 auto
-	footer .navigation nav
-		margin-left: 0
-		.footer_block
-			padding-left: 20px
+						margin-left: 6px
 
 	main.landingWrapper section > .wrapper
 		width: 90%
@@ -92,6 +145,13 @@
 				width: calc( 100% / 4 - 20px)
 	section.action_goods .cards .card
 		width: 27.6vw
+	section.item .interested > div
+		flex-direction: column
+		.schedule
+			width: 100%
+		.openConsult
+			width: 100%
+			margin-top: 15px
 	section.blogs
 		.cards
 			margin: 0
@@ -105,13 +165,11 @@
 		width: 15vw
 	section.news .card
 		width: 28.6vw
-	section.video h2
-		max-width: 70%
-	section.video
+	section.video_section
+		h2
+			max-width: 70%
 		.text
 			padding-right: 40px
-		.video
-			height: 320px
 	section.recipes .card .video
 		height: 240px
 	section.find_items
@@ -250,51 +308,7 @@
 			min-width: 160px
 			width: auto
 
-@media (max-width: 768px)
-	body > .discount
-		font-size: 18px
-	h1.page_title
-		font-size: 24px
-	h2
-		font-size: 24px
-	.mainitem > .sublist
-		background-color: $w
-
-	header
-		nav .wrapper
-			padding-top: 0
-			.logo
-				display: block
-				order: 1
-		.contacts .wrapper
-			.logo
-				display: none
-			.addresses
-				font-size: 10px
-			.phones a
-				font-size: 10px
-				&:not(:first-child)
-					margin-left: 10px
-		.manage .wrapper
-			width: 100%
-			.catalog
-				.openMegamenu
-					padding: 24px 20px
-				.megamenu
-					width: auto
-			.search
-				padding: 8px 0
-				#searchResults
-					transform: translate(-50%, 12px)
-			.personal
-				margin-left: 60px
-				a
-					border: none !important
-					padding: 0 12px
-					&.compare
-						display: none
-					p
-						display: none
+@media (max-width: 920px)
 	header.cart
 		.wrapper > .logo
 			position: absolute
@@ -328,44 +342,37 @@
 			display: block
 			margin-left: 16px
 
-	footer
-		.wrapper
-			padding: 30px 0
-		.navigation
-			flex-direction: column
-			padding: 0 0 24px
-			.slogan
-				width: 100%
-				.logo
-					width: 160px
-				p
-					display: none
-			nav
-				width: 100%
-				margin: 42px 0 0 0
-				.footer_block
-					font-size: 10px
-					padding: 0
-					width: 22%
-					&.filials ul li a
-						white-space: break-spaces
-					> .socials
-						justify-content: space-between
-						li:not(:first-child)
-							margin-left: 0
-					> ul
-						margin-top: 10px
-						li:not(:first-child)
-							margin-top: 10px
-		.copyright
-			font-size: 9px
-			.payments
-				padding-right: 10vw
-				li
-					width: 36px
-					height: 24px
-					&:not(:first-child)
-						margin-left: 6px
+@media (max-width: 768px)
+	body > .discount
+		font-size: 18px
+	h1.page_title
+		font-size: 24px
+	h2
+		font-size: 24px
+	.mainitem > .sublist
+		background-color: $w
+
+	header
+		.manage .wrapper
+			width: 100%
+			.catalog
+				.openMegamenu
+					padding: 24px 20px
+				.megamenu
+					width: auto
+			.search
+				padding: 8px 0
+				#searchResults
+					transform: translate(-50%, 12px)
+			.personal
+				margin-left: 10px
+				a
+					border: none !important
+					padding: 0 12px
+					&.compare
+						display: none
+					p
+						display: none
 
 	section.catalog
 		padding: 20px 0 50px
@@ -415,17 +422,14 @@
 		.cards
 			padding: 50px 0 30px
 			margin-bottom: 50px
-	section.video
+	section.video_section
 		.text
 			width: 50%
 		.video
 			width: 50%
-			height: 190px
 	section.recipes
 		.cards
 			padding-top: 70px
-		.card .video
-			height: 160px
 	section.item
 		.top
 			h1
@@ -463,7 +467,7 @@
 		.interested
 			text-align: center
 			h6
-				font-size: 16px
+				font-size: 14px
 				max-width: unset
 			p
 				font-size: 10px
@@ -481,7 +485,7 @@
 			.schedule
 				display: none
 	section.info .item
-		padding: 24px
+		padding: 24px !important
 	section.cheaper
 		display: none
 		margin-bottom: 70px
@@ -635,6 +639,8 @@
 			font-size: 12px
 	section.examples
 		margin-top: 50px
+		.cards .card
+			width: 48vw
 	section.banner_landing.team.company .wrapper
 		.text
 			margin-right: -100px
@@ -647,6 +653,101 @@
 			padding-right: 10px
 		.kit
 			padding-left: 10px
+	section.info .item.item_reviews .content .review .comment
+		font-size: 0.8rem
+
+@media (max-width: 680px)
+	header.cart
+		.wrapper
+			flex-wrap: wrap
+			> .logo
+				display: none
+		.right
+			flex-wrap: wrap
+			> .logo
+				display: block
+				order: 1
+				width: 80px
+			.socials
+				order: 2
+				li
+					margin: 0 !important
+					svg
+						height: 20px
+			.languages
+				order: 3
+				margin-left: 7px
+			.hamb
+				order: 4
+				margin-left: 10px
+			.phones
+				order: 5
+				width: 100%
+				flex-direction: row
+				justify-content: space-between
+				a
+					margin: 0 !important
+					font-size: 10px
+					svg
+						width: 20px
+						margin-right: 4px
+
+@media (max-width: 640px)
+	header
+		.contacts .wrapper
+			flex-wrap: wrap
+			.addresses
+				width: 100%
+				order: 2
+				margin-top: 10px
+				justify-content: flex-end
+			.phones
+				width: 100%
+				order: 1
+				justify-content: space-around
+				a
+					font-size: 9px
+					svg
+						margin-right: 4px
+	footer
+		.bg > img
+			height: 100%
+		.navigation
+			.slogan
+				text-align: center
+				.logo
+					width: 190px
+					margin: 0 auto
+			nav
+				flex-wrap: wrap
+				.footer_block
+					width: 45%
+					padding-right: 16px
+					padding-bottom: 40px
+		.copyright
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			.payments
+				padding: 0
+				margin-top: 8px
+
+@media (max-width: 500px)
+	section.contacts
+		margin-top: 20px
+		.card
+			.content
+				flex-direction: column
+				.text
+					width: 100%
+					padding: 0
+					h2
+						font-size: 20px
+				.gallery
+					width: 100%
+					margin-top: 16px
+					img
+						width: 83vw
 
 @media (max-width: 480px)
 	.slick-arrow
@@ -687,24 +788,18 @@
 						margin-left: 6px
 					svg
 						height: 22px
-		.contacts .wrapper
-			flex-wrap: wrap
-			.addresses
-				width: 100%
-				order: 2
-				margin-top: 10px
-				justify-content: flex-end
-			.phones
-				width: 100%
-				order: 1
-				justify-content: space-around
-				a
-					font-size: 9px
-					svg
-						margin-right: 4px
+		.contacts .wrapper .addresses
+			> span,	a
+				white-space: break-spaces
+			.sublist
+				max-width: 100%
+				padding: 5px 9px
+				li
+					width: 100%
 		.manage
 			margin-top: 10px
 			.wrapper
+				padding-right: 10px
 				.catalog
 					.openMegamenu
 						font-size: 9px
@@ -730,63 +825,6 @@
 						svg
 							width: 16px
 							height: auto
-	header.cart
-		.wrapper
-			flex-wrap: wrap
-			> .logo
-				display: none
-		.right
-			flex-wrap: wrap
-			> .logo
-				display: block
-				order: 1
-				width: 80px
-			.socials
-				order: 2
-				li
-					margin: 0 !important
-					svg
-						height: 20px
-			.languages
-				order: 3
-				margin-left: 7px
-			.hamb
-				order: 4
-				margin-left: 10px
-			.phones
-				order: 5
-				width: 100%
-				flex-direction: row
-				justify-content: space-between
-				a
-					margin: 0 !important
-					font-size: 10px
-					svg
-						width: 20px
-						margin-right: 4px
-
-	footer
-		.bg > img
-			height: 100%
-		.navigation
-			.slogan
-				text-align: center
-				.logo
-					width: 190px
-					margin: 0 auto
-			nav
-				flex-wrap: wrap
-				.footer_block
-					width: 45%
-					padding-right: 16px
-					padding-bottom: 40px
-		.copyright
-			flex-direction: column
-			align-items: center
-			justify-content: center
-			.payments
-				padding: 0
-				margin-top: 8px
 
 	section.catalog
 		.btn_all
@@ -874,7 +912,7 @@
 			top: 50%
 			right: 0
 			transform: translate(-12px, -50%)
-	section.video
+	section.video_section
 		h2
 			max-width: unset
 			font-size: 20px
@@ -886,7 +924,7 @@
 			.video
 				margin-top: 16px
 				width: 100%
-				height: 170px
+				padding-bottom: 56%
 	section.recipes
 		padding-top: 18px
 		.btn_all
@@ -938,7 +976,7 @@
 				margin-top: 30px
 				.slick-list
 					height: 100% !important
-				img
+				.image
 					display: inline-block
 					width: 11vw
 					height: auto
@@ -967,33 +1005,32 @@
 	section.info
 		.item
 			position: relative
-			// &::after
-			// 	content: ''
-			// 	position: absolute
-			// 	z-index: 50
-			// 	height: 100%
-			// 	width: 90px
-			// 	top: 0
-			// 	bottom: 0
-			// 	left: 100%
-			// 	background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0))
-			// .content:after
-			// 	content: ''
-			// 	position: absolute
-			// 	z-index: 50
-			// 	height: 100%
-			// 	width: 90px
-			// 	top: 0
-			// 	bottom: 0
-			// 	left: 100%
-			// 	transform: translateX(-50%)
-			// 	background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0))
+			padding: 12px !important
 			&.active
 				overflow-x: scroll
+				.content
+					margin-top: 20px
 			table
 				width: 150%
 				td
 					white-space: nowrap
+			&.item_reviews
+				.content
+					padding-right: 12px
+					.review
+						&:not(:first-child)
+							margin-top: 20px
+						.name_date
+							font-size: 12px
+							flex-wrap: wrap
+							.name
+								width: 100%
+								margin-bottom: 3px
+							.rating
+								width: 50%
+							.date
+								width: 50%
+								text-align: right
 	section.cheaper .set .card
 		&:nth-of-type(2),
 		&.total
@@ -1111,14 +1148,21 @@
 	section.cart .fields
 		fieldset.user, fieldset.payment, fieldset.delivery
 			padding: 20px 10px
-	section.search .searchOptions
-		input[type="text"], select
-			width: 100% !important
-		.submitWrap
-			text-align: center
-			width: 100% !important
-			button
-				margin: 0 auto
+	section.search
+		overflow: hidden
+		.result
+			font-size: 18px
+		.searchOptions
+			input[type="text"], select
+				width: 100% !important
+			.submitWrap
+				text-align: center
+				width: 100% !important
+				button
+					margin: 0 auto
+		.cards .card
+			width: 100vw
+			margin: 0 -5vw
 	section.archive_news
 		padding: 0
 		.cards
@@ -1146,21 +1190,7 @@
 					display: none
 			.btnWrapper
 				display: block
-	section.contacts
-		margin-top: 20px
-		.card
-			.content
-				flex-direction: column
-				.text
-					width: 100%
-					padding: 0
-					h2
-						font-size: 20px
-				.gallery
-					width: 100%
-					margin-top: 16px
-					img
-						width: 83vw
+
 	section.banner_landing.title .wrapper
 		height: 190px
 		h1
@@ -1281,10 +1311,13 @@
 			> img.director
 				max-width: 170px
 				margin-top: -40px
-	section.examples .leaveRequest
-		margin-top: 50px
-		min-width: 180px
-		padding: 12px
+	section.examples
+		.cards .card
+			max-width: unset
+		.leaveRequest
+			margin-top: 50px
+			min-width: 180px
+			padding: 12px
 	section.banner_landing.team.company .wrapper
 		height: auto
 		.text

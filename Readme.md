@@ -20,3 +20,8 @@
 # Todo
 - custom scrollbar search
 - под логином какую то менюшку чтоб выводило, если залогинен
+
+
+Мобильный
+- иконки наши нужно использовать
+	https://grili.com.ua/elektricheskiy-gril-pulse-1000-weber--81010074/

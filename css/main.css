@@ -408,24 +408,26 @@ body > .discount {
   justify-content: center;
   align-items: center;
   font-family: 'Montserrat', sans-serif; }
-  .pagination li:not(:first-child) {
-    margin-left: 16px; }
-  .pagination li.active a {
-    background-color: #427d1e;
-    color: #ffffff;
-    pointer-events: none; }
-  .pagination li[aria-disabled=true] {
-    color: #dbdbdb;
-    pointer-events: none; }
-  .pagination li a {
-    width: 46px;
-    height: 46px;
-    padding: 15px 21px;
-    border-radius: 100%;
-    font-size: 12px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center; }
+  .pagination li {
+    font-weight: bold; }
+    .pagination li:not(:first-child) {
+      margin-left: 16px; }
+    .pagination li.active a {
+      background-color: #427d1e;
+      color: #ffffff;
+      pointer-events: none; }
+    .pagination li[aria-disabled=true] {
+      color: #dbdbdb;
+      pointer-events: none; }
+    .pagination li a {
+      width: 46px;
+      height: 46px;
+      padding: 15px 21px;
+      border-radius: 100%;
+      font-size: 12px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center; }
 
 input[type=text] {
   outline: none;
@@ -623,9 +625,16 @@ header {
       justify-content: flex-start;
       font-size: 14px;
       font-family: 'Montserrat', sans-serif; }
+      header .contacts .wrapper .addresses > span, header .contacts .wrapper .addresses a {
+        white-space: nowrap; }
       header .contacts .wrapper .addresses div {
         font-weight: bold;
         margin-left: 8px; }
+        header .contacts .wrapper .addresses div .sublist {
+          background-color: #ffffff;
+          left: -8px;
+          width: auto;
+          transform: none; }
       header .contacts .wrapper .addresses svg {
         width: 12px;
         margin-left: 8px;
@@ -718,6 +727,9 @@ header {
               transition: all 0.2s linear;
               opacity: 0;
               visibility: hidden; }
+              header .manage .wrapper .catalog .megamenu .item .submenu.active {
+                opacity: 1;
+                visibility: visible; }
               header .manage .wrapper .catalog .megamenu .item .submenu li {
                 display: block;
                 padding: 10px; }
@@ -924,7 +936,7 @@ header.v_03 .languages {
   order: 3; }
 
 header.v_03 .hamb {
-  display: block;
+  display: none;
   margin-left: 16px;
   order: 4; }
 
@@ -1187,38 +1199,38 @@ section.news {
         font-size: 12px;
         line-height: 1.5; }
 
-section.video .wrapper {
+section.video_section .wrapper {
   padding: 35px 0 65px; }
 
-section.video h2 {
+section.video_section h2 {
   max-width: 53%; }
 
-section.video .content {
+section.video_section .content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 32px; }
 
-section.video .text {
+section.video_section .text {
   width: 36%;
   padding-right: 120px;
   font-family: 'Open Sans', sans-serif; }
-  section.video .text p {
+  section.video_section .text p {
     font-size: 14px;
     line-height: 1.5; }
-    section.video .text p:not(:first-child) {
+    section.video_section .text p:not(:first-child) {
       margin-top: 8px; }
-    section.video .text p.accent {
+    section.video_section .text p.accent {
       font-weight: bold; }
-    section.video .text p a {
+    section.video_section .text p a {
       color: #427d1e; }
-      section.video .text p a:hover {
+      section.video_section .text p a:hover {
         color: #2c5414; }
 
-section.video .video {
+section.video_section .video {
   width: 64%;
-  height: 470px; }
-  section.video .video iframe {
+  padding-bottom: 36%; }
+  section.video_section .video iframe {
     width: 100%;
     height: 100%; }
 
@@ -1310,17 +1322,41 @@ section.item {
     margin-right: 40px; }
     section.item .tape .slick-track {
       width: 100% !important; }
-    section.item .tape img {
+    section.item .tape .image {
       display: block;
-      width: 60px;
-      height: 80px;
+      height: auto;
       cursor: pointer;
+      position: relative;
       transition: all 0.2s linear;
       opacity: 0.3; }
-      section.item .tape img:hover, section.item .tape img.active {
+      section.item .tape .image:hover, section.item .tape .image.active {
         opacity: 1; }
-      section.item .tape img:not(:first-child) {
+      section.item .tape .image:not(:first-child) {
         margin-top: 30px; }
+      section.item .tape .image.item_video::before {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); }
+      section.item .tape .image.item_video::after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../img/ico_play.svg) no-repeat center;
+        width: 26px;
+        height: 26px; }
+      section.item .tape .image > img {
+        max-width: 100%;
+        max-height: 100%; }
   section.item .item_image {
     width: 52%;
     padding: 0 90px;
@@ -1469,7 +1505,6 @@ section.item {
       font-weight: bold; }
     section.item .interested .openConsult {
       width: max-content;
-      white-space: nowrap;
       padding: 12px 14px;
       font-size: 12px;
       font-family: 'Montserrat', sans-serif;
@@ -1498,13 +1533,46 @@ section.info {
       margin-top: 33px;
       opacity: 1;
       visibility: visible;
-      max-height: 1000px; }
+      max-height: 500px; }
+    section.info .item.item_reviews {
+      padding: 24px 24px 24px 40px; }
+      section.info .item.item_reviews .content {
+        width: 100%;
+        overflow: auto; }
+        section.info .item.item_reviews .content .review:not(:first-child) {
+          margin-top: 30px; }
+        section.info .item.item_reviews .content .review .name_date {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 5px 8px;
+          border: 1px solid rgba(45, 44, 44, 0.15);
+          border-radius: 5px;
+          background: linear-gradient(to right, #f5f5f5 0%, rgba(66, 125, 30, 0.1) 100%); }
+          section.info .item.item_reviews .content .review .name_date .name i {
+            color: #b3b3b3; }
+          section.info .item.item_reviews .content .review .name_date .name span {
+            margin: 0 8px 0 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600; }
+          section.info .item.item_reviews .content .review .name_date .rating {
+            white-space: nowrap; }
+            section.info .item.item_reviews .content .review .name_date .rating i {
+              color: #b3b3b3; }
+              section.info .item.item_reviews .content .review .name_date .rating i.active {
+                color: #427d1e; }
+          section.info .item.item_reviews .content .review .name_date .date {
+            margin-left: auto; }
+        section.info .item.item_reviews .content .review .comment {
+          margin-top: 8px;
+          padding-left: 8px; }
     section.info .item h6 {
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       cursor: pointer;
       transition: all 0.2s linear;
-      color: #2d2c2c; }
+      color: #2d2c2c;
+      user-select: none; }
       section.info .item h6:hover {
         color: #427d1e; }
       section.info .item h6 i {
@@ -2349,7 +2417,7 @@ section.allBrands {
         margin-right: 16px; }
     section.allBrands .alphabet button {
       font-size: 18px;
-      font-weight: bold;
+      font-weight: normal;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -2357,13 +2425,18 @@ section.allBrands {
       height: 30px;
       text-transform: uppercase;
       border-radius: 100%; }
-      section.allBrands .alphabet button.active, section.allBrands .alphabet button:hover {
+      section.allBrands .alphabet button.active {
+        font-weight: bold;
+        background-color: #427d1e;
+        color: #ffffff; }
+      section.allBrands .alphabet button:hover {
         background-color: #427d1e;
         color: #ffffff; }
   section.allBrands .letter_results .result {
     margin-top: 40px; }
   section.allBrands .letter_results .letter {
-    font-size: 24px; }
+    font-size: 24px;
+    font-weight: bold; }
   section.allBrands .letter_results .brands {
     display: flex;
     justify-content: flex-start;
@@ -2793,7 +2866,9 @@ section.portfolio {
       width: calc( 50% - 10px); }
       section.portfolio .card > * span {
         font-size: 14px;
-        line-height: 1.5; }
+        line-height: 1.5;
+        font-weight: bold;
+        color: rgba(45, 44, 44, 0.6); }
       section.portfolio .card > * .bg {
         margin-top: 12px;
         height: 336px;
@@ -2969,7 +3044,8 @@ section.banner_landing.director {
 section.examples {
   padding-bottom: 70px; }
   section.examples .cards .card {
-    width: 22.5vw; }
+    width: 22.5vw;
+    max-width: 337px; }
   section.examples .wrapper > .text {
     margin-top: 50px;
     font-size: 14px;
@@ -3272,6 +3348,28 @@ footer {
     width: 90%; } }
 
 @media (max-width: 1280px) {
+  header .contacts .wrapper .phones a:not(:first-child) {
+    margin-left: 5px; }
+  header .contacts .wrapper .phones a svg {
+    margin-right: 3px; }
+  header.v_03 {
+    padding: 0; }
+    header.v_03 .right .phones {
+      order: 1;
+      margin: 0 auto 0 0;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: auto; }
+      header.v_03 .right .phones a {
+        font-size: 11px; }
+        header.v_03 .right .phones a:not(:first-child) {
+          margin: 5px 0 0 0; }
+        header.v_03 .right .phones a svg {
+          width: 22px;
+          margin-right: 10px; }
+    header.v_03 .right .socials {
+      order: 2;
+      margin: 0 0 0 auto; }
   footer .navigation nav {
     margin-left: 30px; }
     footer .navigation nav .footer_block {
@@ -3299,7 +3397,7 @@ footer {
   h2 {
     font-size: 24px; }
   header nav .wrapper {
-    padding-top: 10px; }
+    padding-top: 0; }
     header nav .wrapper .links {
       display: none; }
     header nav .wrapper .socials {
@@ -3312,34 +3410,60 @@ footer {
     header nav .wrapper .hamb {
       display: block;
       order: 4; }
+    header nav .wrapper .logo {
+      display: block;
+      order: 1; }
+  header .contacts .wrapper .logo {
+    display: none; }
+  header .contacts .wrapper .addresses {
+    font-size: 10px; }
+  header .contacts .wrapper .phones a {
+    font-size: 10px; }
+    header .contacts .wrapper .phones a:not(:first-child) {
+      margin-left: 10px; }
   header .manage .wrapper .personal {
     margin-left: 0; }
   header .manage .wrapper .search #searchResults {
     width: 500px;
     left: 50%;
     transform: translate(-50%, 18px); }
-  header.v_03 {
-    padding: 0; }
-    header.v_03 .right .phones {
-      order: 1;
-      margin: 0 auto 0 0;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-right: auto; }
-      header.v_03 .right .phones a {
-        font-size: 11px; }
-        header.v_03 .right .phones a:not(:first-child) {
-          margin: 5px 0 0 0; }
-        header.v_03 .right .phones a svg {
-          width: 22px;
-          margin-right: 10px; }
-    header.v_03 .right .socials {
-      order: 2;
-      margin: 0 0 0 auto; }
-  footer .navigation nav {
-    margin-left: 0; }
-    footer .navigation nav .footer_block {
-      padding-left: 20px; }
+  footer .wrapper {
+    padding: 30px 0; }
+  footer .navigation {
+    flex-direction: column;
+    padding: 0 0 24px; }
+    footer .navigation .slogan {
+      width: 100%; }
+      footer .navigation .slogan .logo {
+        width: 160px; }
+      footer .navigation .slogan p {
+        display: none; }
+    footer .navigation nav {
+      width: 100%;
+      margin: 42px 0 0 0; }
+      footer .navigation nav .footer_block {
+        font-size: 10px;
+        padding: 0;
+        width: 22%; }
+        footer .navigation nav .footer_block.filials ul li a {
+          white-space: break-spaces; }
+        footer .navigation nav .footer_block > .socials {
+          justify-content: space-between; }
+          footer .navigation nav .footer_block > .socials li:not(:first-child) {
+            margin-left: 0; }
+        footer .navigation nav .footer_block > ul {
+          margin-top: 10px; }
+          footer .navigation nav .footer_block > ul li:not(:first-child) {
+            margin-top: 10px; }
+  footer .copyright {
+    font-size: 9px; }
+    footer .copyright .payments {
+      padding-right: 10vw; }
+      footer .copyright .payments li {
+        width: 36px;
+        height: 24px; }
+        footer .copyright .payments li:not(:first-child) {
+          margin-left: 6px; }
   main.landingWrapper section > .wrapper {
     width: 90%; }
   .video {
@@ -3350,6 +3474,13 @@ footer {
       width: calc( 100% / 4 - 20px); }
   section.action_goods .cards .card {
     width: 27.6vw; }
+  section.item .interested > div {
+    flex-direction: column; }
+    section.item .interested > div .schedule {
+      width: 100%; }
+    section.item .interested > div .openConsult {
+      width: 100%;
+      margin-top: 15px; }
   section.blogs .cards {
     margin: 0; }
   section.blogs .card {
@@ -3362,12 +3493,10 @@ footer {
     width: 15vw; }
   section.news .card {
     width: 28.6vw; }
-  section.video h2 {
+  section.video_section h2 {
     max-width: 70%; }
-  section.video .text {
+  section.video_section .text {
     padding-right: 40px; }
-  section.video .video {
-    height: 320px; }
   section.recipes .card .video {
     height: 240px; }
   section.find_items aside {
@@ -3497,47 +3626,7 @@ footer {
       min-width: 160px;
       width: auto; } }
 
-@media (max-width: 768px) {
-  body > .discount {
-    font-size: 18px; }
-  h1.page_title {
-    font-size: 24px; }
-  h2 {
-    font-size: 24px; }
-  .mainitem > .sublist {
-    background-color: #ffffff; }
-  header nav .wrapper {
-    padding-top: 0; }
-    header nav .wrapper .logo {
-      display: block;
-      order: 1; }
-  header .contacts .wrapper .logo {
-    display: none; }
-  header .contacts .wrapper .addresses {
-    font-size: 10px; }
-  header .contacts .wrapper .phones a {
-    font-size: 10px; }
-    header .contacts .wrapper .phones a:not(:first-child) {
-      margin-left: 10px; }
-  header .manage .wrapper {
-    width: 100%; }
-    header .manage .wrapper .catalog .openMegamenu {
-      padding: 24px 20px; }
-    header .manage .wrapper .catalog .megamenu {
-      width: auto; }
-    header .manage .wrapper .search {
-      padding: 8px 0; }
-      header .manage .wrapper .search #searchResults {
-        transform: translate(-50%, 12px); }
-    header .manage .wrapper .personal {
-      margin-left: 60px; }
-      header .manage .wrapper .personal a {
-        border: none !important;
-        padding: 0 12px; }
-        header .manage .wrapper .personal a.compare {
-          display: none; }
-        header .manage .wrapper .personal a p {
-          display: none; }
+@media (max-width: 920px) {
   header.cart .wrapper > .logo {
     position: absolute;
     width: 150px;
@@ -3567,44 +3656,36 @@ footer {
     margin: 0 0 0 12px; }
   header.cart .hamb {
     display: block;
-    margin-left: 16px; }
-  footer .wrapper {
-    padding: 30px 0; }
-  footer .navigation {
-    flex-direction: column;
-    padding: 0 0 24px; }
-    footer .navigation .slogan {
-      width: 100%; }
-      footer .navigation .slogan .logo {
-        width: 160px; }
-      footer .navigation .slogan p {
-        display: none; }
-    footer .navigation nav {
-      width: 100%;
-      margin: 42px 0 0 0; }
-      footer .navigation nav .footer_block {
-        font-size: 10px;
-        padding: 0;
-        width: 22%; }
-        footer .navigation nav .footer_block.filials ul li a {
-          white-space: break-spaces; }
-        footer .navigation nav .footer_block > .socials {
-          justify-content: space-between; }
-          footer .navigation nav .footer_block > .socials li:not(:first-child) {
-            margin-left: 0; }
-        footer .navigation nav .footer_block > ul {
-          margin-top: 10px; }
-          footer .navigation nav .footer_block > ul li:not(:first-child) {
-            margin-top: 10px; }
-  footer .copyright {
-    font-size: 9px; }
-    footer .copyright .payments {
-      padding-right: 10vw; }
-      footer .copyright .payments li {
-        width: 36px;
-        height: 24px; }
-        footer .copyright .payments li:not(:first-child) {
-          margin-left: 6px; }
+    margin-left: 16px; } }
+
+@media (max-width: 768px) {
+  body > .discount {
+    font-size: 18px; }
+  h1.page_title {
+    font-size: 24px; }
+  h2 {
+    font-size: 24px; }
+  .mainitem > .sublist {
+    background-color: #ffffff; }
+  header .manage .wrapper {
+    width: 100%; }
+    header .manage .wrapper .catalog .openMegamenu {
+      padding: 24px 20px; }
+    header .manage .wrapper .catalog .megamenu {
+      width: auto; }
+    header .manage .wrapper .search {
+      padding: 8px 0; }
+      header .manage .wrapper .search #searchResults {
+        transform: translate(-50%, 12px); }
+    header .manage .wrapper .personal {
+      margin-left: 10px; }
+      header .manage .wrapper .personal a {
+        border: none !important;
+        padding: 0 12px; }
+        header .manage .wrapper .personal a.compare {
+          display: none; }
+        header .manage .wrapper .personal a p {
+          display: none; }
   section.catalog {
     padding: 20px 0 50px; }
     section.catalog .cards .card {
@@ -3651,15 +3732,12 @@ footer {
     section.news .cards {
       padding: 50px 0 30px;
       margin-bottom: 50px; }
-  section.video .text {
+  section.video_section .text {
     width: 50%; }
-  section.video .video {
-    width: 50%;
-    height: 190px; }
+  section.video_section .video {
+    width: 50%; }
   section.recipes .cards {
     padding-top: 70px; }
-  section.recipes .card .video {
-    height: 160px; }
   section.item .top h1 {
     width: 50%;
     font-size: 24px; }
@@ -3695,7 +3773,7 @@ footer {
   section.item .interested {
     text-align: center; }
     section.item .interested h6 {
-      font-size: 16px;
+      font-size: 14px;
       max-width: unset; }
     section.item .interested p {
       font-size: 10px;
@@ -3713,7 +3791,7 @@ footer {
     section.item .interested .schedule {
       display: none; }
   section.info .item {
-    padding: 24px; }
+    padding: 24px !important; }
   section.cheaper {
     display: none;
     margin-bottom: 70px; }
@@ -3861,6 +3939,8 @@ footer {
       font-size: 12px; }
   section.examples {
     margin-top: 50px; }
+    section.examples .cards .card {
+      width: 48vw; }
   section.banner_landing.team.company .wrapper .text {
     margin-right: -100px; }
   section.banner_landing.team.company .wrapper > img.team {
@@ -3870,7 +3950,97 @@ footer {
   section.rent_catalog .cards .card .info .use {
     padding-right: 10px; }
   section.rent_catalog .cards .card .info .kit {
-    padding-left: 10px; } }
+    padding-left: 10px; }
+  section.info .item.item_reviews .content .review .comment {
+    font-size: 0.8rem; } }
+
+@media (max-width: 680px) {
+  header.cart .wrapper {
+    flex-wrap: wrap; }
+    header.cart .wrapper > .logo {
+      display: none; }
+  header.cart .right {
+    flex-wrap: wrap; }
+    header.cart .right > .logo {
+      display: block;
+      order: 1;
+      width: 80px; }
+    header.cart .right .socials {
+      order: 2; }
+      header.cart .right .socials li {
+        margin: 0 !important; }
+        header.cart .right .socials li svg {
+          height: 20px; }
+    header.cart .right .languages {
+      order: 3;
+      margin-left: 7px; }
+    header.cart .right .hamb {
+      order: 4;
+      margin-left: 10px; }
+    header.cart .right .phones {
+      order: 5;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between; }
+      header.cart .right .phones a {
+        margin: 0 !important;
+        font-size: 10px; }
+        header.cart .right .phones a svg {
+          width: 20px;
+          margin-right: 4px; } }
+
+@media (max-width: 640px) {
+  header .contacts .wrapper {
+    flex-wrap: wrap; }
+    header .contacts .wrapper .addresses {
+      width: 100%;
+      order: 2;
+      margin-top: 10px;
+      justify-content: flex-end; }
+    header .contacts .wrapper .phones {
+      width: 100%;
+      order: 1;
+      justify-content: space-around; }
+      header .contacts .wrapper .phones a {
+        font-size: 9px; }
+        header .contacts .wrapper .phones a svg {
+          margin-right: 4px; }
+  footer .bg > img {
+    height: 100%; }
+  footer .navigation .slogan {
+    text-align: center; }
+    footer .navigation .slogan .logo {
+      width: 190px;
+      margin: 0 auto; }
+  footer .navigation nav {
+    flex-wrap: wrap; }
+    footer .navigation nav .footer_block {
+      width: 45%;
+      padding-right: 16px;
+      padding-bottom: 40px; }
+  footer .copyright {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    footer .copyright .payments {
+      padding: 0;
+      margin-top: 8px; } }
+
+@media (max-width: 500px) {
+  section.contacts {
+    margin-top: 20px; }
+    section.contacts .card .content {
+      flex-direction: column; }
+      section.contacts .card .content .text {
+        width: 100%;
+        padding: 0; }
+        section.contacts .card .content .text h2 {
+          font-size: 20px; }
+      section.contacts .card .content .gallery {
+        width: 100%;
+        margin-top: 16px; }
+        section.contacts .card .content .gallery img {
+          width: 83vw; } }
 
 @media (max-width: 480px) {
   .slick-arrow {
@@ -3907,100 +4077,41 @@ footer {
         margin-left: 6px; }
       header nav .wrapper .socials li svg {
         height: 22px; }
-  header .contacts .wrapper {
-    flex-wrap: wrap; }
-    header .contacts .wrapper .addresses {
-      width: 100%;
-      order: 2;
-      margin-top: 10px;
-      justify-content: flex-end; }
-    header .contacts .wrapper .phones {
-      width: 100%;
-      order: 1;
-      justify-content: space-around; }
-      header .contacts .wrapper .phones a {
-        font-size: 9px; }
-        header .contacts .wrapper .phones a svg {
-          margin-right: 4px; }
+  header .contacts .wrapper .addresses > span, header .contacts .wrapper .addresses a {
+    white-space: break-spaces; }
+  header .contacts .wrapper .addresses .sublist {
+    max-width: 100%;
+    padding: 5px 9px; }
+    header .contacts .wrapper .addresses .sublist li {
+      width: 100%; }
   header .manage {
     margin-top: 10px; }
-    header .manage .wrapper .catalog .openMegamenu {
-      font-size: 9px;
-      padding: 20px 10px; }
-    header .manage .wrapper .search {
-      margin-left: 8px; }
-      header .manage .wrapper .search input {
-        padding: 6px; }
-      header .manage .wrapper .search svg {
-        left: unset;
-        right: 6px; }
-      header .manage .wrapper .search #searchResults {
-        width: 90vw;
-        left: 43%; }
-        header .manage .wrapper .search #searchResults .card .text {
-          font-size: 10px; }
-        header .manage .wrapper .search #searchResults .price {
-          font-size: 12px; }
-    header .manage .wrapper .personal {
-      margin-left: 4px; }
-      header .manage .wrapper .personal a {
-        padding: 0 6px; }
-        header .manage .wrapper .personal a svg {
-          width: 16px;
-          height: auto; }
-  header.cart .wrapper {
-    flex-wrap: wrap; }
-    header.cart .wrapper > .logo {
-      display: none; }
-  header.cart .right {
-    flex-wrap: wrap; }
-    header.cart .right > .logo {
-      display: block;
-      order: 1;
-      width: 80px; }
-    header.cart .right .socials {
-      order: 2; }
-      header.cart .right .socials li {
-        margin: 0 !important; }
-        header.cart .right .socials li svg {
-          height: 20px; }
-    header.cart .right .languages {
-      order: 3;
-      margin-left: 7px; }
-    header.cart .right .hamb {
-      order: 4;
-      margin-left: 10px; }
-    header.cart .right .phones {
-      order: 5;
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-between; }
-      header.cart .right .phones a {
-        margin: 0 !important;
-        font-size: 10px; }
-        header.cart .right .phones a svg {
-          width: 20px;
-          margin-right: 4px; }
-  footer .bg > img {
-    height: 100%; }
-  footer .navigation .slogan {
-    text-align: center; }
-    footer .navigation .slogan .logo {
-      width: 190px;
-      margin: 0 auto; }
-  footer .navigation nav {
-    flex-wrap: wrap; }
-    footer .navigation nav .footer_block {
-      width: 45%;
-      padding-right: 16px;
-      padding-bottom: 40px; }
-  footer .copyright {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; }
-    footer .copyright .payments {
-      padding: 0;
-      margin-top: 8px; }
+    header .manage .wrapper {
+      padding-right: 10px; }
+      header .manage .wrapper .catalog .openMegamenu {
+        font-size: 9px;
+        padding: 20px 10px; }
+      header .manage .wrapper .search {
+        margin-left: 8px; }
+        header .manage .wrapper .search input {
+          padding: 6px; }
+        header .manage .wrapper .search svg {
+          left: unset;
+          right: 6px; }
+        header .manage .wrapper .search #searchResults {
+          width: 90vw;
+          left: 43%; }
+          header .manage .wrapper .search #searchResults .card .text {
+            font-size: 10px; }
+          header .manage .wrapper .search #searchResults .price {
+            font-size: 12px; }
+      header .manage .wrapper .personal {
+        margin-left: 4px; }
+        header .manage .wrapper .personal a {
+          padding: 0 6px; }
+          header .manage .wrapper .personal a svg {
+            width: 16px;
+            height: auto; }
   section.catalog .btn_all {
     display: block; }
   section.catalog .cards {
@@ -4085,18 +4196,18 @@ footer {
     top: 50%;
     right: 0;
     transform: translate(-12px, -50%); }
-  section.video h2 {
+  section.video_section h2 {
     max-width: unset;
     font-size: 20px; }
-  section.video .content {
+  section.video_section .content {
     flex-wrap: wrap; }
-    section.video .content .text {
+    section.video_section .content .text {
       width: 100%;
       padding: 0; }
-    section.video .content .video {
+    section.video_section .content .video {
       margin-top: 16px;
       width: 100%;
-      height: 170px; }
+      padding-bottom: 56%; }
   section.recipes {
     padding-top: 18px; }
     section.recipes .btn_all {
@@ -4147,7 +4258,7 @@ footer {
       margin-top: 30px; }
       section.item .bottom .tape .slick-list {
         height: 100% !important; }
-      section.item .bottom .tape img {
+      section.item .bottom .tape .image {
         display: inline-block;
         width: 11vw;
         height: auto;
@@ -4174,13 +4285,31 @@ footer {
   section.item .interested .openConsult {
     width: 100%; }
   section.info .item {
-    position: relative; }
+    position: relative;
+    padding: 12px !important; }
     section.info .item.active {
       overflow-x: scroll; }
+      section.info .item.active .content {
+        margin-top: 20px; }
     section.info .item table {
       width: 150%; }
       section.info .item table td {
         white-space: nowrap; }
+    section.info .item.item_reviews .content {
+      padding-right: 12px; }
+      section.info .item.item_reviews .content .review:not(:first-child) {
+        margin-top: 20px; }
+      section.info .item.item_reviews .content .review .name_date {
+        font-size: 12px;
+        flex-wrap: wrap; }
+        section.info .item.item_reviews .content .review .name_date .name {
+          width: 100%;
+          margin-bottom: 3px; }
+        section.info .item.item_reviews .content .review .name_date .rating {
+          width: 50%; }
+        section.info .item.item_reviews .content .review .name_date .date {
+          width: 50%;
+          text-align: right; }
   section.cheaper .set .card:nth-of-type(2), section.cheaper .set .card.total {
     display: none; }
   section.cheaper .set .card:nth-of-type(1) {
@@ -4290,13 +4419,20 @@ footer {
           margin: 20px 0 0 0; }
   section.cart .fields fieldset.user, section.cart .fields fieldset.payment, section.cart .fields fieldset.delivery {
     padding: 20px 10px; }
-  section.search .searchOptions input[type="text"], section.search .searchOptions select {
-    width: 100% !important; }
-  section.search .searchOptions .submitWrap {
-    text-align: center;
-    width: 100% !important; }
-    section.search .searchOptions .submitWrap button {
-      margin: 0 auto; }
+  section.search {
+    overflow: hidden; }
+    section.search .result {
+      font-size: 18px; }
+    section.search .searchOptions input[type="text"], section.search .searchOptions select {
+      width: 100% !important; }
+    section.search .searchOptions .submitWrap {
+      text-align: center;
+      width: 100% !important; }
+      section.search .searchOptions .submitWrap button {
+        margin: 0 auto; }
+    section.search .cards .card {
+      width: 100vw;
+      margin: 0 -5vw; }
   section.archive_news {
     padding: 0; }
     section.archive_news .cards {
@@ -4323,20 +4459,6 @@ footer {
         display: none; }
     section.whoops .wrapper .btnWrapper {
       display: block; }
-  section.contacts {
-    margin-top: 20px; }
-    section.contacts .card .content {
-      flex-direction: column; }
-      section.contacts .card .content .text {
-        width: 100%;
-        padding: 0; }
-        section.contacts .card .content .text h2 {
-          font-size: 20px; }
-      section.contacts .card .content .gallery {
-        width: 100%;
-        margin-top: 16px; }
-        section.contacts .card .content .gallery img {
-          width: 83vw; }
   section.banner_landing.title .wrapper {
     height: 190px; }
     section.banner_landing.title .wrapper h1 {
@@ -4454,6 +4576,8 @@ footer {
       section.banner_landing.director .wrapper > img.director {
         max-width: 170px;
         margin-top: -40px; }
+  section.examples .cards .card {
+    max-width: unset; }
   section.examples .leaveRequest {
     margin-top: 50px;
     min-width: 180px;

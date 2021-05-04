@@ -127,9 +127,16 @@ header
 			justify-content: flex-start
 			font-size: 14px
 			font-family: 'Montserrat', sans-serif
+			> span, a
+				white-space: nowrap
 			div
 				font-weight: bold
 				margin-left: 8px
+				.sublist
+					background-color: $w
+					left: -8px
+					width: auto
+					transform: none
 			svg
 				width: 12px
 				margin-left: 8px
@@ -222,6 +229,9 @@ header
 							transition: all 0.2s linear
 							opacity: 0
 							visibility: hidden
+							&.active
+								opacity: 1
+								visibility: visible
 							li
 								display: block
 								padding: 10px
@@ -428,6 +438,6 @@ header.v_03
 		margin: 0 0 0 12px
 		order: 3
 	.hamb
-		display: block
+		display: none
 		margin-left: 16px
 		order: 4
