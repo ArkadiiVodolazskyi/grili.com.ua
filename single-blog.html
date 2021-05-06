@@ -49,7 +49,7 @@
 
 	<a href="./taxonomy-category.html" class="discount bg">
 		<img src="./img/discount_bg.png" alt="discount_bg">
-		Скидки на грили до <strong>-20%</strong>
+		Скидки до <strong>-20%</strong>
 	</a>
 
 	<!-- header start -->
@@ -344,6 +344,11 @@
 
 				<div class="content">
 
+					<div class="post_title">
+						<h1>Буженина от Кости Лайпакова на гриль-коптильне GRILLI</h1>
+						<span class="date">21.08.2020</span>
+					</div>
+
 					<div class="thumbnail">
 						<img src="./img/thumbnail.png" alt="thumbnail">
 						<div class="text">
@@ -358,18 +363,20 @@
 
 					<div class="details">
 						<h4>Ингредиенты</h4>
-						<ol>
-							<li>Свиная шея 1 кг </li>
-							<li>Чернослив 100 гр</li>
-							<li>Курага 100 гр</li>
-							<li>Горчица 60 гр</li>
-							<li>Чеснок 3 зубчика</li>
-							<li>Несколько веточек розмарина</li>
-							<li>Соевый соус 70 мл</li>
-							<li>Мед 1 ст. л.</li>
-							<li>Соль</li>
-							<li>Перец</li>
-						</ol>
+						<div>
+							<ol>
+								<li>Свиная шея 1 кг </li>
+								<li>Чернослив 100 гр</li>
+								<li>Курага 100 гр</li>
+								<li>Горчица 60 гр</li>
+								<li>Чеснок 3 зубчика</li>
+								<li>Несколько веточек розмарина</li>
+								<li>Соевый соус 70 мл</li>
+								<li>Мед 1 ст. л.</li>
+								<li>Соль</li>
+								<li>Перец</li>
+							</ol>
+						</div>
 					</div>
 
 					<div class="video">
@@ -465,7 +472,7 @@
 								<span>Все звонки бесплатно!</span>
 							</li>
 							<li><a href="tel:0980774427">(098) 077 44 27</a></li>
-							<li><a href="tel:0507357404">(050) 735 74 04</a></li>
+							<li style="margin-top: 0;"><a href="tel:0507357404">(050) 735 74 04</a></li>
 							<li>
 								<p>Email: </p>
 								<a href="mailto:info@grili.com.ua">info@grili.com.ua</a>
@@ -515,21 +522,5 @@
 	<script src="./js/libs/slick.min.js"></script>
 	<script src="./js/main.js"></script>
 
-
-	<script>
-		window.addEventListener('load', () => {
-
-			// Shorten .details to make it two rowed
-			(function() {
-				if (window.innerWidth > 480) {
-					const details = document.querySelectorAll('.details');
-					details.forEach(detail => {
-						detail.style.height = `${detail.offsetHeight * 0.6}px`;
-					});
-				}
-			})();
-
-		})
-	</script>
 </body>
 </html>

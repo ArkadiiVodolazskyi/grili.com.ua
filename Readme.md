@@ -16,12 +16,3 @@
 13. page-testdrive 		**http://dev4.devpro.agency/page-testdrive.html**
 14. page-grillrent 		**http://dev4.devpro.agency/page-grillrent.html**
 15. page-heatrent 		**http://dev4.devpro.agency/page-heatrent.html**
-
-# Todo
-- custom scrollbar search
-- под логином какую то менюшку чтоб выводило, если залогинен
-
-
-Мобильный
-- иконки наши нужно использовать
-	https://grili.com.ua/elektricheskiy-gril-pulse-1000-weber--81010074/

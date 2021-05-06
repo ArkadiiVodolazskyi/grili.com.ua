@@ -1,4 +1,9 @@
 // page-home
+section.banner img
+	max-width: 1024px
+	max-height: 500px
+	margin: 0 auto
+	display: block
 section.catalog
 	padding: 40px 0 100px
 	background-color: $cream
@@ -133,6 +138,7 @@ section.action_goods
 					font-family: 'Open Sans', sans-serif
 				h3
 					font-size: 16px
+					margin-bottom: 20px
 					transition: all 0.2s linear
 				.buy
 					width: 70%
@@ -198,7 +204,8 @@ section.brands
 	margin-top: 70px
 	.cards
 		display: inline-flex
-		padding: 80px 0 70px
+		padding: 80px 0 40px
+		margin-bottom: 30px
 	.card
 		display: inline-block
 		text-align: center
@@ -213,7 +220,6 @@ section.brands
 			font-size: 10px
 			user-select: none
 	.btn_all
-		display: none
 		margin-top: 54px
 section.news
 	margin-top: 30px
@@ -221,7 +227,8 @@ section.news
 	background-color: $cream
 	.cards
 		display: inline-flex
-		padding: 70px 0 50px
+		padding: 70px 0 30px
+		margin-bottom: 80px
 		font-family: 'Open Sans', sans-serif
 	.card
 		display: inline-block
@@ -387,7 +394,7 @@ section.item
 			&:hover, &.active
 				opacity: 1
 			&:not(:first-child)
-				margin-top: 30px
+				margin-top: 20px
 			&.item_video::before
 				content: ''
 				position: absolute
@@ -821,6 +828,7 @@ section.find_items
 		font-family: 'Montserrat', sans-serif
 		font-size: 14px
 		color: #000
+		position: relative
 		#closeFilters
 			position: absolute
 			z-index: 250
@@ -834,6 +842,26 @@ section.find_items
 				fill: $green
 			svg
 				width: 15px
+		#resetFilters
+			position: absolute
+			z-index: 10
+			bottom: 0
+			left: 0
+			right: 0
+			width: 100%
+			transform: translate(0, calc( 100% + 25px ))
+			display: block
+			font-size: 12px
+			font-weight: bold
+			font-family: 'Montserrat', sans-serif
+			background-color: $w
+			color: $green
+			padding: 12px 0
+			border-radius: 140px
+			border: 1px solid $green
+			&:hover
+				background-color: $green
+				color: $w
 		.price
 			font-size: 12px
 		.options_block
@@ -921,10 +949,23 @@ section.post
 			width: 80%
 			margin-left: auto
 			margin-right: auto
+		.post_title
+			display: none
+			h1
+				font-size: 18px
+				line-height: 1.2
+				font-family: 'Montserrat', sans-serif
+			.date
+				font-size: 10px
+				font-family: 'Open Sans', sans-serif
+				color: $grey
+				line-height: 1.5
+				margin-top: 5px
 		.thumbnail
 			border-radius: 5px
 			position: relative
 			overflow: hidden
+			margin-top: 20px
 			margin-bottom: 50px
 			img
 				width: 100%
@@ -956,17 +997,19 @@ section.post
 			h4
 				font-size: 24px
 				line-height: 1.5
+				margin-bottom: 12px
+			> div
+				column-count: 2
+				column-fill: balance
+				column-gap: 10px
 			ol
-				margin-top: 12px
 				display: flex
 				flex-direction: column
 				flex-wrap: wrap
 				list-style: decimal
 				height: 100%
-				padding-bottom: 30px
+				padding-bottom: 0
 				li
-					width: 40%
-					padding-right: 16px
 					font-size: 14px
 					line-height: 1.5
 					display: list-item

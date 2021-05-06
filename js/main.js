@@ -211,7 +211,7 @@ window.addEventListener("load", () => {
 
   // Fix z-index on hover
   (function() {
-    function hideShow(triggerElementSelector, hideElementSelector, showElementSelector) {
+    function hideShow(triggerElementSelector, hideElementSelector, withIndex, showElementSelector) {
       const triggerElement = document.querySelector(triggerElementSelector);
       const hideElement = document.querySelector(hideElementSelector);
       const showElement = document.querySelector(showElementSelector);
@@ -220,13 +220,13 @@ window.addEventListener("load", () => {
           hideElement.style.zIndex = '-1';
         });
         triggerElement.addEventListener('mouseout', () => {
-          hideElement.style.zIndex = '1';
+          hideElement.style.zIndex = `${withIndex}`;
         });
       }
     }
 
-    hideShow('header .contacts .wrapper .addresses div', 'header .manage', 'header .contacts .wrapper .addresses div .sublist');
-    hideShow('header .contacts .wrapper .addresses div', 'main', 'header .contacts .wrapper .addresses div .sublist');
+    hideShow('header .contacts .wrapper .addresses div', 'header .manage', 1, 'header .contacts .wrapper .addresses div .sublist');
+    hideShow('header .contacts .wrapper .addresses div', 'main', 0, 'header .contacts .wrapper .addresses div .sublist');
   })();
 
   // Open/close filters
@@ -470,9 +470,9 @@ window.addEventListener("load", () => {
           },
         },
         {
-          breakpoint: 768,
+          breakpoint: 769,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 3,
             slidesToScroll: 1,
             arrows: true,
             draggable: true,

@@ -121,8 +121,8 @@
 							margin-left: 0
 					> ul
 						margin-top: 10px
-						li:not(:first-child)
-							margin-top: 10px
+					&:not(:last-of-type) > ul li:not(:first-child)
+						margin-top: 10px
 		.copyright
 			font-size: 9px
 			.payments
@@ -531,6 +531,14 @@
 				transform: scale(1)
 			#closeFilters
 				display: block
+			#resetFilters
+				position: relative
+				left: unset
+				bottom: unset
+				right: unset
+				transform: unset
+				max-width: 200px
+				margin: 0 auto 15px
 		main
 			width: 100%
 			padding: 0
@@ -541,8 +549,9 @@
 		.content > *:not(.thumbnail):not(.video),
 		.back
 			width: 100%
-		.content .thumbnail .text h1
-			font-size: 24px
+		.content
+			.thumbnail .text h1
+				font-size: 24px
 	section.cart
 		.page_title
 			font-size: 24px
@@ -557,6 +566,11 @@
 			width: 100%
 		> div
 			margin-top: 30px
+		.user .info
+			column-count: 2
+			column-fill: balance
+		.field:not(:first-child)
+			margin-top: 10px
 	section.search
 		.searchOptions
 			justify-content: space-between
@@ -575,8 +589,8 @@
 		.cards
 			margin: 20px -10px 0
 			padding: 0
-		.card
-			width: calc( 100% / 2 - 20px)
+		.card .bg
+			height: 110px
 		.pagination
 			margin-top: 30px
 	section.whoops
@@ -584,6 +598,8 @@
 		.wrapper
 			padding-top: 20px
 			align-items: flex-end
+	section.action_goods.discount_goods
+		border-bottom: 1px solid $lgrey
 	section.pros .wrapper .cards .card
 		padding: 10px 5px
 		p
@@ -640,7 +656,7 @@
 	section.examples
 		margin-top: 50px
 		.cards .card
-			width: 48vw
+			width: 28.6vw
 	section.banner_landing.team.company .wrapper
 		.text
 			margin-right: -100px
@@ -949,7 +965,7 @@
 					margin: 20px 0 0 0
 			.basic_info
 				width: 90%
-				margin-top: -30px
+				margin-top: -20px
 				flex-wrap: wrap
 				flex-direction: row
 				.brand
@@ -957,6 +973,14 @@
 				> span
 					width: 50%
 					margin-bottom: 8px
+				.producer
+					order: 1
+				.code
+					order: 2
+				.availability
+					order: 3
+				.articul
+					order: 4
 		.bottom
 			margin-top: 30px
 			flex-direction: column
@@ -1072,12 +1096,16 @@
 	section.post
 		margin-bottom: 0
 		.content
+			.post_title
+				display: block
 			.thumbnail
 				margin-bottom: 30px
 				.text
 					display: none
 			.details
 				padding: 30px 20px
+				> div
+					column-count: 1
 				ol
 					padding: 0
 					li
@@ -1205,6 +1233,7 @@
 					font-size: 18px
 				span
 					font-size: 12px
+					margin: 15px 0
 				.openConsult
 					display: none
 			.cards
@@ -1232,6 +1261,8 @@
 			padding: 12px
 		a
 			font-size: 24px
+	section.video_reviews.self
+		margin-top: 60px
 	section.pros_2
 		padding: 30px 0 50px
 		h2
@@ -1278,6 +1309,7 @@
 	section.banner_landing.team .wrapper
 		padding: 20px
 		flex-direction: column
+		height: 380px
 		.text
 			width: 100%
 			h2
